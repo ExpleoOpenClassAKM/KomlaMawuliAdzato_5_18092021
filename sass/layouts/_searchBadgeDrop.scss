@@ -1,0 +1,52 @@
+
+.SearchBadgeDropdown {
+    
+    width: 100%;
+    height: 30vh;
+    margin-bottom: 20px;
+}
+
+//Search Bar
+.searchBar {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    &__form {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        &--input {
+            width: 100%;
+            padding-left: 20px;
+            padding-right: 40px;
+            font-size: 15px;
+            border-radius: 5px;
+            background-color: $cd-color-primary;
+            border: 2px solid $cd-color-primary;
+            &:focus {
+                outline: none !important;
+                border-color: $cd-color-utensils;
+            }
+        }
+        &--icon {
+            position: absolute;
+            cursor: pointer;
+            font-size: 20px;
+            width: 45px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+//Badge
+
+
+
+
+//Dropdown - filters

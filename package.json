@@ -1,0 +1,26 @@
+{
+  "name": "lespetisplats_v1",
+  "version": "1.0.0",
+  "description": "Développez un algorithme de recherche en JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ExpleoOpenClassAKM/KomlaMawuliAdzato_5_18092021.git"
+  },
+  "keywords": [
+    "HTML",
+    "-",
+    "CSS",
+    "-",
+    "JavaScript"
+  ],
+  "author": "Komla Mawuli ADZATO",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ExpleoOpenClassAKM/KomlaMawuliAdzato_5_18092021/issues"
+  },
+  "homepage": "https://github.com/ExpleoOpenClassAKM/KomlaMawuliAdzato_5_18092021#readme"
+}
