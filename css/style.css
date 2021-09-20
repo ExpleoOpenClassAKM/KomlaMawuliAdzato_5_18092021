@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
 *,
 *::before,
 *::after {
@@ -12,6 +13,8 @@
   max-width: 1240px;
   height: 100vh;
   color: #000000;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
   display: flex;
   flex-direction: column;
 }
@@ -30,7 +33,7 @@
 
 .SearchBadgeDropdown {
   width: 100%;
-  height: 30vh;
+  height: auto;
   margin-bottom: 20px;
 }
 
@@ -38,6 +41,7 @@
   width: 100%;
   height: 50px;
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 .searchBar__form {
   position: relative;
@@ -53,6 +57,8 @@
   padding-right: 40px;
   font-size: 15px;
   border-radius: 5px;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
   background-color: #E7E7E7;
   border: 2px solid #E7E7E7;
 }
@@ -67,8 +73,279 @@
   width: 45px;
   height: 100%;
   display: flex;
-  justify-content: center;
+  padding-top: 15px;
+  padding-left: 13px;
+}
+
+.badgeBox {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  margin-bottom: 20px;
+}
+
+.ingredientBadge {
+  width: auto;
+  height: 35px;
+  margin-right: 20px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #FFFFFF;
+  border: 1px solid #3282F7;
+  background-color: #3282F7;
+  border-radius: 5px;
+}
+.ingredientBadge__designation {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 14px;
+}
+.ingredientBadge__closeBtn:hover {
+  cursor: pointer;
+  color: #0751bc;
+}
+
+.deviceBadge {
+  width: auto;
+  height: 35px;
+  margin-right: 20px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #FFFFFF;
+  border: 1px solid #68D9A4;
+  background-color: #68D9A4;
+  border-radius: 5px;
+}
+.deviceBadge__designation {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 14px;
+}
+.deviceBadge__closeBtn:hover {
+  cursor: pointer;
+  color: #2caf72;
+}
+
+.utensilBadge {
+  width: auto;
+  height: 35px;
+  margin-right: 20px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #FFFFFF;
+  border: 1px solid #ED6454;
+  background-color: #ED6454;
+  border-radius: 5px;
+}
+.utensilBadge__designation {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 14px;
+}
+.utensilBadge__closeBtn:hover {
+  cursor: pointer;
+  color: #c62715;
+}
+
+.dropdownBox {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #FFFFFF;
+}
+
+.ingredientDropdown {
+  width: auto;
+  height: 55px;
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+}
+.ingredientDropdown > a {
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+.ingredientDropdown__openBtn {
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 100%;
+  width: 150px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  background-color: #3282F7;
+}
+.ingredientDropdown__openBtn:hover {
+  background: #085bd4;
+  transition: linear 300ms;
+}
+.ingredientDropdown__hidden {
+  position: absolute;
+  display: none;
+}
+
+.deviceDropdown {
+  width: auto;
+  height: 55px;
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+}
+.deviceDropdown > a {
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+.deviceDropdown__openBtn {
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 100%;
+  width: 150px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  background-color: #68D9A4;
+}
+.deviceDropdown__openBtn:hover {
+  background: #31c37f;
+  transition: linear 300ms;
+  border: none;
+}
+.deviceDropdown__hidden {
+  position: absolute;
+  display: none;
+}
+
+.utensilDropdown {
+  width: auto;
+  height: 55px;
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+}
+.utensilDropdown > a {
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+.utensilDropdown__openBtn {
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 100%;
+  width: 150px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  background-color: #ED6454;
+}
+.utensilDropdown__openBtn:hover {
+  background: #dd2c17;
+  transition: linear 300ms;
+  border: none;
+}
+.utensilDropdown__hidden {
+  position: absolute;
+  display: none;
+}
+
+.thumbCard-section {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.thumbCard {
+  width: 380px;
+  height: 364px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.thumbCard__img {
+  width: 100%;
+  height: 50%;
+  border-radius: 5px 5px 0px 0px;
+  background-color: #C7BEBE;
+}
+.thumbCard__description {
+  width: 100%;
+  height: 50%;
+  padding: 10px;
+  border-radius: 0px 0px 5px 5px;
+  background-color: #E7E7E7;
+}
+.thumbCard__description--header {
+  width: 100%;
+  height: 20%;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.thumbCard__description--footer {
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+}
+
+.thumbCard__listOfCondiments {
+  width: 50%;
+  height: 100%;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.thumbCard__howToUse {
+  width: 50%;
+  height: 100%;
+  font-size: 12px;
+  margin-left: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

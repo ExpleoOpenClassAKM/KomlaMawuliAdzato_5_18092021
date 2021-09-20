@@ -1,0 +1,62 @@
+//Thumb Cards
+.thumbCard-section {
+    width: 100%;
+    height: auto;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.thumbCard {
+    width: 380px;
+    height: 364px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    &__img {
+        width: 100%;
+        height: 50%;
+        border-radius: 5px 5px 0px 0px;
+        background-color: $cd-color-secondary;
+    }
+    &__description {
+        width: 100%;
+        height: 50%;
+        padding: 10px;
+        border-radius: 0px 0px 5px 5px;
+        background-color: $cd-color-primary;
+        &--header {
+            width: 100%;
+            height: 20%;
+            font-size: 18px;
+            font-weight: bold;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        &--footer {
+            height: 80%;
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}
+
+.thumbCard__listOfCondiments {
+    width: 50%;
+    height: 100%;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.thumbCard__howToUse {
+    width: 50%;
+    height: 100%;
+    font-size: 12px;
+    margin-left: 5px;
+}

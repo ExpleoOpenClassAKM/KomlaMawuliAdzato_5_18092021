@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+
 //General settings
 *,
 *::before,
@@ -13,6 +16,8 @@
     max-width: 1240px;
     height: 100vh;
     color: $cd-color-default;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
     display: flex;
     flex-direction: column;
 }

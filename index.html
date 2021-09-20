@@ -11,32 +11,260 @@
     <body>
         <div class="container">
 
-            <!--HEADER-->
+            <!-- HEADER -->
             <header class="header">
-                <!--Logo-->
+                <!-- Logo -->
                 <div class="header__logo">
                     <img src="./images/logo.png" alt="Logo les petits plats">
                 </div>
             </header>
-            <!--First section: "search bar" - "badge" - "dropdown or filter"-->
-            <section class="SearchBadgeDropdown">
-                <!--Search input bar-->
-                <div class="searchBar">
-                    <form class="searchBar__form" id="searchBar">
-                        <input type="text" class="searchBar__form--input" 
-                        placeholder="Rechercher un ingredient, appareil, ustensiles ou une recette">
-                        <i class="searchBar__form--icon fas fa-search"></i>
-                    </form>
+
+            <!-- SECTION Search Badge Dropdown -->
+            <section class="SearchBadgeDropdown-section">
+                <!-- First section: "search bar" - "badge" - "dropdown or filter" -->
+                <div class="SearchBadgeDropdown">
+                    <!-- Search input bar -->
+                    <div class="searchBar">
+                        <form class="searchBar__form" id="searchBar">
+                            <input type="text" class="searchBar__form--input" 
+                            placeholder="Rechercher un ingredient, appareil, ustensiles ou une recette">
+                            <i class="searchBar__form--icon fas fa-search"></i>
+                        </form>
+                    </div>
+
+                    <!-- Badges-->
+                    <div class="badgeBox" id="badgeBox">
+                        <!-- Ingredients badge -->
+                        <div class="ingredientBadge">
+                            <span class="ingredientBadge__designation" id="ingredientBadge">(show ingredient selected)</span>
+                            <i class="ingredientBadge__closeBtn far fa-times-circle" id="ingredientBadge-closeBtn"></i>
+                        </div>
+
+                        <!-- Device badge -->
+                        <div class="deviceBadge">
+                            <span class="deviceBadge__designation" id="deviceBadge">(show device selected)</span>
+                            <i class="deviceBadge__closeBtn far fa-times-circle" id="deviceBadge-closeBtn"></i>
+                        </div>
+
+                        <!-- Utensils badge -->
+                        <div class="utensilBadge">
+                            <span class="utensilBadge__designation" id="utensilBadge">(show utensil selected)</span>
+                            <i class="utensilBadge__closeBtn far fa-times-circle" id="utensilBadge-closeBtn"></i>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown -->
+                    <div class="dropdownBox" id="dropdownBox">
+                        <!-- Ingredients dropdown -->
+                        <div class="ingredientDropdown" id="ingredientDropdown">
+                            <a href="">
+                                <button class="ingredientDropdown__openBtn">Ingredients
+                                <i class="ingredientDropdown__openChevron fas fa-chevron-down" id="ingredientDropdown__openChevron"></i></button>
+                                <div class="ingredientDropdown__hidden" id="ingredientDropdown__hidden">
+                                    <input type="text" class="ingredientDropdown__hidden--input" id="ingredientDropdown__hidden--input"
+                                    placeholder="Rechercher un ingredient">
+                                    <i class="ingredientDropdown__closeChevron fas fa-chevron-up" id="ingredientDropdown__closeChevron"></i>
+                                    <div id="ingredientExample"></div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Device dropdown -->
+                        <div class="deviceDropdown" id="deviceDropdown">
+                            <a href="">
+                                <button class="deviceDropdown__openBtn">Appareil
+                                <i class="deviceDropdown__openChevron fas fa-chevron-down" id="deviceDropdown__openChevron"></i></button>
+                                <div class="deviceDropdown__hidden" id="deviceDropdown__hidden">
+                                    <input type="text" class="deviceDropdown__hidden--input" id="deviceDropdown__hidden--input"
+                                    placeholder="Rechercher un appareil">
+                                    <i class="deviceDropdown__closeChevron fas fa-chevron-up" id="deviceDropdown__closeChevron"></i>
+                                    <div id="deviceExample"></div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Utensils dropdown -->
+                        <div class="utensilDropdown" id="utensilDropdown">
+                            <a href="">
+                                <button class="utensilDropdown__openBtn">Ustensiles
+                                <i class="utensilDropdown__openChevron fas fa-chevron-down" id="utensilDropdown__openChevron"></i></button>
+                                <div class="utensilDropdown__hidden" id="utensilDropdown__hidden">
+                                    <input type="text" class="utensilDropdown__hidden--input" id="utensilDropdown__hidden--input"
+                                    placeholder="Rechercher un ustensile">
+                                    <i class="utensilDropdown__closeChevron fas fa-chevron-up" id="utensilDropdown__closeChevron"></i>
+                                    <div id="utensilExample"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION Thumb card -->
+            <section class="thumbCard-section">
+                <div class="thumbCard">
+                    <div class="thumbCard__img"></div>
+                    <div class="thumbCard__description">
+                        <div class="thumbCard__description--header">
+                            <div class="thumbCard__title"><h3>Limonade de Coco</h3></div>
+                            <div class="thumbCard__time">
+                                <i class="far fa-clock"></i>
+                                <span>10 min</span>
+                            </div>
+                        </div>
+                        <div class="thumbCard__description--footer">
+                            <label for="thumb Card list Of Condiments" class="thumbCard__listOfCondiments">
+                                <strong>Lait de coco: </strong><span>400 ml</span><br>
+                                <strong>Jus de citron: </strong>2</span><br>
+                                <strong>Créme de coco: </strong><span>4 cuillères à soupe</span><br>
+                                <strong>Sucre: </strong><span>20g</span><br>
+                                <strong>Glaçons: </strong><span>2</span><br>
+                            </label>
+                            <label for="thumb Card how To Use" class="thumbCard__howToUse">
+                                Mettre les glaçons à votre goût dans le blender, 
+                                ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. 
+                                Mixer jusqu'à avoir la consistence désirée.
+                            </label>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="badgeBox">
-
+                <div class="thumbCard">
+                    <div class="thumbCard__img"></div>
+                    <div class="thumbCard__description">
+                        <div class="thumbCard__description--header">
+                            <div class="thumbCard__title"><h3>Limonade de Coco</h3></div>
+                            <div class="thumbCard__time">
+                                <i class="far fa-clock"></i>
+                                <span>10 min</span>
+                            </div>
+                        </div>
+                        <div class="thumbCard__description--footer">
+                            <label for="thumb Card list Of Condiments" class="thumbCard__listOfCondiments">
+                                <strong>Lait de coco: </strong><span>400 ml</span><br>
+                                <strong>Jus de citron: </strong>2</span><br>
+                                <strong>Créme de coco: </strong><span>4 cuillères à soupe</span><br>
+                                <strong>Sucre: </strong><span>20g</span><br>
+                                <strong>Glaçons: </strong><span>2</span><br>
+                            </label>
+                            <label for="thumb Card how To Use" class="thumbCard__howToUse">
+                                Mettre les glaçons à votre goût dans le blender, 
+                                ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. 
+                                Mixer jusqu'à avoir la consistence désirée.
+                            </label>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="dropdownBox">
-
+                <div class="thumbCard">
+                    <div class="thumbCard__img"></div>
+                    <div class="thumbCard__description">
+                        <div class="thumbCard__description--header">
+                            <div class="thumbCard__title"><h3>Limonade de Coco</h3></div>
+                            <div class="thumbCard__time">
+                                <i class="far fa-clock"></i>
+                                <span>10 min</span>
+                            </div>
+                        </div>
+                        <div class="thumbCard__description--footer">
+                            <label for="thumb Card list Of Condiments" class="thumbCard__listOfCondiments">
+                                <strong>Lait de coco: </strong><span>400 ml</span><br>
+                                <strong>Jus de citron: </strong>2</span><br>
+                                <strong>Créme de coco: </strong><span>4 cuillères à soupe</span><br>
+                                <strong>Sucre: </strong><span>20g</span><br>
+                                <strong>Glaçons: </strong><span>2</span><br>
+                            </label>
+                            <label for="thumb Card how To Use" class="thumbCard__howToUse">
+                                Mettre les glaçons à votre goût dans le blender, 
+                                ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. 
+                                Mixer jusqu'à avoir la consistence désirée.
+                            </label>
+                        </div>
+                    </div>
                 </div>
 
+                <div class="thumbCard">
+                    <div class="thumbCard__img"></div>
+                    <div class="thumbCard__description">
+                        <div class="thumbCard__description--header">
+                            <div class="thumbCard__title"><h3>Limonade de Coco</h3></div>
+                            <div class="thumbCard__time">
+                                <i class="far fa-clock"></i>
+                                <span>10 min</span>
+                            </div>
+                        </div>
+                        <div class="thumbCard__description--footer">
+                            <label for="thumb Card list Of Condiments" class="thumbCard__listOfCondiments">
+                                <strong>Lait de coco: </strong><span>400 ml</span><br>
+                                <strong>Jus de citron: </strong>2</span><br>
+                                <strong>Créme de coco: </strong><span>4 cuillères à soupe</span><br>
+                                <strong>Sucre: </strong><span>20g</span><br>
+                                <strong>Glaçons: </strong><span>2</span><br>
+                            </label>
+                            <label for="thumb Card how To Use" class="thumbCard__howToUse">
+                                Mettre les glaçons à votre goût dans le blender, 
+                                ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. 
+                                Mixer jusqu'à avoir la consistence désirée.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="thumbCard">
+                    <div class="thumbCard__img"></div>
+                    <div class="thumbCard__description">
+                        <div class="thumbCard__description--header">
+                            <div class="thumbCard__title"><h3>Limonade de Coco</h3></div>
+                            <div class="thumbCard__time">
+                                <i class="far fa-clock"></i>
+                                <span>10 min</span>
+                            </div>
+                        </div>
+                        <div class="thumbCard__description--footer">
+                            <label for="thumb Card list Of Condiments" class="thumbCard__listOfCondiments">
+                                <strong>Lait de coco: </strong><span>400 ml</span><br>
+                                <strong>Jus de citron: </strong>2</span><br>
+                                <strong>Créme de coco: </strong><span>4 cuillères à soupe</span><br>
+                                <strong>Sucre: </strong><span>20g</span><br>
+                                <strong>Glaçons: </strong><span>2</span><br>
+                            </label>
+                            <label for="thumb Card how To Use" class="thumbCard__howToUse">
+                                Mettre les glaçons à votre goût dans le blender, 
+                                ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. 
+                                Mixer jusqu'à avoir la consistence désirée.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="thumbCard">
+                    <div class="thumbCard__img"></div>
+                    <div class="thumbCard__description">
+                        <div class="thumbCard__description--header">
+                            <div class="thumbCard__title"><h3>Limonade de Coco</h3></div>
+                            <div class="thumbCard__time">
+                                <i class="far fa-clock"></i>
+                                <span>10 min</span>
+                            </div>
+                        </div>
+                        <div class="thumbCard__description--footer">
+                            <label for="thumb Card list Of Condiments" class="thumbCard__listOfCondiments">
+                                <strong>Lait de coco: </strong><span>400 ml</span><br>
+                                <strong>Jus de citron: </strong>2</span><br>
+                                <strong>Créme de coco: </strong><span>4 cuillères à soupe</span><br>
+                                <strong>Sucre: </strong><span>20g</span><br>
+                                <strong>Glaçons: </strong><span>2</span><br>
+                            </label>
+                            <label for="thumb Card how To Use" class="thumbCard__howToUse">
+                                Mettre les glaçons à votre goût dans le blender, 
+                                ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. 
+                                Mixer jusqu'à avoir la consistence désirée.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            
             </section>
 
         </div>

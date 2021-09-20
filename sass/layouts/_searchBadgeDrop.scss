@@ -1,16 +1,17 @@
 
 .SearchBadgeDropdown {
-    
     width: 100%;
-    height: 30vh;
+    height: auto;
     margin-bottom: 20px;
 }
 
+//+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
 //Search Bar
 .searchBar {
     width: 100%;
     height: 50px;
     border-radius: 5px;
+    margin-bottom: 20px;
     &__form {
         position: relative;
         width: 100%;
@@ -24,11 +25,13 @@
             padding-right: 40px;
             font-size: 15px;
             border-radius: 5px;
+            font-family: 'Lato', sans-serif;
+            font-style: normal;
             background-color: $cd-color-primary;
             border: 2px solid $cd-color-primary;
             &:focus {
                 outline: none !important;
-                border-color: $cd-color-utensils;
+                border-color: $cd-color-utensil;
             }
         }
         &--icon {
@@ -38,15 +41,147 @@
             width: 45px;
             height: 100%;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            padding-top: 15px;
+            padding-left: 13px;
         }
     }
 }
 
-//Badge
+//+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+//Badges
+.badgeBox {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
 
+.ingredientBadge {
+    @include badge-parameter;
+    border: 1px solid $cd-color-ingredient;
+    background-color: $cd-color-ingredient;
+    border-radius: 5px;
+    &__designation {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 14px;
+    }
+    &__closeBtn:hover {
+        cursor: pointer;
+        color: darken($color: $cd-color-ingredient, $amount: 20);
+    }
+}
 
+.deviceBadge {
+    @include badge-parameter;
+    border: 1px solid $cd-color-device;
+    background-color: $cd-color-device;
+    border-radius: 5px;
+    &__designation {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 14px;
+    }
+    &__closeBtn:hover {
+        cursor: pointer;
+        color: darken($color: $cd-color-device, $amount: 20);
+    }
+}
 
+.utensilBadge {
+    @include badge-parameter;
+    border: 1px solid $cd-color-utensil;
+    background-color: $cd-color-utensil;
+    border-radius: 5px;
+    &__designation {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 14px;
+    }
+    &__closeBtn:hover {
+        cursor: pointer;
+        color: darken($color: $cd-color-utensil, $amount: 20);
+    }
+}
 
+//+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
 //Dropdown - filters
+.dropdownBox {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: $cd-color-accent;
+}
+
+.ingredientDropdown {
+    @include dropdown-CommonParameters;
+    & > a {
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+    }
+    &__openBtn {
+        @include dropdownBtn-CommonParameters;
+        position: relative;
+        background-color: $cd-color-ingredient;
+        &:hover {
+            background: darken($color: $cd-color-ingredient, $amount: 15);
+            transition: linear 300ms;
+        }
+    }
+    &__hidden {
+        position: absolute;
+        display: none;
+    }
+}
+
+.deviceDropdown {
+    @include dropdown-CommonParameters;
+    & > a {
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+    }
+    &__openBtn {
+        @include dropdownBtn-CommonParameters;
+        position: relative;
+        background-color: $cd-color-device;
+        &:hover {
+            background: darken($color: $cd-color-device, $amount: 15);
+            transition: linear 300ms;
+            border: none;
+        }
+    }
+    &__hidden {
+        position: absolute;
+        display: none;
+    }
+}
+
+.utensilDropdown {
+    @include dropdown-CommonParameters;
+    & > a {
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+    }
+    &__openBtn {
+        @include dropdownBtn-CommonParameters;
+        position: relative;
+        background-color: $cd-color-utensil;
+        &:hover {
+            background: darken($color: $cd-color-utensil, $amount: 15);
+            transition: linear 300ms;
+            border: none;
+        }
+    }
+    &__hidden {
+        position: absolute;
+        display: none;
+    }
+}
