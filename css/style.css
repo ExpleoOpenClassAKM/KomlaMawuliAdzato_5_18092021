@@ -109,7 +109,7 @@
   color: #0751bc;
 }
 
-.deviceBadge {
+.applianceBadge {
   width: auto;
   height: 35px;
   margin-right: 20px;
@@ -122,17 +122,17 @@
   background-color: #68D9A4;
   border-radius: 5px;
 }
-.deviceBadge__designation {
+.applianceBadge__designation {
   padding-left: 10px;
   padding-right: 10px;
   font-size: 14px;
 }
-.deviceBadge__closeBtn:hover {
+.applianceBadge__closeBtn:hover {
   cursor: pointer;
   color: #2caf72;
 }
 
-.utensilBadge {
+.ustensilBadge {
   width: auto;
   height: 35px;
   margin-right: 20px;
@@ -145,12 +145,12 @@
   background-color: #ED6454;
   border-radius: 5px;
 }
-.utensilBadge__designation {
+.ustensilBadge__designation {
   padding-left: 10px;
   padding-right: 10px;
   font-size: 14px;
 }
-.utensilBadge__closeBtn:hover {
+.ustensilBadge__closeBtn:hover {
   cursor: pointer;
   color: #c62715;
 }
@@ -171,6 +171,7 @@
   margin-right: 30px;
   display: flex;
   align-items: center;
+  position: relative;
 }
 .ingredientDropdown > a {
   height: 100%;
@@ -193,7 +194,6 @@
   color: #FFFFFF;
   border: none;
   cursor: pointer;
-  position: relative;
   background-color: #3282F7;
 }
 .ingredientDropdown__openBtn:hover {
@@ -203,21 +203,36 @@
 .ingredientDropdown__hidden {
   position: absolute;
   display: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 100%;
+  width: 150px;
+  border-radius: 5px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  background-color: #3282F7;
 }
 
-.deviceDropdown {
+.applianceDropdown {
   width: auto;
   height: 55px;
   margin-right: 30px;
   display: flex;
   align-items: center;
 }
-.deviceDropdown > a {
+.applianceDropdown > a {
   height: 100%;
   width: 100%;
   text-decoration: none;
 }
-.deviceDropdown__openBtn {
+.applianceDropdown__openBtn {
   padding-left: 15px;
   padding-right: 15px;
   height: 100%;
@@ -236,29 +251,29 @@
   position: relative;
   background-color: #68D9A4;
 }
-.deviceDropdown__openBtn:hover {
+.applianceDropdown__openBtn:hover {
   background: #31c37f;
   transition: linear 300ms;
   border: none;
 }
-.deviceDropdown__hidden {
+.applianceDropdown__hidden {
   position: absolute;
   display: none;
 }
 
-.utensilDropdown {
+.ustensilDropdown {
   width: auto;
   height: 55px;
   margin-right: 30px;
   display: flex;
   align-items: center;
 }
-.utensilDropdown > a {
+.ustensilDropdown > a {
   height: 100%;
   width: 100%;
   text-decoration: none;
 }
-.utensilDropdown__openBtn {
+.ustensilDropdown__openBtn {
   padding-left: 15px;
   padding-right: 15px;
   height: 100%;
@@ -277,12 +292,12 @@
   position: relative;
   background-color: #ED6454;
 }
-.utensilDropdown__openBtn:hover {
+.ustensilDropdown__openBtn:hover {
   background: #dd2c17;
   transition: linear 300ms;
   border: none;
 }
-.utensilDropdown__hidden {
+.ustensilDropdown__hidden {
   position: absolute;
   display: none;
 }

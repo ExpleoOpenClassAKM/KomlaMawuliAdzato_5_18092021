@@ -31,7 +31,7 @@
             border: 2px solid $cd-color-primary;
             &:focus {
                 outline: none !important;
-                border-color: $cd-color-utensil;
+                border-color: $cd-color-ustensil;
             }
         }
         &--icon {
@@ -74,10 +74,10 @@
     }
 }
 
-.deviceBadge {
+.applianceBadge {
     @include badge-parameter;
-    border: 1px solid $cd-color-device;
-    background-color: $cd-color-device;
+    border: 1px solid $cd-color-appliance;
+    background-color: $cd-color-appliance;
     border-radius: 5px;
     &__designation {
         padding-left: 10px;
@@ -86,14 +86,14 @@
     }
     &__closeBtn:hover {
         cursor: pointer;
-        color: darken($color: $cd-color-device, $amount: 20);
+        color: darken($color: $cd-color-appliance, $amount: 20);
     }
 }
 
-.utensilBadge {
+.ustensilBadge {
     @include badge-parameter;
-    border: 1px solid $cd-color-utensil;
-    background-color: $cd-color-utensil;
+    border: 1px solid $cd-color-ustensil;
+    background-color: $cd-color-ustensil;
     border-radius: 5px;
     &__designation {
         padding-left: 10px;
@@ -102,7 +102,7 @@
     }
     &__closeBtn:hover {
         cursor: pointer;
-        color: darken($color: $cd-color-utensil, $amount: 20);
+        color: darken($color: $cd-color-ustensil, $amount: 20);
     }
 }
 
@@ -120,6 +120,7 @@
 
 .ingredientDropdown {
     @include dropdown-CommonParameters;
+    position: relative;
     & > a {
         height: 100%;
         width: 100%;
@@ -127,7 +128,6 @@
     }
     &__openBtn {
         @include dropdownBtn-CommonParameters;
-        position: relative;
         background-color: $cd-color-ingredient;
         &:hover {
             background: darken($color: $cd-color-ingredient, $amount: 15);
@@ -137,10 +137,27 @@
     &__hidden {
         position: absolute;
         display: none;
+        
+        //==================================
+        padding-left: 15px;
+        padding-right: 15px;
+        height: 100%;
+        width: 150px;
+        border-radius: 5px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 15px;
+        font-family: 'Lato', sans-serif;
+        font-style: normal;
+        color: $cd-color-accent;
+        border: none;
+        cursor: pointer;
+        background-color: $cd-color-ingredient;
     }
 }
 
-.deviceDropdown {
+.applianceDropdown {
     @include dropdown-CommonParameters;
     & > a {
         height: 100%;
@@ -150,9 +167,9 @@
     &__openBtn {
         @include dropdownBtn-CommonParameters;
         position: relative;
-        background-color: $cd-color-device;
+        background-color: $cd-color-appliance;
         &:hover {
-            background: darken($color: $cd-color-device, $amount: 15);
+            background: darken($color: $cd-color-appliance, $amount: 15);
             transition: linear 300ms;
             border: none;
         }
@@ -163,7 +180,7 @@
     }
 }
 
-.utensilDropdown {
+.ustensilDropdown {
     @include dropdown-CommonParameters;
     & > a {
         height: 100%;
@@ -173,9 +190,9 @@
     &__openBtn {
         @include dropdownBtn-CommonParameters;
         position: relative;
-        background-color: $cd-color-utensil;
+        background-color: $cd-color-ustensil;
         &:hover {
-            background: darken($color: $cd-color-utensil, $amount: 15);
+            background: darken($color: $cd-color-ustensil, $amount: 15);
             transition: linear 300ms;
             border: none;
         }
