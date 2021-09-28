@@ -121,11 +121,7 @@
 .ingredientDropdown {
     @include dropdown-CommonParameters;
     position: relative;
-    & > a {
-        height: 100%;
-        width: 100%;
-        text-decoration: none;
-    }
+    
     &__openBtn {
         @include dropdownBtn-CommonParameters;
         background-color: $cd-color-ingredient;
@@ -133,6 +129,7 @@
             background: darken($color: $cd-color-ingredient, $amount: 15);
             transition: linear 300ms;
         }
+        visibility: visible;
     }
     &__hidden {
         position: absolute;
@@ -142,7 +139,7 @@
         padding-left: 15px;
         padding-right: 15px;
         height: 100%;
-        width: 150px;
+        width: auto;
         border-radius: 5px;
         flex-direction: row;
         justify-content: space-between;
@@ -159,15 +156,11 @@
 
 .applianceDropdown {
     @include dropdown-CommonParameters;
-    & > a {
-        height: 100%;
-        width: 100%;
-        text-decoration: none;
-    }
     &__openBtn {
         @include dropdownBtn-CommonParameters;
         position: relative;
         background-color: $cd-color-appliance;
+        margin-left: 30px; //*****
         &:hover {
             background: darken($color: $cd-color-appliance, $amount: 15);
             transition: linear 300ms;
@@ -182,15 +175,11 @@
 
 .ustensilDropdown {
     @include dropdown-CommonParameters;
-    & > a {
-        height: 100%;
-        width: 100%;
-        text-decoration: none;
-    }
     &__openBtn {
         @include dropdownBtn-CommonParameters;
         position: relative;
         background-color: $cd-color-ustensil;
+        margin-left: 30px; //*****
         &:hover {
             background: darken($color: $cd-color-ustensil, $amount: 15);
             transition: linear 300ms;
