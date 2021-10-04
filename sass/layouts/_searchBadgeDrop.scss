@@ -129,7 +129,7 @@
             background: darken($color: $cd-color-ingredient, $amount: 15);
             transition: linear 300ms;
         }
-        visibility: visible;
+        
     }
     &__hidden {
         position: absolute;

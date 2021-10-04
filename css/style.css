@@ -189,7 +189,6 @@
   border: none;
   cursor: pointer;
   background-color: #3282F7;
-  visibility: visible;
 }
 .ingredientDropdown__openBtn:hover {
   background: #085bd4;
