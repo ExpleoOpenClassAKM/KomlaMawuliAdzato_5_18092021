@@ -114,13 +114,13 @@
     margin-bottom: 20px;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     color: $cd-color-accent;
+    position: relative;
 }
 
 .ingredientDropdown {
     @include dropdown-CommonParameters;
-    position: relative;
     
     &__openBtn {
         @include dropdownBtn-CommonParameters;
@@ -128,48 +128,98 @@
         &:hover {
             background: darken($color: $cd-color-ingredient, $amount: 15);
             transition: linear 300ms;
+            border: none;
         }
-        
     }
+
     &__hidden {
-        position: absolute;
-        display: none;
-        
-        //==================================
-        padding-left: 15px;
-        padding-right: 15px;
-        height: 100%;
-        width: auto;
-        border-radius: 5px;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 15px;
-        font-family: 'Lato', sans-serif;
-        font-style: normal;
-        color: $cd-color-accent;
-        border: none;
-        cursor: pointer;
+        @include dropdownHidden-CommonParameters;
         background-color: $cd-color-ingredient;
+        margin-top: -55px;
+        &--input {
+            @include recipesElementsList-Input;
+            background-color: $cd-color-ingredient;
+        }
+
+        &--closeChevron {
+            @include recipesElementsList-closeChevron;
+        }
+        display: none;
+    }
+
+    &__list {
+        display: none;
+        position: absolute;
+        &--allIngredients {
+            @include recipesElementsListCommonParameter;
+            width: 500px;
+            height: 1450px;
+            background-color: $cd-color-ingredient;
+
+            & > div {
+                @include recipesElementsList-Div;
+            }
+
+            & > div:hover {
+                color: $cd-color-ingredient;
+                background-color: $cd-color-accent;
+
+            }
+        }
     }
 }
+    
 
 .applianceDropdown {
     @include dropdown-CommonParameters;
     &__openBtn {
         @include dropdownBtn-CommonParameters;
-        position: relative;
         background-color: $cd-color-appliance;
-        margin-left: 30px; //*****
+        margin-left: 30px;
         &:hover {
             background: darken($color: $cd-color-appliance, $amount: 15);
             transition: linear 300ms;
             border: none;
         }
     }
+
     &__hidden {
+        @include dropdownHidden-CommonParameters;
+        margin-left: 30px;
+        margin-top: -55px;
+        background-color: $cd-color-appliance;
+        
+        &--input {
+            @include recipesElementsList-Input;
+            background-color: $cd-color-appliance;
+        }
+
+        &--closeChevron {
+            @include recipesElementsList-closeChevron;
+        }
+        display: none;
+    }
+
+    &__list {
         position: absolute;
         display: none;
+        margin-left: 30px;
+        &--allAppliances {
+            @include recipesElementsListCommonParameter;
+            width: 500px;
+            height: 190px;
+            background-color: $cd-color-appliance;
+
+            & > div {
+                @include recipesElementsList-Div;
+            }
+
+            & > div:hover {
+                color: $cd-color-appliance;
+                background-color: $cd-color-accent;
+
+            }
+        }
     }
 }
 
@@ -177,17 +227,51 @@
     @include dropdown-CommonParameters;
     &__openBtn {
         @include dropdownBtn-CommonParameters;
-        position: relative;
         background-color: $cd-color-ustensil;
-        margin-left: 30px; //*****
+        margin-left: 30px; 
         &:hover {
             background: darken($color: $cd-color-ustensil, $amount: 15);
             transition: linear 300ms;
             border: none;
         }
     }
+
     &__hidden {
+        @include dropdownHidden-CommonParameters;
+        margin-left: 30px;
+        margin-top: -55px;
+        background-color: $cd-color-ustensil;
+        
+        &--input {
+            @include recipesElementsList-Input;
+            background-color: $cd-color-ustensil;
+        }
+
+        &--closeChevron {
+            @include recipesElementsList-closeChevron;
+        }
+        display: none;
+    }
+
+    &__list {
         position: absolute;
         display: none;
+        margin-left: 30px;
+        &--allUstensils {
+            @include recipesElementsListCommonParameter;
+            width: 500px;
+            height: 365px;
+            background-color: $cd-color-ustensil;
+
+            & > div {
+                @include recipesElementsList-Div;
+            }
+
+            & > div:hover {
+                color: $cd-color-ustensil;
+                background-color: $cd-color-accent;
+
+            }
+        }
     }
 }

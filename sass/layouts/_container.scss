@@ -21,3 +21,33 @@
     display: flex;
     flex-direction: column;
 }
+
+//=========================================== à paraméter puis à supprimer
+.pl-30-custom {
+    padding-left: 30px
+}
+
+.box-filter {
+    height: 250px;
+    overflow: scroll;
+}
+
+.box-display {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.line-through {
+    text-decoration: line-through;
+    cursor: not-allowed;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.recipe-box {
+    height: 250px;
+    overflow: scroll;
+}

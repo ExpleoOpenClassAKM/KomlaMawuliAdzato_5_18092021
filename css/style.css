@@ -19,6 +19,35 @@
   flex-direction: column;
 }
 
+.pl-30-custom {
+  padding-left: 30px;
+}
+
+.box-filter {
+  height: 250px;
+  overflow: scroll;
+}
+
+.box-display {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.line-through {
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.recipe-box {
+  height: 250px;
+  overflow: scroll;
+}
+
 .header {
   width: 100%;
   height: auto;
@@ -161,21 +190,19 @@
   margin-bottom: 20px;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   color: #FFFFFF;
+  position: relative;
 }
 
 .ingredientDropdown {
   width: auto;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  position: relative;
+  height: auto;
 }
 .ingredientDropdown__openBtn {
   padding-left: 15px;
   padding-right: 15px;
-  height: 100%;
+  height: 55px;
   width: 150px;
   border-radius: 5px;
   display: flex;
@@ -193,15 +220,14 @@
 .ingredientDropdown__openBtn:hover {
   background: #085bd4;
   transition: linear 300ms;
+  border: none;
 }
 .ingredientDropdown__hidden {
-  position: absolute;
-  display: none;
-  padding-left: 15px;
-  padding-right: 15px;
-  height: 100%;
-  width: auto;
-  border-radius: 5px;
+  height: 55px;
+  width: 500px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -210,20 +236,74 @@
   font-style: normal;
   color: #FFFFFF;
   border: none;
-  cursor: pointer;
   background-color: #3282F7;
+  margin-top: -55px;
+  display: none;
+}
+.ingredientDropdown__hidden--input {
+  width: 455px;
+  height: 100%;
+  font-size: 16px;
+  border: none;
+  padding-left: 25px;
+  border-top-left-radius: 5px;
+  background-color: #3282F7;
+}
+.ingredientDropdown__hidden--input:focus {
+  outline: none !important;
+  color: #FFFFFF;
+}
+.ingredientDropdown__hidden--closeChevron {
+  width: 40px;
+  height: 100%;
+  padding-top: 20px;
+  padding-left: 10px;
+  border-top-right-radius: 5px;
+  cursor: pointer;
+}
+.ingredientDropdown__list {
+  display: none;
+  position: absolute;
+}
+.ingredientDropdown__list--allIngredients {
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 500px;
+  height: 1450px;
+  background-color: #3282F7;
+}
+.ingredientDropdown__list--allIngredients > div {
+  width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 2.5px;
+  padding-bottom: 2.5px;
+  padding-left: 15px;
+  padding-right: 40px;
+  line-height: 30px;
+}
+.ingredientDropdown__list--allIngredients > div:hover {
+  color: #3282F7;
+  background-color: #FFFFFF;
 }
 
 .applianceDropdown {
   width: auto;
-  height: 55px;
-  display: flex;
-  align-items: center;
+  height: auto;
 }
 .applianceDropdown__openBtn {
   padding-left: 15px;
   padding-right: 15px;
-  height: 100%;
+  height: 55px;
   width: 150px;
   border-radius: 5px;
   display: flex;
@@ -236,7 +316,6 @@
   color: #FFFFFF;
   border: none;
   cursor: pointer;
-  position: relative;
   background-color: #68D9A4;
   margin-left: 30px;
 }
@@ -246,20 +325,89 @@
   border: none;
 }
 .applianceDropdown__hidden {
+  height: 55px;
+  width: 500px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  color: #FFFFFF;
+  border: none;
+  margin-left: 30px;
+  margin-top: -55px;
+  background-color: #68D9A4;
+  display: none;
+}
+.applianceDropdown__hidden--input {
+  width: 455px;
+  height: 100%;
+  font-size: 16px;
+  border: none;
+  padding-left: 25px;
+  border-top-left-radius: 5px;
+  background-color: #68D9A4;
+}
+.applianceDropdown__hidden--input:focus {
+  outline: none !important;
+  color: #FFFFFF;
+}
+.applianceDropdown__hidden--closeChevron {
+  width: 40px;
+  height: 100%;
+  padding-top: 20px;
+  padding-left: 10px;
+  border-top-right-radius: 5px;
+  cursor: pointer;
+}
+.applianceDropdown__list {
   position: absolute;
   display: none;
+  margin-left: 30px;
+}
+.applianceDropdown__list--allAppliances {
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 500px;
+  height: 190px;
+  background-color: #68D9A4;
+}
+.applianceDropdown__list--allAppliances > div {
+  width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 2.5px;
+  padding-bottom: 2.5px;
+  padding-left: 15px;
+  padding-right: 40px;
+  line-height: 30px;
+}
+.applianceDropdown__list--allAppliances > div:hover {
+  color: #68D9A4;
+  background-color: #FFFFFF;
 }
 
 .ustensilDropdown {
   width: auto;
-  height: 55px;
-  display: flex;
-  align-items: center;
+  height: auto;
 }
 .ustensilDropdown__openBtn {
   padding-left: 15px;
   padding-right: 15px;
-  height: 100%;
+  height: 55px;
   width: 150px;
   border-radius: 5px;
   display: flex;
@@ -272,7 +420,6 @@
   color: #FFFFFF;
   border: none;
   cursor: pointer;
-  position: relative;
   background-color: #ED6454;
   margin-left: 30px;
 }
@@ -282,8 +429,79 @@
   border: none;
 }
 .ustensilDropdown__hidden {
+  height: 55px;
+  width: 500px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  color: #FFFFFF;
+  border: none;
+  margin-left: 30px;
+  margin-top: -55px;
+  background-color: #ED6454;
+  display: none;
+}
+.ustensilDropdown__hidden--input {
+  width: 455px;
+  height: 100%;
+  font-size: 16px;
+  border: none;
+  padding-left: 25px;
+  border-top-left-radius: 5px;
+  background-color: #ED6454;
+}
+.ustensilDropdown__hidden--input:focus {
+  outline: none !important;
+  color: #FFFFFF;
+}
+.ustensilDropdown__hidden--closeChevron {
+  width: 40px;
+  height: 100%;
+  padding-top: 20px;
+  padding-left: 10px;
+  border-top-right-radius: 5px;
+  cursor: pointer;
+}
+.ustensilDropdown__list {
   position: absolute;
   display: none;
+  margin-left: 30px;
+}
+.ustensilDropdown__list--allUstensils {
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  font-size: 18px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 500px;
+  height: 365px;
+  background-color: #ED6454;
+}
+.ustensilDropdown__list--allUstensils > div {
+  width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 2.5px;
+  padding-bottom: 2.5px;
+  padding-left: 15px;
+  padding-right: 40px;
+  line-height: 30px;
+}
+.ustensilDropdown__list--allUstensils > div:hover {
+  color: #ED6454;
+  background-color: #FFFFFF;
 }
 
 .thumbCard-section {

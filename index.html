@@ -9,7 +9,7 @@
         <title>Les Petits Plats</title><link rel="icon" href="./images/icon_title.png">
     </head>
     <body>
-        <div class="container">
+        <div class="container"> 
 
             <!-- HEADER -->
             <header class="header">
@@ -26,18 +26,27 @@
                     <!-- Search input bar -->
                     <div class="searchBar">
                         <form class="searchBar__form" id="searchBar">
-                            <input type="text" class="searchBar__form--input" 
+                            <input type="text" class="searchBar__form--input" id="input-search" 
                             placeholder="Rechercher un ingredient, appareil, ustensiles ou une recette">
                             <i class="searchBar__form--icon fas fa-search"></i>
                         </form>
                     </div>
 
                     <!-- Badges / tag -->
+                    <!-- ================================ -->
+
+                    <div class="col-12 pt-2 pl-30-custom">
+                        <div class="row" id="activeFilters">
+            
+                        </div>
+                    </div>
+
+                    <!-- ================================= -->
                     <div class="badgeBox" id="badgeBox">
                         <!-- Ingredients badge -->
-                        <div class="ingredientBadge">
+                        <div class="ingredientBadge" id="activeFilter"> <!--Exemple de filtre-->
                             <span class="ingredientBadge__designation" id="ingredientBadge">(show ingredient selected)</span>
-                            <i class="ingredientBadge__closeBtn far fa-times-circle" id="ingredientBadge-closeBtn"></i>
+                            <i class="ingredientBadge__closeBtn far fa-times-circle" id="ingredientBadge-closeBtn remove-"></i>
                         </div>
 
                         <!-- Appliances badge -->
@@ -59,36 +68,47 @@
                         <div class="ingredientDropdown" id="ingredientDropdown">
                             <button class="ingredientDropdown__openBtn" id="displayIngredients">Ingredients
                                 <i class="ingredientDropdown__openChevron fas fa-chevron-down" id="ingredientDropdown__openChevron"></i></button>
-                                <div class="ingredientDropdown__hidden" id="ingredientDropdown__hidden allIngredients">
-                                    <input type="text" class="ingredientDropdown__hidden--input" id="ingredientDropdown__hidden--input"
+                            
+                            <div class="ingredientDropdown__hidden" id="displayIngredients-hidden">
+                                <input type="text" class="ingredientDropdown__hidden--input" id="ingredientDropdown__hidden--input"
                                     placeholder="Rechercher un ingredient">
-                                    <i class="ingredientDropdown__closeChevron fas fa-chevron-up" id="ingredientDropdown__closeChevron"></i>
-                                    <div id="ingredientExample"></div>
-                                </div>
+                                <i class="ingredientDropdown__hidden--closeChevron fas fa-chevron-up" id="ingredientsList-closeChevron"></i>
+                            </div>    
+                                
+                            <div class="ingredientDropdown__list" id="displayAllIngredients-list">
+                                <div id="allIngredients" class="ingredientDropdown__list--allIngredients"></div>
+                            </div>
                         </div>
 
                         <!-- Appliance dropdown -->
                         <div class="applianceDropdown" id="applianceDropdown">
                             <button class="applianceDropdown__openBtn" id="displayAppliances">Appareil
                                 <i class="applianceDropdown__openChevron fas fa-chevron-down" id="applianceDropdown__openChevron"></i></button>
-                                <div class="applianceDropdown__hidden" id="applianceDropdown__hidden allAppliances">
-                                    <input type="text" class="applianceDropdown__hidden--input" id="applianceDropdown__hidden--input"
+                            
+                            <div class="applianceDropdown__hidden" id="displayAppliances-hidden">
+                                <input type="text" class="applianceDropdown__hidden--input" id="applianceDropdown__hidden--input"
                                     placeholder="Rechercher un appareil">
-                                    <i class="applianceDropdown__closeChevron fas fa-chevron-up" id="applianceDropdown__closeChevron"></i>
-                                    <div id="applianceExample"></div>
-                                </div>
+                                <i class="applianceDropdown__hidden--closeChevron fas fa-chevron-up" id="appliancesList-closeChevron"></i>
+                            </div>
+
+                            <div class="applianceDropdown__list" id="displayAllAppliances-list">
+                                <div id="allAppliances" class="applianceDropdown__list--allAppliances"></div>
+                            </div>
                         </div>
 
                         <!-- Ustensils dropdown -->
                         <div class="ustensilDropdown" id="ustensilDropdown">
                             <button class="ustensilDropdown__openBtn" id="displayUstensils">Ustensiles
                                 <i class="ustensilDropdown__openChevron fas fa-chevron-down" id="ustensilDropdown__openChevron"></i></button>
-                                <div class="ustensilDropdown__hidden" id="ustensilDropdown__hidden allUstensils">
-                                    <input type="text" class="ustensilDropdown__hidden--input" id="ustensilDropdown__hidden--input"
-                                    placeholder="Rechercher un ustensile">
-                                    <i class="ustensilDropdown__closeChevron fas fa-chevron-up" id="ustensilDropdown__closeChevron"></i>
-                                    <div id="ustensilExample"></div>
-                                </div>
+                           
+                            <div class="ustensilDropdown__hidden" id="displayUstensils-hidden">
+                                <input type="text" class="ustensilDropdown__hidden--input" id="ustensilDropdown__hidden-input"
+                                    placeholder="Rechercher un ustensil">
+                                <i class="ustensilDropdown__hidden--closeChevron fas fa-chevron-up" id="ustensilsList-closeChevron"></i>
+                            </div>
+                            <div class="ustensilDropdown__list" id="displayAllUstensils-list">
+                                <div id="allUstensils" class="ustensilDropdown__list--allUstensils"></div>
+                            </div>    
                         </div>
                     </div>
                 </div>
@@ -96,168 +116,163 @@
 
             <!-- SECTION Thumb card -->
             <section class="thumbCard-section">
-                <div class="thumbCard">
-                    <div class="thumbCard__img"></div>
-                    <div class="thumbCard__description">
-                        <div class="thumbCard__description--header">
-                            <div class="thumbCard__title"><h3>Limonade de Coco</h3></div>
-                            <div class="thumbCard__time">
-                                <i class="far fa-clock"></i>
-                                <span>10 min</span>
+                <div id="recipes">
+                    <div class="thumbCard" id="recipes_exemple"> <!--Affiche la carte-->
+                        <div class="thumbCard__img"></div>
+                        <div class="thumbCard__description">
+                            <div class="thumbCard__description--header">
+                                <div class="thumbCard__title"><h3>Limonade de Coco</h3></div>
+                                <div class="thumbCard__time">
+                                    <i class="far fa-clock"></i>
+                                    <span>10 min</span>
+                                </div>
+                            </div>
+                            <div class="thumbCard__description--footer">
+                                <label for="thumb Card list Of Condiments" class="thumbCard__listOfCondiments">
+                                    
+                                </label>
+                                <label for="thumb Card how To Use" class="thumbCard__howToUse">
+                                    
+                                </label>
                             </div>
                         </div>
-                        <div class="thumbCard__description--footer">
-                            <label for="thumb Card list Of Condiments" class="thumbCard__listOfCondiments">
-                                <strong>Lait de coco: </strong><span>400 ml</span><br>
-                                <strong>Jus de citron: </strong>2</span><br>
-                                <strong>Créme de coco: </strong><span>4 cuillères à soupe</span><br>
-                                <strong>Sucre: </strong><span>20g</span><br>
-                                <strong>Glaçons: </strong><span>2</span><br>
-                            </label>
-                            <label for="thumb Card how To Use" class="thumbCard__howToUse">
-                                Mettre les glaçons à votre goût dans le blender, 
-                                ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. 
-                                Mixer jusqu'à avoir la consistence désirée.
-                            </label>
+                    </div>
+
+                    <div class="thumbCard">
+                        <div class="thumbCard__img"></div>
+                        <div class="thumbCard__description">
+                            <div class="thumbCard__description--header">
+                                <div class="thumbCard__title"><h3>Limonade de Coco</h3></div>
+                                <div class="thumbCard__time">
+                                    <i class="far fa-clock"></i>
+                                    <span>10 min</span>
+                                </div>
+                            </div>
+                            <div class="thumbCard__description--footer">
+                                <label for="thumb Card list Of Condiments" class="thumbCard__listOfCondiments">
+                                    <strong>Lait de coco: </strong><span>400 ml</span><br>
+                                    <strong>Jus de citron: </strong>2</span><br>
+                                    <strong>Créme de coco: </strong><span>4 cuillères à soupe</span><br>
+                                    <strong>Sucre: </strong><span>20g</span><br>
+                                    <strong>Glaçons: </strong><span>2</span><br>
+                                </label>
+                                <label for="thumb Card how To Use" class="thumbCard__howToUse">
+                                    Mettre les glaçons à votre goût dans le blender, 
+                                    ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. 
+                                    Mixer jusqu'à avoir la consistence désirée.
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="thumbCard">
+                        <div class="thumbCard__img"></div>
+                        <div class="thumbCard__description">
+                            <div class="thumbCard__description--header">
+                                <div class="thumbCard__title"><h3>Limonade de Coco</h3></div>
+                                <div class="thumbCard__time">
+                                    <i class="far fa-clock"></i>
+                                    <span>10 min</span>
+                                </div>
+                            </div>
+                            <div class="thumbCard__description--footer">
+                                <label for="thumb Card list Of Condiments" class="thumbCard__listOfCondiments">
+                                    <strong>Lait de coco: </strong><span>400 ml</span><br>
+                                    <strong>Jus de citron: </strong>2</span><br>
+                                    <strong>Créme de coco: </strong><span>4 cuillères à soupe</span><br>
+                                    <strong>Sucre: </strong><span>20g</span><br>
+                                    <strong>Glaçons: </strong><span>2</span><br>
+                                </label>
+                                <label for="thumb Card how To Use" class="thumbCard__howToUse">
+                                    Mettre les glaçons à votre goût dans le blender, 
+                                    ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. 
+                                    Mixer jusqu'à avoir la consistence désirée.
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="thumbCard">
+                        <div class="thumbCard__img"></div>
+                        <div class="thumbCard__description">
+                            <div class="thumbCard__description--header">
+                                <div class="thumbCard__title"><h3>Limonade de Coco</h3></div>
+                                <div class="thumbCard__time">
+                                    <i class="far fa-clock"></i>
+                                    <span>10 min</span>
+                                </div>
+                            </div>
+                            <div class="thumbCard__description--footer">
+                                <label for="thumb Card list Of Condiments" class="thumbCard__listOfCondiments">
+                                    <strong>Lait de coco: </strong><span>400 ml</span><br>
+                                    <strong>Jus de citron: </strong>2</span><br>
+                                    <strong>Créme de coco: </strong><span>4 cuillères à soupe</span><br>
+                                    <strong>Sucre: </strong><span>20g</span><br>
+                                    <strong>Glaçons: </strong><span>2</span><br>
+                                </label>
+                                <label for="thumb Card how To Use" class="thumbCard__howToUse">
+                                    Mettre les glaçons à votre goût dans le blender, 
+                                    ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. 
+                                    Mixer jusqu'à avoir la consistence désirée.
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="thumbCard">
+                        <div class="thumbCard__img"></div>
+                        <div class="thumbCard__description">
+                            <div class="thumbCard__description--header">
+                                <div class="thumbCard__title"><h3>Limonade de Coco</h3></div>
+                                <div class="thumbCard__time">
+                                    <i class="far fa-clock"></i>
+                                    <span>10 min</span>
+                                </div>
+                            </div>
+                            <div class="thumbCard__description--footer">
+                                <label for="thumb Card list Of Condiments" class="thumbCard__listOfCondiments">
+                                    <strong>Lait de coco: </strong><span>400 ml</span><br>
+                                    <strong>Jus de citron: </strong>2</span><br>
+                                    <strong>Créme de coco: </strong><span>4 cuillères à soupe</span><br>
+                                    <strong>Sucre: </strong><span>20g</span><br>
+                                    <strong>Glaçons: </strong><span>2</span><br>
+                                </label>
+                                <label for="thumb Card how To Use" class="thumbCard__howToUse">
+                                    Mettre les glaçons à votre goût dans le blender, 
+                                    ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. 
+                                    Mixer jusqu'à avoir la consistence désirée.
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="thumbCard">
+                        <div class="thumbCard__img"></div>
+                        <div class="thumbCard__description">
+                            <div class="thumbCard__description--header">
+                                <div class="thumbCard__title"><h3>Limonade de Coco</h3></div>
+                                <div class="thumbCard__time">
+                                    <i class="far fa-clock"></i>
+                                    <span>10 min</span>
+                                </div>
+                            </div>
+                            <div class="thumbCard__description--footer">
+                                <label for="thumb Card list Of Condiments" class="thumbCard__listOfCondiments">
+                                    <strong>Lait de coco: </strong><span>400 ml</span><br>
+                                    <strong>Jus de citron: </strong>2</span><br>
+                                    <strong>Créme de coco: </strong><span>4 cuillères à soupe</span><br>
+                                    <strong>Sucre: </strong><span>20g</span><br>
+                                    <strong>Glaçons: </strong><span>2</span><br>
+                                </label>
+                                <label for="thumb Card how To Use" class="thumbCard__howToUse">
+                                    Mettre les glaçons à votre goût dans le blender, 
+                                    ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. 
+                                    Mixer jusqu'à avoir la consistence désirée.
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="thumbCard">
-                    <div class="thumbCard__img"></div>
-                    <div class="thumbCard__description">
-                        <div class="thumbCard__description--header">
-                            <div class="thumbCard__title"><h3>Limonade de Coco</h3></div>
-                            <div class="thumbCard__time">
-                                <i class="far fa-clock"></i>
-                                <span>10 min</span>
-                            </div>
-                        </div>
-                        <div class="thumbCard__description--footer">
-                            <label for="thumb Card list Of Condiments" class="thumbCard__listOfCondiments">
-                                <strong>Lait de coco: </strong><span>400 ml</span><br>
-                                <strong>Jus de citron: </strong>2</span><br>
-                                <strong>Créme de coco: </strong><span>4 cuillères à soupe</span><br>
-                                <strong>Sucre: </strong><span>20g</span><br>
-                                <strong>Glaçons: </strong><span>2</span><br>
-                            </label>
-                            <label for="thumb Card how To Use" class="thumbCard__howToUse">
-                                Mettre les glaçons à votre goût dans le blender, 
-                                ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. 
-                                Mixer jusqu'à avoir la consistence désirée.
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="thumbCard">
-                    <div class="thumbCard__img"></div>
-                    <div class="thumbCard__description">
-                        <div class="thumbCard__description--header">
-                            <div class="thumbCard__title"><h3>Limonade de Coco</h3></div>
-                            <div class="thumbCard__time">
-                                <i class="far fa-clock"></i>
-                                <span>10 min</span>
-                            </div>
-                        </div>
-                        <div class="thumbCard__description--footer">
-                            <label for="thumb Card list Of Condiments" class="thumbCard__listOfCondiments">
-                                <strong>Lait de coco: </strong><span>400 ml</span><br>
-                                <strong>Jus de citron: </strong>2</span><br>
-                                <strong>Créme de coco: </strong><span>4 cuillères à soupe</span><br>
-                                <strong>Sucre: </strong><span>20g</span><br>
-                                <strong>Glaçons: </strong><span>2</span><br>
-                            </label>
-                            <label for="thumb Card how To Use" class="thumbCard__howToUse">
-                                Mettre les glaçons à votre goût dans le blender, 
-                                ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. 
-                                Mixer jusqu'à avoir la consistence désirée.
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="thumbCard">
-                    <div class="thumbCard__img"></div>
-                    <div class="thumbCard__description">
-                        <div class="thumbCard__description--header">
-                            <div class="thumbCard__title"><h3>Limonade de Coco</h3></div>
-                            <div class="thumbCard__time">
-                                <i class="far fa-clock"></i>
-                                <span>10 min</span>
-                            </div>
-                        </div>
-                        <div class="thumbCard__description--footer">
-                            <label for="thumb Card list Of Condiments" class="thumbCard__listOfCondiments">
-                                <strong>Lait de coco: </strong><span>400 ml</span><br>
-                                <strong>Jus de citron: </strong>2</span><br>
-                                <strong>Créme de coco: </strong><span>4 cuillères à soupe</span><br>
-                                <strong>Sucre: </strong><span>20g</span><br>
-                                <strong>Glaçons: </strong><span>2</span><br>
-                            </label>
-                            <label for="thumb Card how To Use" class="thumbCard__howToUse">
-                                Mettre les glaçons à votre goût dans le blender, 
-                                ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. 
-                                Mixer jusqu'à avoir la consistence désirée.
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="thumbCard">
-                    <div class="thumbCard__img"></div>
-                    <div class="thumbCard__description">
-                        <div class="thumbCard__description--header">
-                            <div class="thumbCard__title"><h3>Limonade de Coco</h3></div>
-                            <div class="thumbCard__time">
-                                <i class="far fa-clock"></i>
-                                <span>10 min</span>
-                            </div>
-                        </div>
-                        <div class="thumbCard__description--footer">
-                            <label for="thumb Card list Of Condiments" class="thumbCard__listOfCondiments">
-                                <strong>Lait de coco: </strong><span>400 ml</span><br>
-                                <strong>Jus de citron: </strong>2</span><br>
-                                <strong>Créme de coco: </strong><span>4 cuillères à soupe</span><br>
-                                <strong>Sucre: </strong><span>20g</span><br>
-                                <strong>Glaçons: </strong><span>2</span><br>
-                            </label>
-                            <label for="thumb Card how To Use" class="thumbCard__howToUse">
-                                Mettre les glaçons à votre goût dans le blender, 
-                                ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. 
-                                Mixer jusqu'à avoir la consistence désirée.
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="thumbCard">
-                    <div class="thumbCard__img"></div>
-                    <div class="thumbCard__description">
-                        <div class="thumbCard__description--header">
-                            <div class="thumbCard__title"><h3>Limonade de Coco</h3></div>
-                            <div class="thumbCard__time">
-                                <i class="far fa-clock"></i>
-                                <span>10 min</span>
-                            </div>
-                        </div>
-                        <div class="thumbCard__description--footer">
-                            <label for="thumb Card list Of Condiments" class="thumbCard__listOfCondiments">
-                                <strong>Lait de coco: </strong><span>400 ml</span><br>
-                                <strong>Jus de citron: </strong>2</span><br>
-                                <strong>Créme de coco: </strong><span>4 cuillères à soupe</span><br>
-                                <strong>Sucre: </strong><span>20g</span><br>
-                                <strong>Glaçons: </strong><span>2</span><br>
-                            </label>
-                            <label for="thumb Card how To Use" class="thumbCard__howToUse">
-                                Mettre les glaçons à votre goût dans le blender, 
-                                ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. 
-                                Mixer jusqu'à avoir la consistence désirée.
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
             
             </section>
         </div>
