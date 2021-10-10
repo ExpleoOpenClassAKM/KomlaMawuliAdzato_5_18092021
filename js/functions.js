@@ -21,6 +21,7 @@ function createRecipesObject() {
         OneRecipe.ingredients.forEach(function(OneIngredient) {
             let OneIngredientObject = new Ingredient(OneIngredient.ingredient, OneIngredient.quantity, OneIngredient.unit);
             OneNewRecipeObject.addIngredient(OneIngredientObject);
+            console.log(OneIngredient.ingredient);
         });
 
         //Ajout des plats à notre recette
@@ -90,53 +91,53 @@ function displayFilters() {
     // "allElementsFilters[1] (allIngredientsFilters)
     // "allElementsFilters[2] (allUstensilsFilters)
     // et leurs conteneurs respectifs
-    let arrayConfig = [
+    let arrayConfiguration = [
         "allAppliances",  //=======> 0
         "allIngredients",  //=======> 1
         "allUstensils"   //=======> 2
     ]
-    
+
     //====> Bouclage sur le tableau de config pour y mettre tous les filtres
-    arrayConfig.forEach(function(containerName, index) {
+    arrayConfiguration.forEach(function(containerName, index) {
 
         //==> Récupération du containeur du filtre courant
         let container = document.getElementById(containerName);
         
         //==> Vidage du conteneur courant de son contenu
-        container.textContent = "";
-
+        // container.textContent = ""; 
+        
         //==> Ajout de chaque valeur du filtre créé plus haut
         allElementsFilters[index].forEach(function(OneElement) {
             let elementToAdd = document.createElement("div");
-            elementToAdd.classList.add("col-4") //Classe de la "div" de l'élément (à modifier "col-4")
+            elementToAdd.classList.add("recipesOneElement-Div") //Classe de la "div" de l'élément (à modifier "col-4")
             elementToAdd.textContent = OneElement;
             if (activeFilters.includes(OneElement) === false) {
                 elementToAdd.classList.add("pointer") //===> Pointer l'élément au survol de la sourcis
                 elementToAdd.addEventListener("click", function() {
                     activeFilters.push(OneElement)
-                    addFilter(OneElement, index) // Ajout le nouvel élément dans le "Badge"
+                    addFilter(OneElement, index) // Ajout le nouvel élément au "tag"
                 })
             } else {
                 elementToAdd.classList.add("line-through") //===> Barre l'élément s'il est déjà sélectionné
             }
-            container.appendChild(elementToAdd) //Crée l'élément
+            container.appendChild(elementToAdd) //Ajoute le nouvel élément à la liste
         })
     })
 };
 
 //Créer des évenements pour les filtres
 //=====> Cacher les éléments au départ
-let ingredientsHidden = true;
-let appliancesHidden = true;
-let ustensilsHidden = true;
+// let ingredientsHidden = true;
+// let appliancesHidden = true;
+// let ustensilsHidden = true;
 
 //=====> Fonction liée aux évenements des filtres
 function createEventsForFilters() {
 
     //Ouvre la liste des ingredients
     document.getElementById("displayIngredients").addEventListener("click", function() {
-        ingredientsHidden = !ingredientsHidden;
-        document.getElementById("allIngredients").hidden = ingredientsHidden;
+        // ingredientsHidden = !ingredientsHidden;
+        // document.getElementById("allIngredients").hidden = ingredientsHidden;
         document.getElementById("displayIngredients-hidden").style.display = "block";
         document.getElementById("displayAllIngredients-list").style.display = "block";
     });
@@ -149,8 +150,8 @@ function createEventsForFilters() {
 
     //Ouvre la liste des appareils
     document.getElementById("displayAppliances").addEventListener("click", function() {
-        appliancesHidden = !appliancesHidden;
-        document.getElementById("allAppliances").hidden = appliancesHidden;
+        // appliancesHidden = !appliancesHidden;
+        // document.getElementById("allAppliances").hidden = appliancesHidden;
         document.getElementById("displayAppliances-hidden").style.display = "block";
         document.getElementById("displayAllAppliances-list").style.display = "block"
     });
@@ -163,8 +164,8 @@ function createEventsForFilters() {
 
     //Ouvre la liste des ustensils
     document.getElementById("displayUstensils").addEventListener("click", function() {
-        ustensilsHidden = !ustensilsHidden;
-        document.getElementById("allUstensils").hidden = ustensilsHidden;
+        // ustensilsHidden = !ustensilsHidden;
+        // document.getElementById("allUstensils").hidden = ustensilsHidden;
         document.getElementById("displayUstensils-hidden").style.display = "block";
         document.getElementById("displayAllUstensils-list").style.display = "block"
     });
@@ -195,7 +196,7 @@ function addFilter(filteredElement, typeOfElement) {
             OneRecipe.appliances.forEach(function(OneAppliance) {
                 if (filteredElement === OneAppliance.name) {
                     OneRecipe.hasFilters += 1;
-                }
+                } 
             })
         }
 
@@ -257,7 +258,6 @@ function removeFilter(filteredElement, typeOfElement) {
     getValidRecipes();
 }
 
-
 function getValidRecipes(input = false) {
 
     let validRecipes = [];
@@ -282,32 +282,38 @@ function displayRecipes() {
 
     let container = document.getElementById("recipes");
     container.innerHTML = "";
+
+
+
     allRecipes.forEach(function(OneRecipe) {
 
+        
         let template = 
-        `
-                <div class="thumbCard"> <!--Affiche la carte-->
-                    <div class="thumbCard__img"></div>
-                    <div class="thumbCard__description">
-                        <div class="thumbCard__description--header">
-                            <div class="thumbCard__title"><h3>${OneRecipe.name}</h3></div>
-                            <div class="thumbCard__time">
-                                <i class="far fa-clock"></i>
-                                <span>10 min</span>
-                            </div>
-                        </div>
-                        <div class="thumbCard__description--footer">
-                            <label for="thumb Card list Of Condiments" class="thumbCard__listOfCondiments">
-                                ${OneRecipe.description}
-                            </label>
-                            <label for="thumb Card how To Use" class="thumbCard__howToUse">
-                                
-                            </label>
+
+
+            `
+            <div class="thumbCard">
+                <div class="thumbCard__img"></div>
+                <div class="thumbCard__description">
+                    <div class="thumbCard__description--header">
+                        <div class="thumbCard__title"><h3>${OneRecipe.name}</h3></div>
+                        <div class="thumbCard__time">
+                            <i class="far fa-clock"></i>
+                            <span>${OneRecipe.time} min</span>
                         </div>
                     </div>
+                    <div class="thumbCard__description--footer">
+                        <label for="thumb Card list Of Condiments" class="thumbCard__listOfCondiments">
+                            
+                        </label>
+                        <label for="description" class="thumbCard__howToUse">
+                            ${OneRecipe.description}
+                        </label>
+                    </div>
                 </div>
-        
-        `
+            </div>
+            
+            `
         container.innerHTML += template;
     })
 }
@@ -317,51 +323,33 @@ function addFilterBox(name, type) {
 
     //Ajout de couleurs au tag
     let colors = [
-        "success",
-        "primary",
-        "danger"
+        "tagAppliance",   //===> $cd-color-appliance: #68D9A4;
+        "tagIngredient",   //===> $cd-color-ingredient: #3282F7;
+        "tagUstensil"    //===> $cd-color-ustensil: #ED6454;
     ]
 
     let container = document.getElementById("activeFilters");
     let template = 
-    `
-        <div class="rounded mb-2 col-4 col-sm-3 col-lg-2 border border-dark mr-1 bg-${colors[type]} text-white" id="box-${name}">
-                        <div class="row">
-                            <div class="col-10 box-display" >
-                                ${name}
-                            </div>
-                            <div class="col-2 p-0 m-auto pointer removeElement" id="remove-${name}">
-                                <i class="far fa-times-circle"></i>
-                            </div>
-                        </div>
+                    `<div class="Badge__${colors[type]}" id="Badge__${colors[type]}--${name}"> 
+                        <div class="Badge__${colors[type]}--name">${name}</div>
+                        <i class="Badge__${colors[type]}--closeCross far fa-times-circle" id="remove-${name}"></i>
                     </div>
-    
-    `
- 
-    /*
-    `
-    <div class="ingredientBadge">
-            <span class="ingredientBadge__designation" id="ingredientBadge">${name}</span>
-            <i class="ingredientBadge__closeBtn far fa-times-circle" id="ingredientBadge-closeBtn remove-${name}"></i>
-        </div>
-    `
-    */
+                    `;
 
-    //==================
     container.insertAdjacentHTML('beforeend', template)
     let cross = document.getElementById("remove-" + name);
 
     cross.addEventListener("click", function() {
-        let box = document.getElementById("box-", + name)
+        let box = document.getElementById("Badge__" + colors[type] + "--" + name)
         box.remove();
-        activeFilters.forEach(function(oneFilter, index) {
-            if (oneFilter === name) {
+        activeFilters.forEach(function(OneFilter, index) {
+            if (OneFilter === name) {
                 activeFilters.splice(index, 1);
             }
         });
         removeFilter(name, type)
     })
-}
+} 
 
 function getInputEvent(e) {
     document.getElementById("input-search").addEventListener("input", function() {

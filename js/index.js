@@ -5,3 +5,12 @@ createRecipesObject()
 createEventsForFilters()
 getFilters()
 getInputEvent()
+
+//=============>
+
+displayRecipes()
+
+
+
+
+

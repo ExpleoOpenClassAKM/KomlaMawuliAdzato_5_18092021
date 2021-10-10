@@ -39,10 +39,6 @@
   cursor: not-allowed;
 }
 
-.pointer {
-  cursor: pointer;
-}
-
 .recipe-box {
   height: 250px;
   overflow: scroll;
@@ -108,18 +104,25 @@
 
 .badgeBox {
   width: 100%;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  height: auto;
   margin-bottom: 20px;
 }
 
-.ingredientBadge {
-  width: auto;
+.Badge {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.Badge__tagIngredient {
+  width: 122.75px;
   height: 35px;
-  margin-right: 20px;
-  padding-right: 10px;
+  margin: 10px;
+  margin-right: 15px;
+  margin-left: 0px;
+  padding-right: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -128,21 +131,34 @@
   background-color: #3282F7;
   border-radius: 5px;
 }
-.ingredientBadge__designation {
+.Badge__tagIngredient--name {
   padding-left: 10px;
   padding-right: 10px;
   font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.ingredientBadge__closeBtn:hover {
+.Badge__tagIngredient--closeCross:hover {
   cursor: pointer;
   color: #0751bc;
 }
 
-.applianceBadge {
-  width: auto;
+.Badge {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.Badge__tagAppliance {
+  width: 122.75px;
   height: 35px;
-  margin-right: 20px;
-  padding-right: 10px;
+  margin: 10px;
+  margin-right: 15px;
+  margin-left: 0px;
+  padding-right: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -151,21 +167,34 @@
   background-color: #68D9A4;
   border-radius: 5px;
 }
-.applianceBadge__designation {
+.Badge__tagAppliance--name {
   padding-left: 10px;
   padding-right: 10px;
   font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.applianceBadge__closeBtn:hover {
+.Badge__tagAppliance--closeCross:hover {
   cursor: pointer;
   color: #2caf72;
 }
 
-.ustensilBadge {
-  width: auto;
+.Badge {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.Badge__tagUstensil {
+  width: 122.75px;
   height: 35px;
-  margin-right: 20px;
-  padding-right: 10px;
+  margin: 10px;
+  margin-right: 15px;
+  margin-left: 0px;
+  padding-right: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -174,12 +203,15 @@
   background-color: #ED6454;
   border-radius: 5px;
 }
-.ustensilBadge__designation {
+.Badge__tagUstensil--name {
   padding-left: 10px;
   padding-right: 10px;
   font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.ustensilBadge__closeBtn:hover {
+.Badge__tagUstensil--closeCross:hover {
   cursor: pointer;
   color: #c62715;
 }
@@ -269,6 +301,7 @@
   display: inline-flex;
   flex-direction: column;
   flex-wrap: wrap;
+  width: 500px;
   padding-top: 30px;
   padding-left: 10px;
   padding-right: 10px;
@@ -276,11 +309,11 @@
   font-size: 18px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  width: 500px;
+  cursor: pointer;
   height: 1450px;
   background-color: #3282F7;
 }
-.ingredientDropdown__list--allIngredients > div {
+.ingredientDropdown__list--allIngredients > .recipesOneElement-Div {
   width: 160px;
   white-space: nowrap;
   overflow: hidden;
@@ -291,7 +324,7 @@
   padding-right: 40px;
   line-height: 30px;
 }
-.ingredientDropdown__list--allIngredients > div:hover {
+.ingredientDropdown__list--allIngredients > .recipesOneElement-Div:hover {
   color: #3282F7;
   background-color: #FFFFFF;
 }
@@ -373,6 +406,7 @@
   display: inline-flex;
   flex-direction: column;
   flex-wrap: wrap;
+  width: 500px;
   padding-top: 30px;
   padding-left: 10px;
   padding-right: 10px;
@@ -380,11 +414,11 @@
   font-size: 18px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  width: 500px;
+  cursor: pointer;
   height: 190px;
   background-color: #68D9A4;
 }
-.applianceDropdown__list--allAppliances > div {
+.applianceDropdown__list--allAppliances > .recipesOneElement-Div {
   width: 160px;
   white-space: nowrap;
   overflow: hidden;
@@ -395,7 +429,7 @@
   padding-right: 40px;
   line-height: 30px;
 }
-.applianceDropdown__list--allAppliances > div:hover {
+.applianceDropdown__list--allAppliances > .recipesOneElement-Div:hover {
   color: #68D9A4;
   background-color: #FFFFFF;
 }
@@ -477,6 +511,7 @@
   display: inline-flex;
   flex-direction: column;
   flex-wrap: wrap;
+  width: 500px;
   padding-top: 30px;
   padding-left: 10px;
   padding-right: 10px;
@@ -484,11 +519,11 @@
   font-size: 18px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  width: 500px;
+  cursor: pointer;
   height: 365px;
   background-color: #ED6454;
 }
-.ustensilDropdown__list--allUstensils > div {
+.ustensilDropdown__list--allUstensils > .recipesOneElement-Div {
   width: 160px;
   white-space: nowrap;
   overflow: hidden;
@@ -499,14 +534,14 @@
   padding-right: 40px;
   line-height: 30px;
 }
-.ustensilDropdown__list--allUstensils > div:hover {
+.ustensilDropdown__list--allUstensils > .recipesOneElement-Div:hover {
   color: #ED6454;
   background-color: #FFFFFF;
 }
 
 .thumbCard-section {
   width: 100%;
-  height: auto;
+  height: 500px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -563,6 +598,7 @@
   height: 100%;
   font-size: 12px;
   margin-left: 5px;
+  overflow-y: auto;
 }
 
 /*# sourceMappingURL=style.css.map */
