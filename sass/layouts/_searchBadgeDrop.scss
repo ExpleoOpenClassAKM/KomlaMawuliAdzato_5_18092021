@@ -191,7 +191,11 @@
             & > .recipesOneElement-Div:hover {
                 color: $cd-color-ingredient;
                 background-color: $cd-color-accent;
+            }
 
+            & > .line-through {
+                text-decoration: line-through;
+                cursor: not-allowed;
             }
         }
     }
@@ -244,7 +248,11 @@
             & > .recipesOneElement-Div:hover {
                 color: $cd-color-appliance;
                 background-color: $cd-color-accent;
+            }
 
+            & > .line-through {
+                text-decoration: line-through;
+                cursor: not-allowed;
             }
         }
     }
@@ -296,7 +304,11 @@
             & > .recipesOneElement-Div:hover {
                 color: $cd-color-ustensil;
                 background-color: $cd-color-accent;
+            }
 
+            & > .line-through {
+                text-decoration: line-through;
+                cursor: not-allowed;
             }
         }
     }

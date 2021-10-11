@@ -21,8 +21,7 @@ function createRecipesObject() {
         OneRecipe.ingredients.forEach(function(OneIngredient) {
             let OneIngredientObject = new Ingredient(OneIngredient.ingredient, OneIngredient.quantity, OneIngredient.unit);
             OneNewRecipeObject.addIngredient(OneIngredientObject);
-            console.log(OneIngredient.ingredient);
-        });
+        }); 
 
         //Ajout des plats à notre recette
         let OneApplianceObject = new Appliance(OneRecipe.appliance);
@@ -36,7 +35,7 @@ function createRecipesObject() {
         
         //Ici on vient stocker toute notre recette dans "allRecipes"
         allRecipes.push(OneNewRecipeObject);
-    });
+    }); 
     allRecipesObjects = allRecipes;
 }
 
@@ -104,7 +103,7 @@ function displayFilters() {
         let container = document.getElementById(containerName);
         
         //==> Vidage du conteneur courant de son contenu
-        // container.textContent = ""; 
+         container.textContent = ""; 
         
         //==> Ajout de chaque valeur du filtre créé plus haut
         allElementsFilters[index].forEach(function(OneElement) {
@@ -282,17 +281,12 @@ function displayRecipes() {
 
     let container = document.getElementById("recipes");
     container.innerHTML = "";
-
-
+    
 
     allRecipes.forEach(function(OneRecipe) {
-
         
         let template = 
-
-
-            `
-            <div class="thumbCard">
+            `<div class="thumbCard">
                 <div class="thumbCard__img"></div>
                 <div class="thumbCard__description">
                     <div class="thumbCard__description--header">
@@ -304,15 +298,14 @@ function displayRecipes() {
                     </div>
                     <div class="thumbCard__description--footer">
                         <label for="listOfCondiments" class="thumbCard__listOfCondiments">
-                            
+                                <div class="thumbCard__Condiments"></div>
                         </label>
                         <label for="description" class="thumbCard__howToUse">
                             ${OneRecipe.description}
                         </label>
                     </div>
                 </div>
-            </div>
-            
+             </div>
             `
         container.innerHTML += template;
     })

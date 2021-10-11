@@ -34,11 +34,6 @@
   text-overflow: ellipsis;
 }
 
-.line-through {
-  text-decoration: line-through;
-  cursor: not-allowed;
-}
-
 .recipe-box {
   height: 250px;
   overflow: scroll;
@@ -328,6 +323,10 @@
   color: #3282F7;
   background-color: #FFFFFF;
 }
+.ingredientDropdown__list--allIngredients > .line-through {
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
 
 .applianceDropdown {
   width: auto;
@@ -433,6 +432,10 @@
   color: #68D9A4;
   background-color: #FFFFFF;
 }
+.applianceDropdown__list--allAppliances > .line-through {
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
 
 .ustensilDropdown {
   width: auto;
@@ -537,6 +540,10 @@
 .ustensilDropdown__list--allUstensils > .recipesOneElement-Div:hover {
   color: #ED6454;
   background-color: #FFFFFF;
+}
+.ustensilDropdown__list--allUstensils > .line-through {
+  text-decoration: line-through;
+  cursor: not-allowed;
 }
 
 .thumbCard-section {
