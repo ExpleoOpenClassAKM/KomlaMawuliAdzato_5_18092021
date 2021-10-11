@@ -1,8 +1,7 @@
 //Thumb Cards
 .thumbCard-section {
     width: 100%;
-    height: 500px;
-    
+    height: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -31,13 +30,22 @@
         &--header {
             width: 100%;
             height: 20%;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 10px;
+
+            & > .thumbCard__title {
+                width: 75%;
+                height: 100%;
+            }
+
+            & > .thumbCard__time {
+                height: 100%;
+            }
         }
         &--footer {
             height: 80%;

@@ -296,14 +296,14 @@ function displayRecipes() {
                 <div class="thumbCard__img"></div>
                 <div class="thumbCard__description">
                     <div class="thumbCard__description--header">
-                        <div class="thumbCard__title"><h3>${OneRecipe.name}</h3></div>
+                        <div class="thumbCard__title"><h4>${OneRecipe.name}</h4></div>
                         <div class="thumbCard__time">
                             <i class="far fa-clock"></i>
                             <span>${OneRecipe.time} min</span>
                         </div>
                     </div>
                     <div class="thumbCard__description--footer">
-                        <label for="thumb Card list Of Condiments" class="thumbCard__listOfCondiments">
+                        <label for="listOfCondiments" class="thumbCard__listOfCondiments">
                             
                         </label>
                         <label for="description" class="thumbCard__howToUse">
