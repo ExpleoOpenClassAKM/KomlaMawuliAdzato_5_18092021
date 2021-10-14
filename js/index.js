@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 //On appelle nos fonctions pour les exécuter:
 //=========> 
 
@@ -9,9 +10,3 @@ getInputEvent()
 //=============>
 
 displayRecipes()
-
-
-
-
-
-

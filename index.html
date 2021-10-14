@@ -1,109 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/style.css">
-        <script src="https://kit.fontawesome.com/bdd9672d01.js" crossorigin="anonymous"></script>
-        <title>Les Petits Plats</title><link rel="icon" href="./images/icon_title.png">
-    </head>
-    <body>
-        <div class="container"> 
-            <!-- ================================ -->
-            <!-- HEADER -->
-            <header class="header">
-                <!-- Logo -->
-                <div class="header__logo">
-                    <img src="./images/logo.png" alt="Logo les petits plats">
-                </div>
-            </header>
 
-            <!-- ================================ -->
-            <!-- SECTION Search Badge Dropdown -->
-            <section class="SearchBadgeDropdown-section">
-                <!-- First section: "search bar" - "badge" - "dropdown or filter" -->
-                <div class="SearchBadgeDropdown">
-                    <!-- Search input bar -->
-                    <div class="searchBar">
-                        <form class="searchBar__form" id="searchBar">
-                            <input type="text" class="searchBar__form--input" id="input-search" 
-                            placeholder="Rechercher un ingredient, appareil, ustensiles ou une recette">
-                            <i class="searchBar__form--icon fas fa-search"></i>
-                        </form>
-                    </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://kit.fontawesome.com/bdd9672d01.js" crossorigin="anonymous"></script>
+    <title>Les Petits Plats</title>
+    <link rel="icon" href="./images/icon_title.png" />
+</head>
 
-                    <!-- Badges / tags -->
-                    <div class="badgeBox">
-                        <div class="Badge" id="activeFilters"></div>
-                    </div>
-                    
-                    <!-- Dropdown / Filters-->
-                    <div class="dropdownBox" id="dropdownBox">
-                        <!-- Ingredients dropdown -->
-                        <div class="ingredientDropdown" id="ingredientDropdown">
-                            <button class="ingredientDropdown__openBtn" id="displayIngredients">Ingredients
-                                <i class="ingredientDropdown__openChevron fas fa-chevron-down" id="ingredientDropdown__openChevron"></i></button>
-                            
-                            <div class="ingredientDropdown__hidden" id="displayIngredients-hidden">
-                                <input type="text" class="ingredientDropdown__hidden--input" id="ingredientDropdown__hidden--input"
-                                    placeholder="Rechercher un ingredient">
-                                <i class="ingredientDropdown__hidden--closeChevron fas fa-chevron-up" id="ingredientsList-closeChevron"></i>
-                            </div>    
-                                
-                            <div class="ingredientDropdown__list" id="displayAllIngredients-list">
-                                <div id="allIngredients" class="ingredientDropdown__list--allIngredients"></div>
-                            </div>
-                        </div>
-
-                        <!-- Appliance dropdown -->
-                        <div class="applianceDropdown" id="applianceDropdown">
-                            <button class="applianceDropdown__openBtn" id="displayAppliances">Appareil
-                                <i class="applianceDropdown__openChevron fas fa-chevron-down" id="applianceDropdown__openChevron"></i></button>
-                            
-                            <div class="applianceDropdown__hidden" id="displayAppliances-hidden">
-                                <input type="text" class="applianceDropdown__hidden--input" id="applianceDropdown__hidden--input"
-                                    placeholder="Rechercher un appareil">
-                                <i class="applianceDropdown__hidden--closeChevron fas fa-chevron-up" id="appliancesList-closeChevron"></i>
-                            </div>
-
-                            <div class="applianceDropdown__list" id="displayAllAppliances-list">
-                                <div id="allAppliances" class="applianceDropdown__list--allAppliances"></div>
-                            </div>
-                        </div>
-
-                        <!-- Ustensils dropdown -->
-                        <div class="ustensilDropdown" id="ustensilDropdown">
-                            <button class="ustensilDropdown__openBtn" id="displayUstensils">Ustensiles
-                                <i class="ustensilDropdown__openChevron fas fa-chevron-down" id="ustensilDropdown__openChevron"></i></button>
-                           
-                            <div class="ustensilDropdown__hidden" id="displayUstensils-hidden">
-                                <input type="text" class="ustensilDropdown__hidden--input" id="ustensilDropdown__hidden-input"
-                                    placeholder="Rechercher un ustensil">
-                                <i class="ustensilDropdown__hidden--closeChevron fas fa-chevron-up" id="ustensilsList-closeChevron"></i>
-                            </div>
-                            <div class="ustensilDropdown__list" id="displayAllUstensils-list">
-                                <div id="allUstensils" class="ustensilDropdown__list--allUstensils"></div>
-                            </div>    
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- ================================ -->
-            <!-- SECTION Thumb card -->
-            <section class="thumbCard-section" id="recipes">
-
-                <!-- All Thumb cards are here -->
-            
-            </section>
-        </div>
+<body>
+    <div class="container">
+        <!-- ================================ -->
+        <!-- HEADER -->
+        <header class="header">
+            <!-- Logo -->
+            <div class="header__logo">
+                <img src="./images/logo.png" alt="Logo les petits plats" />
+            </div>
+        </header>
 
         <!-- ================================ -->
-        <!-- JS -->
-        <script src="./js/recipes.js"></script>
-        <script src="./js/classes.js"></script>
-        <script src="./js/functions.js"></script>
-        <script src="./js/index.js"></script>
-    </body>
+        <!-- SECTION Search Badge Dropdown -->
+        <section class="SearchBadgeDropdown-section">
+            <!-- First section: "search bar" - "badge" - "dropdown or filter" -->
+            <div class="SearchBadgeDropdown">
+                <!-- Search input bar -->
+                <div class="searchBar">
+                    <form class="searchBar__form" id="searchBar">
+                        <input type="text" class="searchBar__form--input" id="input-search"
+                            placeholder="Rechercher un ingredient, appareil, ustensiles ou une recette" />
+                        <i class="searchBar__form--icon fas fa-search"></i>
+                    </form>
+                </div>
+
+                <!-- Badges / tags -->
+                <div class="badgeBox">
+                    <div class="Badge" id="activeFilters"></div>
+                </div>
+
+                <!-- Dropdown / Filters-->
+                <div class="dropdownBox" id="dropdownBox">
+                    <!-- Ingredients dropdown -->
+                    <div class="ingredientDropdown" id="ingredientDropdown">
+                        <button class="ingredientDropdown__openBtn" id="displayIngredients">
+                            Ingredients
+                            <i class="ingredientDropdown__openChevron fas fa-chevron-down"
+                                id="ingredientDropdown__openChevron"></i>
+                        </button>
+
+                        <div class="ingredientDropdown__hidden" id="displayIngredients-hidden">
+                            <input type="text" class="ingredientDropdown__hidden--input"
+                                id="input-ingredient" placeholder="Rechercher un ingredient" />
+                            <i class="ingredientDropdown__hidden--closeChevron fas fa-chevron-up" id="ingredientsList-closeChevron"></i>
+                        </div>
+
+                        <div class="ingredientDropdown__list" id="displayAllIngredients-list">
+                            <div id="allIngredients" class="ingredientDropdown__list--allIngredients"></div>
+                        </div>
+                    </div>
+
+                    <!-- Appliance dropdown -->
+                    <div class="applianceDropdown" id="applianceDropdown">
+                        <button class="applianceDropdown__openBtn" id="displayAppliances">
+                            Appareil
+                            <i class="applianceDropdown__openChevron fas fa-chevron-down"
+                                id="applianceDropdown__openChevron"></i>
+                        </button>
+
+                        <div class="applianceDropdown__hidden" id="displayAppliances-hidden">
+                            <input type="text" class="applianceDropdown__hidden--input"
+                                id="input-appliance" placeholder="Rechercher un appareil" />
+                            <i class="applianceDropdown__hidden--closeChevron fas fa-chevron-up" id="appliancesList-closeChevron"></i>
+                        </div>
+
+                        <div class="applianceDropdown__list" id="displayAllAppliances-list">
+                            <div id="allAppliances" class="applianceDropdown__list--allAppliances"></div>
+                        </div>
+                    </div>
+
+                    <!-- Ustensils dropdown -->
+                    <div class="ustensilDropdown" id="ustensilDropdown">
+                        <button class="ustensilDropdown__openBtn" id="displayUstensils">
+                            Ustensiles
+                            <i class="ustensilDropdown__openChevron fas fa-chevron-down"
+                                id="ustensilDropdown__openChevron"></i>
+                        </button>
+
+                        <div class="ustensilDropdown__hidden" id="displayUstensils-hidden">
+                            <input type="text" class="ustensilDropdown__hidden--input"
+                                id="input-ustensil" placeholder="Rechercher un ustensil" />
+                            <i class="ustensilDropdown__hidden--closeChevron fas fa-chevron-up" id="ustensilsList-closeChevron"></i>
+                        </div>
+                        <div class="ustensilDropdown__list" id="displayAllUstensils-list">
+                            <div id="allUstensils" class="ustensilDropdown__list--allUstensils"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================ -->
+        <!-- SECTION Thumb card -->
+        <section class="thumbCard-section" id="menuCards">
+            <!-- All Thumb cards are here -->
+        </section>
+    </div>
+
+    <!-- ================================ -->
+    <!-- JS -->
+    <script src="./js/recipes.js"></script>
+    <script src="./js/classes.js"></script>
+    <script src="./js/functions.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
 </html>

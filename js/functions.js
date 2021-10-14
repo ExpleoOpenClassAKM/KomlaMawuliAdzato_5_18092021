@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 //====> Variables pour stocker toute notre recette
 let allRecipes = [];
 let allRecipesObjects = [];
@@ -20,7 +22,7 @@ function createRecipesObject() {
         //Ajout des ingredients à notre recette
         OneRecipe.ingredients.forEach(function(OneIngredient) {
             let OneIngredientObject = new Ingredient(OneIngredient.ingredient, OneIngredient.quantity, OneIngredient.unit);
-            OneNewRecipeObject.addIngredient(OneIngredientObject);
+            OneNewRecipeObject.addIngredient(OneIngredientObject);        
         }); 
 
         //Ajout des plats à notre recette
@@ -122,7 +124,7 @@ function displayFilters() {
             container.appendChild(elementToAdd) //Ajoute le nouvel élément à la liste
         })
     })
-};
+}
 
 //Créer des évenements pour les filtres
 //=====> Cacher les éléments au départ
@@ -257,14 +259,17 @@ function removeFilter(filteredElement, typeOfElement) {
     getValidRecipes();
 }
 
-function getValidRecipes(input = false) {
+function getValidRecipes(input = false) {  //<======= rajouter appliances / Ustensils / description pour les recherches
 
     let validRecipes = [];
     allRecipesObjects.forEach(function(OneRecipe) {
         if (OneRecipe.hasFilters === totalFiltersClicked) {
-            if (input !== false) {
+            if (input !== false) {                                    
                 if (OneRecipe.name.includes(input)) {
                     validRecipes.push(OneRecipe);
+                }
+                if (OneRecipe.description.includes(input)) {
+                    validRecipes.push(OneRecipe)
                 }
             } else {
                 validRecipes.push(OneRecipe);
@@ -279,7 +284,7 @@ function getValidRecipes(input = false) {
 //====> Déploit la recette
 function displayRecipes() {
 
-    let container = document.getElementById("recipes");
+    let container = document.getElementById("menuCards");
     container.innerHTML = "";
     
 
@@ -298,7 +303,15 @@ function displayRecipes() {
                     </div>
                     <div class="thumbCard__description--footer">
                         <label for="listOfCondiments" class="thumbCard__listOfCondiments">
-                                <div class="thumbCard__Condiments"></div>
+                            <ul class="content">
+                            ${OneRecipe.ingredients
+                                .map(
+                                (OneIngredient) =>
+                                    `<li class="thumbCard__listOfCondiments"><b>${OneIngredient.name} : </b> 
+                                    ${OneIngredient.quantity} ${OneIngredient.unit}</li>`
+                                )
+                                .join("")}
+                            </ul>
                         </label>
                         <label for="description" class="thumbCard__howToUse">
                             ${OneRecipe.description}
@@ -344,10 +357,26 @@ function addFilterBox(name, type) {
     })
 } 
 
+
+//Recherche par l'input de l'utilisateur
 function getInputEvent(e) {
+    //Recherche par la barre de recherche principale
     document.getElementById("input-search").addEventListener("input", function() {
         getValidRecipes(this.value)
     })
+
+    //Recherche par la barre de recherche dans "Ingredients"
+    document.getElementById("input-ingredient").addEventListener("input", function() {
+        getValidRecipes(this.value)
+    })
+
+    //Recherche par la barre de recherche dans "Appareils"
+    document.getElementById("input-appliance").addEventListener("input", function() {
+        getValidRecipes(this.value)
+    })
+
+    //Recherche par la barre de recherche "Ustensils"
+    document.getElementById("input-ustensil").addEventListener("input", function() {
+        getValidRecipes(this.value)
+    })
 }
-
-

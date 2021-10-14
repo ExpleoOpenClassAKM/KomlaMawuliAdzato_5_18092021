@@ -22,5 +22,9 @@
   "bugs": {
     "url": "https://github.com/ExpleoOpenClassAKM/KomlaMawuliAdzato_5_18092021/issues"
   },
-  "homepage": "https://github.com/ExpleoOpenClassAKM/KomlaMawuliAdzato_5_18092021#readme"
+  "homepage": "https://github.com/ExpleoOpenClassAKM/KomlaMawuliAdzato_5_18092021#readme",
+  "devDependencies": {
+    "eslint": "^8.0.1",
+    "eslint-plugin-react": "^7.26.1"
+  }
 }

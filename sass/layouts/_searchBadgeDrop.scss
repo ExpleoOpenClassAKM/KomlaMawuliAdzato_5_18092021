@@ -155,6 +155,7 @@
     &__openBtn {
         @include dropdownBtn-CommonParameters;
         background-color: $cd-color-ingredient;
+
         &:hover {
             background: darken($color: $cd-color-ingredient, $amount: 15);
             transition: linear 300ms;
@@ -166,6 +167,7 @@
         @include dropdownHidden-CommonParameters;
         background-color: $cd-color-ingredient;
         margin-top: -55px;
+        
         &--input {
             @include recipesElementsList-Input;
             background-color: $cd-color-ingredient;
@@ -180,10 +182,12 @@
     &__list {
         display: none;
         position: absolute;
+        
         &--allIngredients {
             @include recipesElementsListCommonParameter;
             height: 1450px;
             background-color: $cd-color-ingredient;
+
             & > .recipesOneElement-Div {
                 @include recipesElementsList-Div;
             }

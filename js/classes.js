@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 //Ici la classe pour "recipes"
 class Recipe {
     constructor (name, time, description) {

@@ -1,6 +1,6 @@
 //Paramètres des tags
 @mixin badge-parameter {
-    width: 122.75px;
+    width: 130px;
     height: 35px;
     margin: 10px;
     margin-right: 15px;
@@ -40,7 +40,7 @@
 //Paramètres du panel de la liste des recettes
 @mixin dropdownHidden-CommonParameters {
     height: 55px;
-    width: 500px;
+    width: 410px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     display: flex;
@@ -59,12 +59,14 @@
     display: inline-flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 500px;
+    width: 410px;
     padding-top: 30px;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
-    font-size: 18px;
+    margin-top: -2px;
+    font-size: 16px;
+    font-weight: 500;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     cursor: pointer;
@@ -72,20 +74,20 @@
 
 //Paramètres des éléments des "Div" de la liste des recettes
 @mixin recipesElementsList-Div {
-    width: 160px;
+    width: 130px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     padding-top: 2.5px;
     padding-bottom: 2.5px;
     padding-left: 15px;
-    padding-right: 40px;
+    padding-right: 15px;
     line-height: 30px;
 }
 
 //Paramètres "Input" de la liste des recettes
 @mixin recipesElementsList-Input {
-    width: 455px;
+    width: 365px;
     height: 100%;
     font-size: 16px;
     border: none;
