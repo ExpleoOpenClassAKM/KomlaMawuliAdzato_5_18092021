@@ -115,8 +115,9 @@ function displayFilters() {
             if (activeFilters.includes(OneElement) === false) {
                 elementToAdd.classList.add("pointer") //===> Pointer l'élément au survol de la sourcis
                 elementToAdd.addEventListener("click", function() {
+                    //Ajoute un "tag"
                     activeFilters.push(OneElement)
-                    addFilter(OneElement, index) // Ajout le nouvel élément au "tag"
+                    addFilter(OneElement, index)            
                 })
             } else {
                 elementToAdd.classList.add("line-through") //===> Barre l'élément s'il est déjà sélectionné
@@ -265,21 +266,56 @@ function getValidRecipes(input = false) {  //<======= rajouter appliances / Uste
     allRecipesObjects.forEach(function(OneRecipe) {
         if (OneRecipe.hasFilters === totalFiltersClicked) {
             if (input !== false) {                                    
-                if (OneRecipe.name.includes(input)) {
+                if (OneRecipe.name.includes(input)) { //Recherche par le nom
                     validRecipes.push(OneRecipe);
                 }
-                if (OneRecipe.description.includes(input)) {
+                if (OneRecipe.description.includes(input)) { //Recherche dans la description
                     validRecipes.push(OneRecipe)
                 }
+                //Ajouter recherche dans ingredients
+
             } else {
                 validRecipes.push(OneRecipe);
             }
         }
     })
     allRecipes = validRecipes;
+
+    //Les couleurs pour le resultat de la recherche
+    let validRecipesResultColors = [
+        "#b5dbf1", // "$cd-color-validRecipesFund"
+        "#ebdb97" // "$cd-color-noValidRecipesFund"
+    ]
+
+    //<=================== Affichage du nombre des recettes trouvées ===================>
+    if (input.length < 3) {
+        document.getElementById("getValidRecipesCount").style.display = "none"
+    } else {
+        if (validRecipes.length !== 0) {
+            document.getElementById("showValidRecipesCount").innerText = validRecipes.length + " recette(s) correspond(ent) à votre recherche"
+            document.getElementById("getValidRecipesCount").style.display = "block"
+            document.getElementById("getValidRecipesCount").style.background = validRecipesResultColors[0] // $cd-color-validRecipesFund  
+    
+        } 
+        else
+        if (validRecipes.length === 0) {
+            document.getElementById("showValidRecipesCount").innerText = "Aucune recette ne correspond à votre critère… vous pouvez chercher: " + 
+                                                                        "« tarte aux pommes », " + "« poisson », etc.";
+            document.getElementById("getValidRecipesCount").style.display = "block"
+            document.getElementById("getValidRecipesCount").style.background = validRecipesResultColors[1] // $cd-color-noValidRecipesFund  
+        }
+    }
+    
+    //==========> appelle d'autres fonctions
     displayRecipes();
     getFilters();
 }
+
+//=====> Ferme la boîte de message du nombre de recettes trouvées
+let closeValidRecipesCountCross = document.getElementById("getValidRecipesCount-closeCross");
+closeValidRecipesCountCross.addEventListener("click", function() {
+    document.getElementById("getValidRecipesCount").style.display = "none";
+})
 
 //====> Déploit la recette
 function displayRecipes() {
