@@ -56,9 +56,10 @@
 
 //Paramètres des éléments de la liste des recettes
 @mixin recipesElementsListCommonParameter {
-    display: inline-flex;
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: flex-start;
     width: 410px;
     padding-top: 30px;
     padding-left: 10px;

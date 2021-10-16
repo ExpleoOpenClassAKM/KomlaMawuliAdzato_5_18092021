@@ -117,7 +117,7 @@ function displayFilters() {
                 elementToAdd.addEventListener("click", function() {
                     //Ajoute un "tag"
                     activeFilters.push(OneElement)
-                    addFilter(OneElement, index)            
+                    addFilter(OneElement, index)       
                 })
             } else {
                 elementToAdd.classList.add("line-through") //===> Barre l'élément s'il est déjà sélectionné
@@ -273,6 +273,7 @@ function getValidRecipes(input = false) {  //<======= rajouter appliances / Uste
                     validRecipes.push(OneRecipe)
                 }
                 //Ajouter recherche dans ingredients
+                
 
             } else {
                 validRecipes.push(OneRecipe);

@@ -40,7 +40,7 @@
             height: 25px;
     
             &:hover {
-                transform: scale(1.05);
+                transform: scale(1.1);
                 cursor: pointer;
             }
         }
@@ -225,8 +225,8 @@
         position: absolute;
         
         &--allIngredients {
+            max-height: 1450px;
             @include recipesElementsListCommonParameter;
-            height: 1450px;
             background-color: $cd-color-ingredient;
 
             & > .recipesOneElement-Div {
@@ -283,7 +283,7 @@
         margin-left: 30px;
         &--allAppliances {
             @include recipesElementsListCommonParameter;
-            height: 190px;
+            max-height: 190px;
             background-color: $cd-color-appliance;
 
             & > .recipesOneElement-Div {
@@ -339,7 +339,7 @@
         margin-left: 30px;
         &--allUstensils {
             @include recipesElementsListCommonParameter;
-            height: 360px;
+            max-height: 360px;
             background-color: $cd-color-ustensil;
 
             & > .recipesOneElement-Div {

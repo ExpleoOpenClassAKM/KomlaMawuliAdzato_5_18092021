@@ -89,7 +89,7 @@
   height: 25px;
 }
 .resultBox__validRecipesCount--closeCross:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
   cursor: pointer;
 }
 
@@ -327,9 +327,11 @@
   position: absolute;
 }
 .ingredientDropdown__list--allIngredients {
-  display: inline-flex;
-  flex-direction: column;
+  max-height: 1450px;
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: flex-start;
   width: 410px;
   padding-top: 30px;
   padding-left: 10px;
@@ -341,7 +343,6 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   cursor: pointer;
-  height: 1450px;
   background-color: #3282F7;
 }
 .ingredientDropdown__list--allIngredients > .recipesOneElement-Div {
@@ -438,9 +439,10 @@
   margin-left: 30px;
 }
 .applianceDropdown__list--allAppliances {
-  display: inline-flex;
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: flex-start;
   width: 410px;
   padding-top: 30px;
   padding-left: 10px;
@@ -452,7 +454,7 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   cursor: pointer;
-  height: 190px;
+  max-height: 190px;
   background-color: #68D9A4;
 }
 .applianceDropdown__list--allAppliances > .recipesOneElement-Div {
@@ -549,9 +551,10 @@
   margin-left: 30px;
 }
 .ustensilDropdown__list--allUstensils {
-  display: inline-flex;
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: flex-start;
   width: 410px;
   padding-top: 30px;
   padding-left: 10px;
@@ -563,7 +566,7 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   cursor: pointer;
-  height: 360px;
+  max-height: 360px;
   background-color: #ED6454;
 }
 .ustensilDropdown__list--allUstensils > .recipesOneElement-Div {
