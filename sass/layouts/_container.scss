@@ -13,36 +13,11 @@
 .container {
     margin: auto;
     padding: 0;
-    max-width: 1290px;
+    max-width: 1320px;
     height: 100vh;
     color: $cd-color-default;
     font-family: 'Lato', sans-serif;
     font-style: normal;
     display: flex;
     flex-direction: column;
-}
-
-//=========================================== à paraméter puis à supprimer
-.pl-30-custom {
-    padding-left: 30px
-}
-
-.box-filter {
-    height: 250px;
-    overflow: scroll;
-}
-
-.box-display {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-
-
-
-
-.recipe-box {
-    height: 250px;
-    overflow: scroll;
 }

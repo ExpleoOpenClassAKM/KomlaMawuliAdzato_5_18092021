@@ -116,8 +116,8 @@ function displayFilters() {
                 elementToAdd.classList.add("pointer") //===> Pointer l'élément au survol de la sourcis
                 elementToAdd.addEventListener("click", function() {
                     //Ajoute un "tag"
-                    activeFilters.push(OneElement)
-                    addFilter(OneElement, index)       
+                    activeFilters.push(OneElement);
+                    addFilter(OneElement, index);  
                 })
             } else {
                 elementToAdd.classList.add("line-through") //===> Barre l'élément s'il est déjà sélectionné

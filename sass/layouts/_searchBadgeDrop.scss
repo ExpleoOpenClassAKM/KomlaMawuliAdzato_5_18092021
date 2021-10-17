@@ -3,6 +3,8 @@
     width: 100%;
     height: auto;
     margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 //+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
@@ -29,6 +31,9 @@
             padding-left: 15px;
             border-top-left-radius: 5px;
             border-bottom-left-radius: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     
         &--closeCross {
@@ -42,18 +47,21 @@
             &:hover {
                 transform: scale(1.1);
                 cursor: pointer;
+                font-weight: 600; 
+                transition: 300ms;
             }
         }
     }
 }
-
 
 //+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
 //Search Bar
 .searchBar {
     width: 100%;
     height: 50px;
+    margin-bottom: 10px;
     border-radius: 5px;
+
     &__form {
         position: relative;
         width: 100%;
@@ -61,9 +69,10 @@
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
+
         &--input {
             width: 100%;
-            padding-left: 20px;
+            padding-left: 15px;
             padding-right: 40px;
             font-size: 15px;
             border-radius: 5px;
@@ -71,11 +80,16 @@
             font-style: normal;
             background-color: $cd-color-primary;
             border: 2px solid $cd-color-primary;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
             &:focus {
                 outline: none !important;
                 border-color: $cd-color-ustensil;
             }
         }
+
         &--icon {
             position: absolute;
             font-size: 20px;
@@ -93,7 +107,7 @@
 .badgeBox {
     width: 100%;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .Badge {
@@ -103,11 +117,13 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+
     &__tagIngredient {
         @include badge-parameter;
         border: 1px solid $cd-color-ingredient;
         background-color: $cd-color-ingredient;
         border-radius: 5px;
+
         &--name {
             padding-left: 10px;
             padding-right: 10px;
@@ -130,11 +146,13 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+
     &__tagAppliance {
         @include badge-parameter;
         border: 1px solid $cd-color-appliance;
         background-color: $cd-color-appliance;
         border-radius: 5px;
+
         &--name {
             padding-left: 10px;
             padding-right: 10px;
@@ -143,6 +161,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+
         &--closeCross:hover {
             cursor: pointer;
             color: darken($color: $cd-color-appliance, $amount: 20);
@@ -157,11 +176,13 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
+
     &__tagUstensil {
         @include badge-parameter;
         border: 1px solid $cd-color-ustensil;
         background-color: $cd-color-ustensil;
         border-radius: 5px;
+
         &--name {
             padding-left: 10px;
             padding-right: 10px;
@@ -170,6 +191,7 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+
         &--closeCross:hover {
             cursor: pointer;
             color: darken($color: $cd-color-ustensil, $amount: 20);
@@ -249,10 +271,12 @@
 
 .applianceDropdown {
     @include dropdown-CommonParameters;
+
     &__openBtn {
         @include dropdownBtn-CommonParameters;
         background-color: $cd-color-appliance;
         margin-left: 30px;
+
         &:hover {
             background: darken($color: $cd-color-appliance, $amount: 15);
             transition: linear 300ms;
@@ -262,7 +286,7 @@
 
     &__hidden {
         @include dropdownHidden-CommonParameters;
-        margin-left: 30px;
+        margin-left: 25px;
         margin-top: -55px;
         background-color: $cd-color-appliance;
         
@@ -280,7 +304,8 @@
     &__list {
         position: absolute;
         display: none;
-        margin-left: 30px;
+        margin-left: 25px;
+
         &--allAppliances {
             @include recipesElementsListCommonParameter;
             max-height: 190px;
@@ -305,10 +330,12 @@
 
 .ustensilDropdown {
     @include dropdown-CommonParameters;
+
     &__openBtn {
         @include dropdownBtn-CommonParameters;
         background-color: $cd-color-ustensil;
         margin-left: 30px; 
+
         &:hover {
             background: darken($color: $cd-color-ustensil, $amount: 15);
             transition: linear 300ms;
@@ -318,7 +345,7 @@
 
     &__hidden {
         @include dropdownHidden-CommonParameters;
-        margin-left: 30px;
+        margin-left: 25px;
         margin-top: -55px;
         background-color: $cd-color-ustensil;
         
@@ -336,7 +363,8 @@
     &__list {
         position: absolute;
         display: none;
-        margin-left: 30px;
+        margin-left: 25px;
+
         &--allUstensils {
             @include recipesElementsListCommonParameter;
             max-height: 360px;
