@@ -78,7 +78,10 @@
                 font-size: 12px;
                 margin-left: 10px;
                 margin-right: 10px;
-                overflow-y: auto;
+                -webkit-line-clamp: 9;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
             }
         }
     }

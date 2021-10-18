@@ -357,6 +357,7 @@ function displayRecipes() {
                                 .join("")}
                             </ul>
                         </label>
+                        
                         <label for="description" class="thumbCard__howToUse">
                             ${OneRecipe.description}
                         </label>
