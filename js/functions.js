@@ -272,8 +272,10 @@ function getValidRecipes(input = false) {  //<======= rajouter appliances / Uste
                 if (OneRecipe.description.includes(input)) { //Recherche dans la description
                     validRecipes.push(OneRecipe)
                 }
-                //Ajouter recherche dans ingredients
-                
+                //Recherche dans la liste des ingredients
+                if (OneRecipe.ingredients.map((OneIngredient) => (OneIngredient.name)).join().includes(input)) {
+                    validRecipes.push(OneRecipe)
+                }
 
             } else {
                 validRecipes.push(OneRecipe);
