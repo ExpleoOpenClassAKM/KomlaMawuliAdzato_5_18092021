@@ -58,6 +58,8 @@ function getFilters() {
             if (allIngredientsFilters.includes(OneIngredient.name) === false) {
                 allIngredientsFilters.push(OneIngredient.name)
             }
+            //Trie les ingredients par ordre alphabétique
+            return allIngredientsFilters.sort()
         });
         
 
@@ -66,6 +68,8 @@ function getFilters() {
             if (allAppliancesFilters.includes(OneAppliance.name) === false) {
                 allAppliancesFilters.push(OneAppliance.name)
             }
+            //Trie les appareils par ordre alphabétique
+            return allAppliancesFilters.sort()
         });
         
 
@@ -74,6 +78,8 @@ function getFilters() {
             if (allUstensilsFilters.includes(OneUstensil.name) === false) {
                 allUstensilsFilters.push(OneUstensil.name)
             }
+            //Trie les ustensils par ordre alphabétique
+            allUstensilsFilters.sort()
         });
         
     })
@@ -325,7 +331,6 @@ function displayRecipes() {
 
     let container = document.getElementById("menuCards");
     container.innerHTML = "";
-    
 
     allRecipes.forEach(function(OneRecipe) {
         
@@ -334,7 +339,7 @@ function displayRecipes() {
                 <div class="thumbCard__img"></div>
                 <div class="thumbCard__description">
                     <div class="thumbCard__description--header">
-                        <div class="thumbCard__title"><h4>${OneRecipe.name}</h4></div>
+                        <div class="thumbCard__title"><span>${OneRecipe.name}<sapn></div>
                         <div class="thumbCard__time">
                             <i class="far fa-clock"></i>
                             <span>${OneRecipe.time} min</span>
