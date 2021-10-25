@@ -5,8 +5,19 @@
 createRecipesObject()
 createEventsForFilters()
 getFilters()
-getInputEvent()
+getMainInputEvent()
+
+//===> Recherche spécifique dans la liste des Ingredients <===
+getSpecificIngredientsInputEvent()
+
+//===> Recherche spécifique dans la liste des Appareils <===
+getSpecificAppliancesInputEvent()
+
+//===> Recherche spécifique dans la liste des Ustensils <===
+getSpecificUstensilsInputEvent()
 
 //=============>
 
 displayRecipes()
+
+

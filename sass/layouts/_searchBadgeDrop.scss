@@ -217,7 +217,6 @@
 
 .ingredientDropdown {
     @include dropdown-CommonParameters;
-    
     &__openBtn {
         @include dropdownBtn-CommonParameters;
         background-color: $cd-color-ingredient;
@@ -232,7 +231,6 @@
     &__hidden {
         @include dropdownHidden-CommonParameters;
         background-color: $cd-color-ingredient;
-        margin-top: -55px;
         
         &--input {
             @include recipesElementsList-Input;
@@ -290,7 +288,6 @@
     &__hidden {
         @include dropdownHidden-CommonParameters;
         margin-left: 25px;
-        margin-top: -55px;
         background-color: $cd-color-appliance;
         
         &--input {
@@ -314,7 +311,7 @@
             max-height: 190px;
             background-color: $cd-color-appliance;
 
-            & > .recipesOneElement-Div {
+            & > .recipesOneElement-Div, .selectedAppliance {
                 @include recipesElementsList-Div;
             }
 
@@ -337,7 +334,7 @@
     &__openBtn {
         @include dropdownBtn-CommonParameters;
         background-color: $cd-color-ustensil;
-        margin-left: 30px; 
+        margin-left: 30px;
 
         &:hover {
             background: darken($color: $cd-color-ustensil, $amount: 15);
@@ -349,7 +346,6 @@
     &__hidden {
         @include dropdownHidden-CommonParameters;
         margin-left: 25px;
-        margin-top: -55px;
         background-color: $cd-color-ustensil;
         
         &--input {

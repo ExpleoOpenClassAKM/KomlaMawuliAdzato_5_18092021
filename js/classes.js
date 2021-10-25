@@ -28,7 +28,7 @@ class Recipe {
 
 //Ici la classe "Ingredient"
 class Ingredient {
-    constructor(name, quantity, unit = '') {
+    constructor(name, quantity = " ", unit = " ") {
         this.name = name;
         this.quantity = quantity;
         this.unit = unit;

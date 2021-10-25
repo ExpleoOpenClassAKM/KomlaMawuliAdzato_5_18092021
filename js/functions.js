@@ -8,7 +8,6 @@ let allRecipesObjects = [];
 let allElementsFilters = [];
 let totalFiltersClicked = 0;
 
-
 //===========================================================
 //Ici on crée une fonction pour récupérer tous les éléments du fichier "recipes" qu'on va stocker dans "allRecipes"
 function createRecipesObject() {
@@ -88,7 +87,6 @@ function getFilters() {
     displayFilters();
 }
 
-
 let activeFilters = [];  //===> Filtres actifs
 
 function displayFilters() {
@@ -116,7 +114,7 @@ function displayFilters() {
         //==> Ajout de chaque valeur du filtre créé plus haut
         allElementsFilters[index].forEach(function(OneElement) {
             let elementToAdd = document.createElement("div");
-            elementToAdd.classList.add("recipesOneElement-Div") //Classe de la "div" de l'élément (à modifier "col-4")
+            elementToAdd.classList.add("recipesOneElement-Div") //Classe de la "div" de l'élément
             elementToAdd.textContent = OneElement;
             if (activeFilters.includes(OneElement) === false) {
                 elementToAdd.classList.add("pointer") //===> Pointer l'élément au survol de la sourcis
@@ -132,7 +130,6 @@ function displayFilters() {
         })
     })
 }
-
 //Créer des évenements pour les filtres
 //=====> Cacher les éléments au départ
 // let ingredientsHidden = true;
@@ -148,12 +145,14 @@ function createEventsForFilters() {
         // document.getElementById("allIngredients").hidden = ingredientsHidden;
         document.getElementById("displayIngredients-hidden").style.display = "block";
         document.getElementById("displayAllIngredients-list").style.display = "block";
+        document.getElementById("displayIngredients").style.display = "none"
     });
 
     //Ferme la liste des ingredients
     document.getElementById("ingredientsList-closeChevron").addEventListener("click", function() {
         document.getElementById("displayIngredients-hidden").style.display = "none";
         document.getElementById("displayAllIngredients-list").style.display = "none";
+        document.getElementById("displayIngredients").style.display = "flex";
     });
 
     //Ouvre la liste des appareils
@@ -161,13 +160,15 @@ function createEventsForFilters() {
         // appliancesHidden = !appliancesHidden;
         // document.getElementById("allAppliances").hidden = appliancesHidden;
         document.getElementById("displayAppliances-hidden").style.display = "block";
-        document.getElementById("displayAllAppliances-list").style.display = "block"
+        document.getElementById("displayAllAppliances-list").style.display = "block";
+        document.getElementById("displayAppliances").style.display = "none"
     });
 
     //Ferme la liste des appareils
     document.getElementById("appliancesList-closeChevron").addEventListener("click", function() {
         document.getElementById("displayAppliances-hidden").style.display = "none";
         document.getElementById("displayAllAppliances-list").style.display = "none";
+        document.getElementById("displayAppliances").style.display = "flex";
     });
 
     //Ouvre la liste des ustensils
@@ -176,15 +177,16 @@ function createEventsForFilters() {
         // document.getElementById("allUstensils").hidden = ustensilsHidden;
         document.getElementById("displayUstensils-hidden").style.display = "block";
         document.getElementById("displayAllUstensils-list").style.display = "block"
+        document.getElementById("displayUstensils").style.display = "none";
     });
 
     //Ferme la liste des ustensils
     document.getElementById("ustensilsList-closeChevron").addEventListener("click", function() {
         document.getElementById("displayUstensils-hidden").style.display = "none";
         document.getElementById("displayAllUstensils-list").style.display = "none";
+        document.getElementById("displayUstensils").style.display = "flex";
     });
 }
-
 
 //====> Fonction pour ajouter les filtres
 function addFilter(filteredElement, typeOfElement) {
@@ -271,18 +273,27 @@ function getValidRecipes(input = false) {  //<======= rajouter appliances / Uste
     let validRecipes = [];
     allRecipesObjects.forEach(function(OneRecipe) {
         if (OneRecipe.hasFilters === totalFiltersClicked) {
-            if (input !== false) {                                    
-                if (OneRecipe.name.includes(input)) { //Recherche par le nom
+            if (input !== false) {   
+                //Recherche par le nom                                 
+                if (OneRecipe.name.includes(input)) { 
                     validRecipes.push(OneRecipe);
-                }
-                if (OneRecipe.description.includes(input)) { //Recherche dans la description
+                } else
+                //Recherche dans la description
+                if (OneRecipe.description.includes(input)) { 
                     validRecipes.push(OneRecipe)
-                }
-                //Recherche dans la liste des ingredients
+                } else
+                //Atteindre la liste des ingredients
                 if (OneRecipe.ingredients.map((OneIngredient) => (OneIngredient.name)).join().includes(input)) {
                     validRecipes.push(OneRecipe)
-                }
-
+                } else
+                //Atteindre la liste des appliances
+                if (OneRecipe.appliances.map((OneAppliance) => (OneAppliance.name)).join().includes(input)) {
+                    validRecipes.push(OneRecipe)
+                } else
+                //Atteindre la liste des ustensils
+                if (OneRecipe.ustensils.map((OneUstensil) => (OneUstensil.name)).join().includes(input)) {
+                        validRecipes.push(OneRecipe)
+                    }
             } else {
                 validRecipes.push(OneRecipe);
             }
@@ -290,21 +301,23 @@ function getValidRecipes(input = false) {  //<======= rajouter appliances / Uste
     })
     allRecipes = validRecipes;
 
+    //================================================================================
+    //========== Paramétrage du message d'info sur le résultat de la recherche ===========
+    
     //Les couleurs pour le resultat de la recherche
     let validRecipesResultColors = [
         "#b5dbf1", // "$cd-color-validRecipesFund"
         "#ebdb97" // "$cd-color-noValidRecipesFund"
     ]
 
-    //<=================== Affichage du nombre des recettes trouvées ===================>
+    //Affichage du nombre des recettes trouvées
     if (input.length < 3) {
         document.getElementById("getValidRecipesCount").style.display = "none"
     } else {
         if (validRecipes.length !== 0) {
             document.getElementById("showValidRecipesCount").innerText = validRecipes.length + " recette(s) correspond(ent) à votre recherche"
             document.getElementById("getValidRecipesCount").style.display = "block"
-            document.getElementById("getValidRecipesCount").style.background = validRecipesResultColors[0] // $cd-color-validRecipesFund  
-    
+            document.getElementById("getValidRecipesCount").style.background = validRecipesResultColors[0] // $cd-color-validRecipesFund 
         } 
         else
         if (validRecipes.length === 0) {
@@ -325,6 +338,56 @@ let closeValidRecipesCountCross = document.getElementById("getValidRecipesCount-
 closeValidRecipesCountCross.addEventListener("click", function() {
     document.getElementById("getValidRecipesCount").style.display = "none";
 })
+
+
+//======TEST============================
+// function getIngApplUst(input = false) {  //<======= rajouter appliances / Ustensils / description pour les recherches
+
+//     let validIngApplUst = [];
+//     allRecipesObjects.forEach(function(OneRecipe) {
+//         if (OneRecipe.hasFilters === totalFiltersClicked) {
+//             if (input !== false) {   
+//                 //Recherche dans la liste des ingredients
+//                 if (OneRecipe.ingredients.map((OneIngredient) => (OneIngredient.name)).join().includes(input)) {
+//                     validIngApplUst.push(OneRecipe)
+//                 }
+//             } else {
+//                 validIngApplUst.push(OneRecipe);
+//             }
+//         }
+//     })
+//     allRecipes = validIngApplUst;
+    
+//     //==========> appelle d'autres fonctions
+//     displayRecipes();
+//     getFilters();
+// }
+//=========FIN TEST =======================
+
+//===============================================================================================
+//================ Function de paramètres des recherches spécifiques ============================
+// function getValidIngredientsAppliancesUstensils(input = false) {
+//     let validIngredientsAppliancesUstensils = [];
+
+    
+//     allRecipesObjects.forEach(function(OneRecipe) {
+//         if (OneRecipe.hasFilters === totalFiltersClicked) {
+//             if (input !== false) {   
+            
+//                 //Recherche dans la liste des ingredients
+//                 if (OneRecipe.ingredients.map((OneIngredient) => (OneIngredient.name)).join().includes(input)) {
+//                     validIngredientsAppliancesUstensils.push(OneRecipe)
+//                 }
+                
+//             } 
+//         }
+//     })
+//     allElementsFilters[1] = validIngredientsAppliancesUstensils
+//     getFilters()
+// }
+
+
+
 
 //====> Déploit la recette
 function displayRecipes() {
@@ -404,24 +467,38 @@ function addFilterBox(name, type) {
 
 
 //Recherche par l'input de l'utilisateur
-function getInputEvent(e) {
+function getMainInputEvent() {
     //Recherche par la barre de recherche principale
-    document.getElementById("input-search").addEventListener("input", function() {
+    document.getElementById("input-search").addEventListener("input", function(event) {
+        event.preventDefault()
         getValidRecipes(this.value)
     })
+}
 
-    //Recherche par la barre de recherche dans "Ingredients"
-    document.getElementById("input-ingredient").addEventListener("input", function() {
+//================================================================================
+//========== Recherche spécifique dans la liste des Ingredients ==================
+function getSpecificIngredientsInputEvent() {
+    document.getElementById("input-ingredient").addEventListener("input", function(event) {
+        event.stopPropagation()
         getValidRecipes(this.value)
-    })
+     })
+}
 
-    //Recherche par la barre de recherche dans "Appareils"
-    document.getElementById("input-appliance").addEventListener("input", function() {
+//================================================================================
+//========== Recherche spécifique dans la liste des Appareils ==================
+function getSpecificAppliancesInputEvent() {
+    document.getElementById("input-appliance").addEventListener("input", function(event) {
+        event.stopPropagation()
         getValidRecipes(this.value)
+        
     })
+}
 
-    //Recherche par la barre de recherche "Ustensils"
-    document.getElementById("input-ustensil").addEventListener("input", function() {
+//================================================================================
+//========== Recherche spécifique dans la liste des Ustensils ==================
+function getSpecificUstensilsInputEvent() {
+    document.getElementById("input-ustensil").addEventListener("input", function(event) {
+        event.stopPropagation()
         getValidRecipes(this.value)
     })
 }
