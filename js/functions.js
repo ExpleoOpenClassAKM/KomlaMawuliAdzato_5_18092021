@@ -127,7 +127,7 @@ function displayFilters(allElementsFiltersCopy = []) {
                 elementToAdd.addEventListener("click", function() {
                     //Ajoute un "tag"
                     activeFilters.push(OneElement);
-                    addFilter(OneElement, index);  
+                    addFilter(OneElement, index);
                 })
             } else {
                 elementToAdd.classList.add("line-through") //===> Barre l'élément s'il est déjà sélectionné
@@ -149,15 +149,13 @@ function createEventsForFilters() {
     document.getElementById("displayIngredients").addEventListener("click", function() {
         // ingredientsHidden = !ingredientsHidden;
         // document.getElementById("allIngredients").hidden = ingredientsHidden;
-        document.getElementById("displayIngredients-hidden").style.display = "block";
-        document.getElementById("displayAllIngredients-list").style.display = "block";
+        document.getElementById("displayIngredients-hiddenElt").style.display = "block";
         document.getElementById("displayIngredients").style.display = "none"
     });
 
     //Ferme la liste des ingredients
     document.getElementById("ingredientsList-closeChevron").addEventListener("click", function() {
-        document.getElementById("displayIngredients-hidden").style.display = "none";
-        document.getElementById("displayAllIngredients-list").style.display = "none";
+        document.getElementById("displayIngredients-hiddenElt").style.display = "none";
         document.getElementById("displayIngredients").style.display = "flex";
     });
 
@@ -165,15 +163,13 @@ function createEventsForFilters() {
     document.getElementById("displayAppliances").addEventListener("click", function() {
         // appliancesHidden = !appliancesHidden;
         // document.getElementById("allAppliances").hidden = appliancesHidden;
-        document.getElementById("displayAppliances-hidden").style.display = "block";
-        document.getElementById("displayAllAppliances-list").style.display = "block";
+        document.getElementById("displayAppliances-hiddenElt").style.display = "block";
         document.getElementById("displayAppliances").style.display = "none"
     });
 
     //Ferme la liste des appareils
     document.getElementById("appliancesList-closeChevron").addEventListener("click", function() {
-        document.getElementById("displayAppliances-hidden").style.display = "none";
-        document.getElementById("displayAllAppliances-list").style.display = "none";
+        document.getElementById("displayAppliances-hiddenElt").style.display = "none";
         document.getElementById("displayAppliances").style.display = "flex";
     });
 
@@ -181,15 +177,13 @@ function createEventsForFilters() {
     document.getElementById("displayUstensils").addEventListener("click", function() {
         // ustensilsHidden = !ustensilsHidden;
         // document.getElementById("allUstensils").hidden = ustensilsHidden;
-        document.getElementById("displayUstensils-hidden").style.display = "block";
-        document.getElementById("displayAllUstensils-list").style.display = "block"
+        document.getElementById("displayUstensils-hiddenElt").style.display = "block";
         document.getElementById("displayUstensils").style.display = "none";
     });
 
     //Ferme la liste des ustensils
     document.getElementById("ustensilsList-closeChevron").addEventListener("click", function() {
-        document.getElementById("displayUstensils-hidden").style.display = "none";
-        document.getElementById("displayAllUstensils-list").style.display = "none";
+        document.getElementById("displayUstensils-hiddenElt").style.display = "none";
         document.getElementById("displayUstensils").style.display = "flex";
     });
 }

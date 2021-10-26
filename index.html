@@ -58,15 +58,19 @@
                             <i class="ingredientDropdown__openBtn--chevron fas fa-chevron-down"
                                 id="ingredientDropdown__openChevron"></i>
                         </button>
+                        <!--Hidden elements-->
+                        <div class="ingredientDropdown__hiddenElt" id="displayIngredients-hiddenElt">
+                            <!--N°1-->
+                            <div class="ingredientDropdown__hiddenElt--header">
+                                <input type="text" class="specificSearch-input"
+                                    id="input-ingredient" placeholder="Rechercher un ingredient"/>
+                                <i class="hiddenElt-closeChevron fas fa-chevron-up" id="ingredientsList-closeChevron"></i>
+                            </div>
 
-                        <div class="ingredientDropdown__hidden" id="displayIngredients-hidden">
-                            <input type="text" class="ingredientDropdown__hidden--input"
-                                id="input-ingredient" placeholder="Rechercher un ingredient" />
-                            <i class="ingredientDropdown__hidden--closeChevron fas fa-chevron-up" id="ingredientsList-closeChevron"></i>
-                        </div>
-
-                        <div class="ingredientDropdown__list" id="displayAllIngredients-list">
-                            <div id="allIngredients" class="ingredientDropdown__list--allIngredients"></div>
+                            <!--N°2-->  
+                            <div class="ingredientDropdown__hiddenElt--footer">
+                                <div id="allIngredients" class="typeOfElement-list"></div>
+                            </div>
                         </div>
                     </div>
 
@@ -77,15 +81,18 @@
                             <i class="applianceDropdown__openBtn--chevron fas fa-chevron-down"
                                 id="applianceDropdown__openChevron"></i>
                         </button>
+                        <!--Hidden elements-->
+                        <div class="applianceDropdown__hiddenElt" id="displayAppliances-hiddenElt">
+                            <!--N°1-->
+                            <div class="applianceDropdown__hiddenElt--header">
+                                <input type="text" class="specificSearch-input"
+                                    id="input-appliance" placeholder="Rechercher un appareil"/>
+                                <i class="hiddenElt-closeChevron fas fa-chevron-up" id="appliancesList-closeChevron"></i>
+                            </div>
 
-                        <div class="applianceDropdown__hidden" id="displayAppliances-hidden">
-                            <input type="text" class="applianceDropdown__hidden--input"
-                                id="input-appliance" placeholder="Rechercher un appareil" />
-                            <i class="applianceDropdown__hidden--closeChevron fas fa-chevron-up" id="appliancesList-closeChevron"></i>
-                        </div>
-
-                        <div class="applianceDropdown__list" id="displayAllAppliances-list">
-                            <div id="allAppliances" class="applianceDropdown__list--allAppliances">
+                            <!--N°2-->  
+                            <div class="applianceDropdown__hiddenElt--footer">
+                                <div id="allAppliances" class="typeOfElement-list"></div>
                             </div>
                         </div>
                     </div>
@@ -97,14 +104,20 @@
                             <i class="ustensilDropdown__openBtn--chevron fas fa-chevron-down"
                                 id="ustensilDropdown__openChevron"></i>
                         </button>
+                        
+                        <!--Hidden elements-->
+                        <div class="ustensilDropdown__hiddenElt" id="displayUstensils-hiddenElt">
+                            <!--N°1-->
+                            <div class="ustensilDropdown__hiddenElt--header">
+                                <input type="text" class="specificSearch-input"
+                                    id="input-ustensil" placeholder="Rechercher un ustensil"/>
+                                <i class="hiddenElt-closeChevron fas fa-chevron-up" id="ustensilsList-closeChevron"></i>
+                            </div>
 
-                        <div class="ustensilDropdown__hidden" id="displayUstensils-hidden">
-                            <input type="text" class="ustensilDropdown__hidden--input"
-                                id="input-ustensil" placeholder="Rechercher un ustensil" />
-                            <i class="ustensilDropdown__hidden--closeChevron fas fa-chevron-up" id="ustensilsList-closeChevron"></i>
-                        </div>
-                        <div class="ustensilDropdown__list" id="displayAllUstensils-list">
-                            <div id="allUstensils" class="ustensilDropdown__list--allUstensils"></div>
+                            <!--N°2-->  
+                            <div class="ustensilDropdown__hiddenElt--footer">
+                                <div id="allUstensils" class="typeOfElement-list"></div>
+                            </div>
                         </div>
                     </div>
                 </div>

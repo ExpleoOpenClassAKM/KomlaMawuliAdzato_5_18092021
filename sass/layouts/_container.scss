@@ -21,8 +21,8 @@
     display: flex;
     flex-direction: column;
 
-    @include media-inf-550px {
-        max-width: 800px; 
+    @include media-inf-400px {
+        max-width: 400px; 
         background-color: aqua;
     }
 }

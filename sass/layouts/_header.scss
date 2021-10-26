@@ -8,6 +8,14 @@
         display: flex;
         justify-content: center;
         margin-bottom: 20px;
+
+        @include media-inf-400px {
+            height: 70px;
+        }
+    }
+
+    @include media-inf-400px {
+        margin-top: 20px;
     }
 }
 

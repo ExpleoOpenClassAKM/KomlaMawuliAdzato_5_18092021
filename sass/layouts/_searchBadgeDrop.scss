@@ -114,12 +114,7 @@
 }
 
 .Badge {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+    @include badge-base-parameter;
 
     &__tagIngredient {
         @include badge-tags-parameter;
@@ -143,12 +138,7 @@
 }
 
 .Badge {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+    @include badge-base-parameter;
 
     &__tagAppliance {
         @include badge-tags-parameter;
@@ -173,12 +163,7 @@
 }
 
 .Badge {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+    @include badge-base-parameter;
 
     &__tagUstensil {
         @include badge-tags-parameter;
@@ -212,13 +197,15 @@
     flex-direction: row;
     align-items: flex-start;
     color: $cd-color-accent;
-    position: relative;
+    position: absolute;
 }
 
+//Ingredients
 .ingredientDropdown {
-    @include dropdown-CommonParameters;
+    @include dropdown-common;
+    
     &__openBtn {
-        @include dropdownBtn-CommonParameters;
+        @include dropdown-Btn-common;
         background-color: $cd-color-ingredient;
 
         &:hover {
@@ -228,55 +215,54 @@
         }
     }
 
-    &__hidden {
-        @include dropdownHidden-CommonParameters;
+    &__hiddenElt {
+        @include dropdown-Hidden-common;
         background-color: $cd-color-ingredient;
-        
-        &--input {
-            @include recipesElementsList-Input;
-            background-color: $cd-color-ingredient;
+        max-height: 1505px;
+
+        &--header {
+            @include hiddenElt-header-common;
+
+            & > .specificSearch-input {
+                background-color: $cd-color-ingredient;
+            }
         }
 
-        &--closeChevron {
-            @include recipesElementsList-closeChevron;
+        &--footer {
+            @include recipes-ElementsDisplay-common;
+
+            & > .typeOfElement-list {
+                
+                & > .recipesOneElement-Div {
+                    @include recipesElementsList-Div;
+
+                    &:hover {
+                        color: $cd-color-ingredient;
+                        background-color: $cd-color-accent;
+                    } 
+                }
+
+                & > .line-through {
+                    text-decoration: line-through;
+                    cursor: not-allowed;
+                }
+            }
         }
         display: none;
-    }
-
-    &__list {
-        display: none;
-        position: absolute;
-        
-        &--allIngredients {
-            max-height: 1450px;
-            @include recipesElementsListCommonParameter;
-            background-color: $cd-color-ingredient;
-
-            & > .recipesOneElement-Div {
-                @include recipesElementsList-Div;
-            }
-
-            & > .recipesOneElement-Div:hover {
-                color: $cd-color-ingredient;
-                background-color: $cd-color-accent;
-            }
-
-            & > .line-through {
-                text-decoration: line-through;
-                cursor: not-allowed;
-            }
-        }
     }
 }
-    
 
+//Appliances
 .applianceDropdown {
-    @include dropdown-CommonParameters;
+    @include dropdown-common;
 
     &__openBtn {
-        @include dropdownBtn-CommonParameters;
+        @include dropdown-Btn-common;
         background-color: $cd-color-appliance;
         margin-left: 30px;
+        @include media-inf-400px {
+            margin-left: 0px;
+        }
 
         &:hover {
             background: darken($color: $cd-color-appliance, $amount: 15);
@@ -285,56 +271,55 @@
         }
     }
 
-    &__hidden {
-        @include dropdownHidden-CommonParameters;
-        margin-left: 25px;
+    &__hiddenElt {
+        @include dropdown-Hidden-common;
         background-color: $cd-color-appliance;
-        
-        &--input {
-            @include recipesElementsList-Input;
-            background-color: $cd-color-appliance;
+        max-height: 245px;
+        margin-left: 30px;
+
+        &--header {
+            @include hiddenElt-header-common;
+
+            & > .specificSearch-input {
+                background-color: $cd-color-appliance;
+            }
         }
 
-        &--closeChevron {
-            @include recipesElementsList-closeChevron;
+        &--footer {
+            @include recipes-ElementsDisplay-common;
+
+            & > .typeOfElement-list {
+                
+                & > .recipesOneElement-Div {
+                    @include recipesElementsList-Div;
+
+                    &:hover {
+                        color: $cd-color-appliance;
+                        background-color: $cd-color-accent;
+                    } 
+                }
+
+                & > .line-through {
+                    text-decoration: line-through;
+                    cursor: not-allowed;
+                }
+            }
         }
         display: none;
-    }
-
-    &__list {
-        position: absolute;
-        display: none;
-        margin-left: 25px;
-
-        &--allAppliances {
-            @include recipesElementsListCommonParameter;
-            max-height: 190px;
-            background-color: $cd-color-appliance;
-
-            & > .recipesOneElement-Div, .selectedAppliance {
-                @include recipesElementsList-Div;
-            }
-
-            & > .recipesOneElement-Div:hover {
-                color: $cd-color-appliance;
-                background-color: $cd-color-accent;
-            }
-
-            & > .line-through {
-                text-decoration: line-through;
-                cursor: not-allowed;
-            }
-        }
     }
 }
 
+//Ustensils
 .ustensilDropdown {
-    @include dropdown-CommonParameters;
+    @include dropdown-common;
 
     &__openBtn {
-        @include dropdownBtn-CommonParameters;
+        @include dropdown-Btn-common;
         background-color: $cd-color-ustensil;
         margin-left: 30px;
+        @include media-inf-400px {
+            margin-left: 0px;
+        }
 
         &:hover {
             background: darken($color: $cd-color-ustensil, $amount: 15);
@@ -343,45 +328,44 @@
         }
     }
 
-    &__hidden {
-        @include dropdownHidden-CommonParameters;
-        margin-left: 25px;
+    &__hiddenElt {
+        @include dropdown-Hidden-common;
         background-color: $cd-color-ustensil;
-        
-        &--input {
-            @include recipesElementsList-Input;
-            background-color: $cd-color-ustensil;
+        max-height: 415px;
+        margin-left: 30px;
+
+        &--header {
+            @include hiddenElt-header-common;
+
+            & > .specificSearch-input {
+                background-color: $cd-color-ustensil;
+            }
         }
 
-        &--closeChevron {
-            @include recipesElementsList-closeChevron;
+        &--footer {
+            @include recipes-ElementsDisplay-common;
+
+            & > .typeOfElement-list {
+                
+                & > .recipesOneElement-Div {
+                    @include recipesElementsList-Div;
+
+                    &:hover {
+                        color: $cd-color-ustensil;
+                        background-color: $cd-color-accent;
+                    } 
+                }
+
+                & > .line-through {
+                    text-decoration: line-through;
+                    cursor: not-allowed;
+                }
+            }
         }
         display: none;
-    }
-
-    &__list {
-        position: absolute;
-        display: none;
-        margin-left: 25px;
-
-        &--allUstensils {
-            @include recipesElementsListCommonParameter;
-            max-height: 360px;
-            background-color: $cd-color-ustensil;
-
-            & > .recipesOneElement-Div {
-                @include recipesElementsList-Div;
-            }
-
-            & > .recipesOneElement-Div:hover {
-                color: $cd-color-ustensil;
-                background-color: $cd-color-accent;
-            }
-
-            & > .line-through {
-                text-decoration: line-through;
-                cursor: not-allowed;
-            }
-        }
     }
 }
+
+
+
+

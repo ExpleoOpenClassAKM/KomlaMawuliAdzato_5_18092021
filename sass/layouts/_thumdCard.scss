@@ -6,6 +6,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
+    margin-top: 65px;
 }
 
 .thumbCard {
@@ -17,6 +18,10 @@
     margin-right: 20px;
     display: flex;
     flex-direction: column;
+    @include media-inf-400px {
+        height: 320px;
+        margin-bottom: 20px;
+    }
 
     &__img {
         width: 100%;
@@ -44,6 +49,10 @@
             margin-bottom: 10px;
             margin-left: 10px;
 
+            @include media-inf-400px {
+                font-size: 13px;
+            }
+
             & > .thumbCard__title {
                 width: 75%;
                 height: 100%;
@@ -70,6 +79,13 @@
                 & > ul {
                     list-style-type: none;
                 }
+
+                @include media-inf-400px {
+                    -webkit-line-clamp: 7;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
             }
 
             & > .thumbCard__howToUse {
@@ -82,11 +98,18 @@
                 display: -webkit-box;
                 -webkit-box-orient: vertical;
                 overflow: hidden;
+
+                @include media-inf-400px {
+                    -webkit-line-clamp: 7;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
             }
         }
     }
 
-    @include media-inf-550px {
+    @include media-inf-400px {
         max-width: 100%;
     }
 }
