@@ -89,7 +89,7 @@ function getFilters() {
 
 let activeFilters = [];  //===> Filtres actifs
 
-function displayFilters() {
+function displayFilters(allElementsFiltersCopy = []) {
     
     //====> Fait la liaison entre: 
     // "allElementsFilters[0] (allAppliancesFilters)
@@ -102,6 +102,12 @@ function displayFilters() {
         "allUstensils"   //=======> 2
     ]
 
+    let filtersTabToUse = allElementsFilters; //Tableau par défaut
+
+    if (allElementsFiltersCopy.length > 0) { //Tableau à utilisé si l'input de la recherche spécifique n'est pas vide
+        filtersTabToUse = allElementsFiltersCopy
+    }
+
     //====> Bouclage sur le tableau de config pour y mettre tous les filtres
     arrayConfiguration.forEach(function(containerName, index) {
 
@@ -112,7 +118,7 @@ function displayFilters() {
          container.textContent = ""; 
         
         //==> Ajout de chaque valeur du filtre créé plus haut
-        allElementsFilters[index].forEach(function(OneElement) {
+        filtersTabToUse[index].forEach(function(OneElement) {
             let elementToAdd = document.createElement("div");
             elementToAdd.classList.add("recipesOneElement-Div") //Classe de la "div" de l'élément
             elementToAdd.textContent = OneElement;
@@ -302,7 +308,7 @@ function getValidRecipes(input = false) {  //<======= rajouter appliances / Uste
     allRecipes = validRecipes;
 
     //================================================================================
-    //========== Paramétrage du message d'info sur le résultat de la recherche ===========
+    //======== Paramétrage du message d'info sur le résultat de la recherche =========
     
     //Les couleurs pour le resultat de la recherche
     let validRecipesResultColors = [
@@ -339,55 +345,24 @@ closeValidRecipesCountCross.addEventListener("click", function() {
     document.getElementById("getValidRecipesCount").style.display = "none";
 })
 
+//=====================================================================================
+//=== Fonction pour la recherche spécifique "Ingredients"; "Appareils"; "Ustensils" ===
+function searchIngredientApplianceUstensil(input, type) {
+    let allSearchElementsFilters = [];
 
-//======TEST============================
-// function getIngApplUst(input = false) {  //<======= rajouter appliances / Ustensils / description pour les recherches
+    allElementsFilters[type].forEach(function(OneSearchElement) {
+        if (OneSearchElement.includes(input)) {
+            allSearchElementsFilters.push(OneSearchElement)
+        }
+    })
 
-//     let validIngApplUst = [];
-//     allRecipesObjects.forEach(function(OneRecipe) {
-//         if (OneRecipe.hasFilters === totalFiltersClicked) {
-//             if (input !== false) {   
-//                 //Recherche dans la liste des ingredients
-//                 if (OneRecipe.ingredients.map((OneIngredient) => (OneIngredient.name)).join().includes(input)) {
-//                     validIngApplUst.push(OneRecipe)
-//                 }
-//             } else {
-//                 validIngApplUst.push(OneRecipe);
-//             }
-//         }
-//     })
-//     allRecipes = validIngApplUst;
-    
-//     //==========> appelle d'autres fonctions
-//     displayRecipes();
-//     getFilters();
-// }
-//=========FIN TEST =======================
-
-//===============================================================================================
-//================ Function de paramètres des recherches spécifiques ============================
-// function getValidIngredientsAppliancesUstensils(input = false) {
-//     let validIngredientsAppliancesUstensils = [];
-
-    
-//     allRecipesObjects.forEach(function(OneRecipe) {
-//         if (OneRecipe.hasFilters === totalFiltersClicked) {
-//             if (input !== false) {   
-            
-//                 //Recherche dans la liste des ingredients
-//                 if (OneRecipe.ingredients.map((OneIngredient) => (OneIngredient.name)).join().includes(input)) {
-//                     validIngredientsAppliancesUstensils.push(OneRecipe)
-//                 }
-                
-//             } 
-//         }
-//     })
-//     allElementsFilters[1] = validIngredientsAppliancesUstensils
-//     getFilters()
-// }
-
-
-
+    if (input === "") {
+        allSearchElementsFilters = allElementsFilters[type]
+    }
+    allElementsFiltersCopy = allElementsFilters;
+    allElementsFiltersCopy[type] = allSearchElementsFilters;
+    displayFilters(allElementsFiltersCopy)
+}
 
 //====> Déploit la recette
 function displayRecipes() {
@@ -465,10 +440,10 @@ function addFilterBox(name, type) {
     })
 } 
 
-
-//Recherche par l'input de l'utilisateur
+//================================================================================
+//=================== Recherche par l'input de l'utilisateur =====================
+//************** Recherche par la barre de recherche principale ******************
 function getMainInputEvent() {
-    //Recherche par la barre de recherche principale
     document.getElementById("input-search").addEventListener("input", function(event) {
         event.preventDefault()
         getValidRecipes(this.value)
@@ -476,11 +451,12 @@ function getMainInputEvent() {
 }
 
 //================================================================================
-//========== Recherche spécifique dans la liste des Ingredients ==================
+//*********** Recherche spécifique dans la liste des Ingredients *****************
 function getSpecificIngredientsInputEvent() {
     document.getElementById("input-ingredient").addEventListener("input", function(event) {
-        event.stopPropagation()
-        getValidRecipes(this.value)
+        event.stopPropagation();
+        getFilters();
+        searchIngredientApplianceUstensil(this.value, 1)
      })
 }
 
@@ -488,8 +464,9 @@ function getSpecificIngredientsInputEvent() {
 //========== Recherche spécifique dans la liste des Appareils ==================
 function getSpecificAppliancesInputEvent() {
     document.getElementById("input-appliance").addEventListener("input", function(event) {
-        event.stopPropagation()
-        getValidRecipes(this.value)
+        event.stopPropagation();
+        getFilters();
+        searchIngredientApplianceUstensil(this.value, 0)
         
     })
 }
@@ -498,7 +475,8 @@ function getSpecificAppliancesInputEvent() {
 //========== Recherche spécifique dans la liste des Ustensils ==================
 function getSpecificUstensilsInputEvent() {
     document.getElementById("input-ustensil").addEventListener("input", function(event) {
-        event.stopPropagation()
-        getValidRecipes(this.value)
+        event.stopPropagation();
+        getFilters();
+        searchIngredientApplianceUstensil(this.value, 2)
     })
 }

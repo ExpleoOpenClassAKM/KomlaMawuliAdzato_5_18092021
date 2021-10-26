@@ -13,11 +13,16 @@
 .container {
     margin: auto;
     padding: 0;
-    max-width: 1320px;
-    height: 100vh;
+    max-width: 1450px;
+    height: auto;
     color: $cd-color-default;
     font-family: 'Lato', sans-serif;
     font-style: normal;
     display: flex;
     flex-direction: column;
+
+    @include media-inf-550px {
+        max-width: 800px; 
+        background-color: aqua;
+    }
 }

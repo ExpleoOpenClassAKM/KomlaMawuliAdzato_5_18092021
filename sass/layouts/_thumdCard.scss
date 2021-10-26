@@ -9,7 +9,7 @@
 }
 
 .thumbCard {
-    max-width: 400px;
+    max-width: 443px;
     height: 400px;
     border-radius: 5px;
     margin-bottom: 40px;
@@ -84,5 +84,9 @@
                 overflow: hidden;
             }
         }
+    }
+
+    @include media-inf-550px {
+        max-width: 100%;
     }
 }

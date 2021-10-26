@@ -122,7 +122,7 @@
     align-items: center;
 
     &__tagIngredient {
-        @include badge-parameter;
+        @include badge-tags-parameter;
         border: 1px solid $cd-color-ingredient;
         background-color: $cd-color-ingredient;
         border-radius: 5px;
@@ -151,7 +151,7 @@
     align-items: center;
 
     &__tagAppliance {
-        @include badge-parameter;
+        @include badge-tags-parameter;
         border: 1px solid $cd-color-appliance;
         background-color: $cd-color-appliance;
         border-radius: 5px;
@@ -181,7 +181,7 @@
     align-items: center;
 
     &__tagUstensil {
-        @include badge-parameter;
+        @include badge-tags-parameter;
         border: 1px solid $cd-color-ustensil;
         background-color: $cd-color-ustensil;
         border-radius: 5px;

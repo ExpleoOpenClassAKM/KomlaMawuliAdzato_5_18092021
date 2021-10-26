@@ -10,13 +10,19 @@
 .container {
   margin: auto;
   padding: 0;
-  max-width: 1320px;
-  height: 100vh;
+  max-width: 1450px;
+  height: auto;
   color: #000000;
   font-family: "Lato", sans-serif;
   font-style: normal;
   display: flex;
   flex-direction: column;
+}
+@media screen and (max-width: 550px) {
+  .container {
+    max-width: 800px;
+    background-color: aqua;
+  }
 }
 
 .header {
@@ -279,7 +285,7 @@
 }
 .ingredientDropdown__hidden {
   height: 55px;
-  width: 410px;
+  width: 453px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   display: flex;
@@ -295,7 +301,7 @@
   display: none;
 }
 .ingredientDropdown__hidden--input {
-  width: 365px;
+  width: 408px;
   height: 100%;
   font-size: 16px;
   border: none;
@@ -325,7 +331,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-  width: 410px;
+  width: 453px;
   padding-top: 30px;
   padding-left: 10px;
   padding-right: 10px;
@@ -339,7 +345,7 @@
   background-color: #3282F7;
 }
 .ingredientDropdown__list--allIngredients > .recipesOneElement-Div {
-  width: 130px;
+  width: 144px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -388,7 +394,7 @@
 }
 .applianceDropdown__hidden {
   height: 55px;
-  width: 410px;
+  width: 453px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   display: flex;
@@ -405,7 +411,7 @@
   display: none;
 }
 .applianceDropdown__hidden--input {
-  width: 365px;
+  width: 408px;
   height: 100%;
   font-size: 16px;
   border: none;
@@ -435,7 +441,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-  width: 410px;
+  width: 453px;
   padding-top: 30px;
   padding-left: 10px;
   padding-right: 10px;
@@ -450,7 +456,7 @@
   background-color: #68D9A4;
 }
 .applianceDropdown__list--allAppliances > .recipesOneElement-Div, .applianceDropdown__list--allAppliances .selectedAppliance {
-  width: 130px;
+  width: 144px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -499,7 +505,7 @@
 }
 .ustensilDropdown__hidden {
   height: 55px;
-  width: 410px;
+  width: 453px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   display: flex;
@@ -516,7 +522,7 @@
   display: none;
 }
 .ustensilDropdown__hidden--input {
-  width: 365px;
+  width: 408px;
   height: 100%;
   font-size: 16px;
   border: none;
@@ -546,7 +552,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-  width: 410px;
+  width: 453px;
   padding-top: 30px;
   padding-left: 10px;
   padding-right: 10px;
@@ -561,7 +567,7 @@
   background-color: #ED6454;
 }
 .ustensilDropdown__list--allUstensils > .recipesOneElement-Div {
-  width: 130px;
+  width: 144px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -590,7 +596,7 @@
 }
 
 .thumbCard {
-  max-width: 400px;
+  max-width: 443px;
   height: 400px;
   border-radius: 5px;
   margin-bottom: 40px;
@@ -657,6 +663,11 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+@media screen and (max-width: 550px) {
+  .thumbCard {
+    max-width: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
