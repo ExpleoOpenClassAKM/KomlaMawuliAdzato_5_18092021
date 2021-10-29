@@ -21,8 +21,33 @@
     display: flex;
     flex-direction: column;
 
-    @include media-inf-400px {
-        max-width: 400px; 
+    //Media: 0 <==> 300px
+    @include media-inf-300px {
+        max-width: 300px; 
         background-color: aqua;
+    }
+
+    //Media: 300px <==> 500px
+    @include media-300px-500px {
+        max-width: 500px;
+        background-color: thistle;
+    }
+
+    //Media: 500px <==> 700px
+    @include media-500px-700px {
+        max-width: 700px;
+        background-color: rgb(208, 216, 191);
+    }
+
+    //Media: 700px <==> 900px
+    @include media-700px-900px {
+        max-width: 900px;
+        background-color: rgb(225, 193, 240);
+    }
+
+    //Media: 900px <==> 1100px
+    @include media-900px-1100px {
+        max-width: 1100px;
+        background-color: rgb(83, 14, 116);
     }
 }

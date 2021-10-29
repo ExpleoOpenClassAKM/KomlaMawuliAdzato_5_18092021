@@ -7,6 +7,31 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     margin-top: 65px;
+    //Media: 0 <==> 500px
+    @include media-inf-500px {
+        margin-top: 0px;
+    }
+
+    //Media: 500 <==> 700px
+    @include media-500px-700px {
+        margin-top: 0px;
+    }
+
+    //Media: 700px <==> 900px
+    @include media-700px-900px { //fusion
+        justify-content: space-between;
+        padding-right: 20px;
+        padding-left: 20px;
+        margin-top: 0px;
+    }
+
+    //Media: 900px <==> 1100px
+    @include media-900px-1100px { //fusion
+        justify-content: space-between;
+        padding-right: 20px;
+        padding-left: 20px;
+        margin-top: 0px;
+    }
 }
 
 .thumbCard {
@@ -18,9 +43,43 @@
     margin-right: 20px;
     display: flex;
     flex-direction: column;
-    @include media-inf-400px {
+
+    //Media: 0 <==> 500px
+    @include media-inf-500px {
         height: 320px;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
+    }
+
+    //Media: 0 <==> 300px
+    @include media-inf-300px {
+        max-width: 300px;
+    }
+
+    //Media: 300px <==> 500px
+    @include media-300px-500px { 
+        max-width: 500px;
+    }
+
+    //Media: 500px <==> 700px
+    @include media-500px-700px {
+        max-width: 680px;
+        margin-bottom: 30px;
+    }
+
+    //Media: 700px <==> 900px
+    @include media-700px-900px {
+        max-width: 47.5%;
+        margin-bottom: 35px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    //Media: 900px <==> 1100px
+    @include media-900px-1100px {
+        max-width: 48%;
+        margin-bottom: 35px;
+        margin-left: 0px;
+        margin-right: 0px;
     }
 
     &__img {
@@ -49,7 +108,8 @@
             margin-bottom: 10px;
             margin-left: 10px;
 
-            @include media-inf-400px {
+            //Media: 0 <==> 500px
+            @include media-inf-500px {
                 font-size: 13px;
             }
 
@@ -80,8 +140,17 @@
                     list-style-type: none;
                 }
 
-                @include media-inf-400px {
+                //Media: 0 <==> 500px
+                @include media-inf-500px { 
                     -webkit-line-clamp: 7;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+
+                //Media: 700px <==> 800px
+                @include media-700px-800px {
+                    -webkit-line-clamp: 9;
                     display: -webkit-box;
                     -webkit-box-orient: vertical;
                     overflow: hidden;
@@ -99,7 +168,8 @@
                 -webkit-box-orient: vertical;
                 overflow: hidden;
 
-                @include media-inf-400px {
+                //Media: 0 <==> 500px
+                @include media-inf-500px { 
                     -webkit-line-clamp: 7;
                     display: -webkit-box;
                     -webkit-box-orient: vertical;
@@ -107,9 +177,5 @@
                 }
             }
         }
-    }
-
-    @include media-inf-400px {
-        max-width: 100%;
     }
 }

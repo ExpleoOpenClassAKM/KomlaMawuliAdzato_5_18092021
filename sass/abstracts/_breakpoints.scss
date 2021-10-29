@@ -1,14 +1,111 @@
 //Responsive
 $breakpoints: (
+    media-300px: 300px,
+    media-350px: 350px,
     media-400px: 400px,
-    media-560px: 560px,
+    media-450px: 450px,
+    media-500px: 500px,
+    media-600px: 600px,
+    media-700px: 700px,
     media-800px: 800px,
-    media-1000px: 1100px,
+    media-900px: 900px,
+    media-1000px: 1000px,
+    media-1100px: 1100px,
     media-1450px: 1450px 
 );
 
-@mixin media-inf-400px {
-    @media screen and (max-width: map-get($map: $breakpoints, $key: media-400px)){
+@mixin media-inf-300px {
+    @media screen and (max-width: map-get($map: $breakpoints, $key: media-300px)){
+        @content;
+    }
+}
+
+@mixin media-inf-500px {
+    @media screen and (max-width: map-get($map: $breakpoints, $key: media-500px)){
+        @content;
+    }
+}
+
+@mixin media-300px-500px {
+    @media (min-width: map-get($map: $breakpoints, $key: media-300px)) and (max-width: map-get($map: $breakpoints, $key: media-500px)){
+        @content;
+    }
+}
+
+@mixin media-300px-350px {
+    @media (min-width: map-get($map: $breakpoints, $key: media-300px)) and (max-width: map-get($map: $breakpoints, $key: media-350px)){
+        @content;
+    }
+}
+
+@mixin media-350px-400px {
+    @media (min-width: map-get($map: $breakpoints, $key: media-350px)) and (max-width: map-get($map: $breakpoints, $key: media-400px)){
+        @content;
+    }
+}
+
+@mixin media-400px-450px {
+    @media (min-width: map-get($map: $breakpoints, $key: media-400px)) and (max-width: map-get($map: $breakpoints, $key: media-450px)){
+        @content;
+    }
+}
+
+@mixin media-450px-500px {
+    @media (min-width: map-get($map: $breakpoints, $key: media-450px)) and (max-width: map-get($map: $breakpoints, $key: media-500px)){
+        @content;
+    }
+}
+
+@mixin media-500px-700px {
+    @media (min-width: map-get($map: $breakpoints, $key: media-500px)) and (max-width: map-get($map: $breakpoints, $key: media-700px)){
+        @content;
+    }
+}
+
+@mixin media-500px-600px {
+    @media (min-width: map-get($map: $breakpoints, $key: media-500px)) and (max-width: map-get($map: $breakpoints, $key: media-600px)){
+        @content;
+    }
+}
+
+@mixin media-600px-700px {
+    @media (min-width: map-get($map: $breakpoints, $key: media-600px)) and (max-width: map-get($map: $breakpoints, $key: media-700px)){
+        @content;
+    }
+}
+
+@mixin media-700px-800px {
+    @media (min-width: map-get($map: $breakpoints, $key: media-700px)) and (max-width: map-get($map: $breakpoints, $key: media-800px)){
+        @content;
+    }
+}
+
+@mixin media-800px-900px {
+    @media (min-width: map-get($map: $breakpoints, $key: media-800px)) and (max-width: map-get($map: $breakpoints, $key: media-900px)){
+        @content;
+    }
+}
+
+@mixin media-700px-900px {
+    @media (min-width: map-get($map: $breakpoints, $key: media-700px)) and (max-width: map-get($map: $breakpoints, $key: media-900px)){
+        @content;
+    }
+}
+
+@mixin media-900px-1100px {
+    @media (min-width: map-get($map: $breakpoints, $key: media-900px)) and (max-width: map-get($map: $breakpoints, $key: media-1100px)){
+        @content;
+    }
+}
+
+@mixin media-900px-1000px {
+    @media (min-width: map-get($map: $breakpoints, $key: media-900px)) and (max-width: map-get($map: $breakpoints, $key: media-1000px)){
+        @content;
+    }
+}
+
+@mixin media-1000px-1100px {
+    @media (min-width: map-get($map: $breakpoints, $key: media-1000px)) and (max-width: map-get($map: $breakpoints, $key: media-1100px)){
         @content;
     }
 }

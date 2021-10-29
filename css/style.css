@@ -18,10 +18,34 @@
   display: flex;
   flex-direction: column;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 300px) {
   .container {
-    max-width: 400px;
+    max-width: 300px;
     background-color: aqua;
+  }
+}
+@media (min-width: 300px) and (max-width: 500px) {
+  .container {
+    max-width: 500px;
+    background-color: thistle;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .container {
+    max-width: 700px;
+    background-color: #d0d8bf;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .container {
+    max-width: 900px;
+    background-color: #e1c1f0;
+  }
+}
+@media (min-width: 900px) and (max-width: 1100px) {
+  .container {
+    max-width: 1100px;
+    background-color: #530e74;
   }
 }
 
@@ -30,20 +54,30 @@
   height: auto;
   margin-top: 42px;
 }
+@media screen and (max-width: 500px) {
+  .header {
+    margin-top: 25px;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .header {
+    margin-top: 30px;
+  }
+}
 .header__logo {
   height: 93px;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .header__logo {
     height: 70px;
   }
 }
-@media screen and (max-width: 400px) {
-  .header {
-    margin-top: 20px;
+@media (min-width: 500px) and (max-width: 700px) {
+  .header__logo {
+    height: 85px;
   }
 }
 
@@ -80,6 +114,11 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+@media screen and (max-width: 500px) {
+  .resultBox__validRecipesCount--message {
+    font-size: 13px;
+  }
 }
 .resultBox__validRecipesCount--closeCross {
   margin-right: 10px;
@@ -146,6 +185,11 @@
   height: auto;
   margin-bottom: 10px;
 }
+@media screen and (max-width: 500px) {
+  .badgeBox {
+    margin-bottom: 20px;
+  }
+}
 
 .Badge {
   width: 100%;
@@ -154,6 +198,26 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
+}
+@media screen and (max-width: 500px) {
+  .Badge {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .Badge {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 17.5px;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .Badge {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
 }
 .Badge__tagIngredient {
   width: 130px;
@@ -169,6 +233,31 @@
   border: 1px solid #3282F7;
   background-color: #3282F7;
   border-radius: 5px;
+}
+@media screen and (max-width: 500px) {
+  .Badge__tagIngredient {
+    width: 105px;
+    height: 30px;
+    font-size: 15px;
+    margin-bottom: 0px;
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .Badge__tagIngredient {
+    margin-bottom: 2.5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 32.5px;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .Badge__tagIngredient {
+    margin-bottom: 5px;
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+  }
 }
 .Badge__tagIngredient--name {
   padding-left: 10px;
@@ -191,6 +280,26 @@
   flex-wrap: wrap;
   align-items: center;
 }
+@media screen and (max-width: 500px) {
+  .Badge {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .Badge {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 17.5px;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .Badge {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+}
 .Badge__tagAppliance {
   width: 130px;
   height: 35px;
@@ -205,6 +314,31 @@
   border: 1px solid #68D9A4;
   background-color: #68D9A4;
   border-radius: 5px;
+}
+@media screen and (max-width: 500px) {
+  .Badge__tagAppliance {
+    width: 105px;
+    height: 30px;
+    font-size: 15px;
+    margin-bottom: 0px;
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .Badge__tagAppliance {
+    margin-bottom: 2.5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 32.5px;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .Badge__tagAppliance {
+    margin-bottom: 5px;
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+  }
 }
 .Badge__tagAppliance--name {
   padding-left: 10px;
@@ -227,6 +361,26 @@
   flex-wrap: wrap;
   align-items: center;
 }
+@media screen and (max-width: 500px) {
+  .Badge {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .Badge {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 17.5px;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .Badge {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+}
 .Badge__tagUstensil {
   width: 130px;
   height: 35px;
@@ -241,6 +395,31 @@
   border: 1px solid #ED6454;
   background-color: #ED6454;
   border-radius: 5px;
+}
+@media screen and (max-width: 500px) {
+  .Badge__tagUstensil {
+    width: 105px;
+    height: 30px;
+    font-size: 15px;
+    margin-bottom: 0px;
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .Badge__tagUstensil {
+    margin-bottom: 2.5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 32.5px;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .Badge__tagUstensil {
+    margin-bottom: 5px;
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+  }
 }
 .Badge__tagUstensil--name {
   padding-left: 10px;
@@ -265,6 +444,45 @@
   color: #FFFFFF;
   position: absolute;
 }
+@media screen and (max-width: 500px) {
+  .dropdownBox {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    position: unset;
+    margin-bottom: -20px;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .dropdownBox {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+    position: unset;
+    margin-bottom: -20px;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .dropdownBox {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+    position: unset;
+    margin-bottom: -20px;
+  }
+}
+@media (min-width: 900px) and (max-width: 1100px) {
+  .dropdownBox {
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
+    position: unset;
+    margin-bottom: -20px;
+  }
+}
 
 .ingredientDropdown {
   width: auto;
@@ -288,9 +506,35 @@
   cursor: pointer;
   background-color: #3282F7;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .ingredientDropdown__openBtn {
     margin-bottom: 20px;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .ingredientDropdown__openBtn {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .ingredientDropdown__openBtn {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 900px) and (max-width: 1100px) {
+  .ingredientDropdown__openBtn {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .ingredientDropdown__openBtn {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+@media (min-width: 900px) and (max-width: 1100px) {
+  .ingredientDropdown__openBtn {
+    margin-right: 30px;
   }
 }
 .ingredientDropdown__openBtn:hover {
@@ -299,7 +543,7 @@
   border: none;
 }
 .ingredientDropdown__hiddenElt {
-  width: 453px;
+  width: 450px;
   border-radius: 5px;
   font-size: 15px;
   font-family: "Lato", sans-serif;
@@ -309,6 +553,91 @@
   background-color: #3282F7;
   max-height: 1505px;
   display: none;
+}
+@media screen and (max-width: 300px) {
+  .ingredientDropdown__hiddenElt {
+    width: 240px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .ingredientDropdown__hiddenElt {
+    padding-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    flex-direction: column;
+  }
+}
+@media (min-width: 300px) and (max-width: 350px) {
+  .ingredientDropdown__hiddenElt {
+    width: 270px;
+  }
+}
+@media (min-width: 350px) and (max-width: 400px) {
+  .ingredientDropdown__hiddenElt {
+    width: 300px;
+    background-color: mediumseagreen;
+  }
+}
+@media (min-width: 400px) and (max-width: 450px) {
+  .ingredientDropdown__hiddenElt {
+    width: 360px;
+    background-color: #f5f269;
+  }
+}
+@media (min-width: 450px) and (max-width: 500px) {
+  .ingredientDropdown__hiddenElt {
+    width: 410px;
+    background-color: #74500d;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .ingredientDropdown__hiddenElt {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 500px) and (max-width: 600px) {
+  .ingredientDropdown__hiddenElt {
+    width: 460px;
+    background-color: #4ccfd8;
+  }
+}
+@media (min-width: 600px) and (max-width: 700px) {
+  .ingredientDropdown__hiddenElt {
+    min-width: 550px;
+    background-color: #090a4e;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .ingredientDropdown__hiddenElt {
+    min-width: 650px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    background-color: #4e093f;
+  }
+}
+@media (min-width: 800px) and (max-width: 900px) {
+  .ingredientDropdown__hiddenElt {
+    min-width: 710px;
+    background-color: #c4d33e;
+  }
+}
+@media (min-width: 900px) and (max-width: 1000px) {
+  .ingredientDropdown__hiddenElt {
+    width: 400.5px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    margin-right: 30px;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1100px) {
+  .ingredientDropdown__hiddenElt {
+    width: 450px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    margin-right: 30px;
+  }
 }
 .ingredientDropdown__hiddenElt--header {
   width: 100%;
@@ -324,12 +653,17 @@
   border: none;
 }
 .ingredientDropdown__hiddenElt--header > .specificSearch-input {
-  width: 408px;
+  width: 90%;
   height: 100%;
   font-size: 16px;
   border: none;
   padding-left: 25px;
   border-top-left-radius: 5px;
+}
+@media screen and (max-width: 500px) {
+  .ingredientDropdown__hiddenElt--header > .specificSearch-input {
+    font-size: 14px;
+  }
 }
 .ingredientDropdown__hiddenElt--header > .specificSearch-input:focus {
   outline: none !important;
@@ -350,9 +684,49 @@
   padding-top: 30px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   font-size: 16px;
   font-weight: 500;
+}
+@media screen and (max-width: 500px) {
+  .ingredientDropdown__hiddenElt--footer {
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    overflow-y: auto;
+  }
+}
+@media screen and (max-width: 300px) {
+  .ingredientDropdown__hiddenElt--footer {
+    max-height: 150px;
+    font-size: 13px;
+  }
+}
+@media (min-width: 300px) and (max-width: 500px) {
+  .ingredientDropdown__hiddenElt--footer {
+    max-height: 180px;
+    font-size: 14px;
+    min-width: 80%;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .ingredientDropdown__hiddenElt--footer {
+    max-height: 190px;
+    overflow-y: auto;
+    padding-top: 10px;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .ingredientDropdown__hiddenElt--footer {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+}
+@media (min-width: 900px) and (max-width: 1100px) {
+  .ingredientDropdown__hiddenElt--footer {
+    max-height: 180px;
+    overflow-y: auto;
+  }
 }
 .ingredientDropdown__hiddenElt--footer > .typeOfElement-list {
   display: flex;
@@ -361,7 +735,7 @@
   justify-content: flex-start;
 }
 .ingredientDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
-  width: 144px;
+  width: 143px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -372,12 +746,60 @@
   line-height: 30px;
   cursor: pointer;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .ingredientDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
-    width: 30%;
+    width: 33%;
     line-height: 20px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .ingredientDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
     padding-left: 5px;
     padding-right: 5px;
+  }
+}
+@media (min-width: 300px) and (max-width: 500px) {
+  .ingredientDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (min-width: 500px) and (max-width: 600px) {
+  .ingredientDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
+    line-height: 25px;
+    width: 110px;
+    font-size: 14px;
+  }
+}
+@media (min-width: 600px) and (max-width: 700px) {
+  .ingredientDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
+    line-height: 25px;
+    width: 132px;
+    padding-left: 20px;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .ingredientDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
+    line-height: 25px;
+    width: 125px;
+    padding-left: 20px;
+    padding-right: 10px;
+  }
+}
+@media (min-width: 800px) and (max-width: 900px) {
+  .ingredientDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
+    width: 115px;
+    padding-left: 10px;
+  }
+}
+@media (min-width: 900px) and (max-width: 1000px) {
+  .ingredientDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
+    width: 126px;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1100px) {
+  .ingredientDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
+    width: 140px;
   }
 }
 .ingredientDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div:hover {
@@ -412,13 +834,40 @@
   background-color: #68D9A4;
   margin-left: 30px;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .applianceDropdown__openBtn {
     margin-bottom: 20px;
   }
 }
-@media screen and (max-width: 400px) {
+@media (min-width: 500px) and (max-width: 700px) {
   .applianceDropdown__openBtn {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .applianceDropdown__openBtn {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 900px) and (max-width: 1100px) {
+  .applianceDropdown__openBtn {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .applianceDropdown__openBtn {
+    margin-left: 0px;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .applianceDropdown__openBtn {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+@media (min-width: 900px) and (max-width: 1100px) {
+  .applianceDropdown__openBtn {
+    margin-right: 30px;
     margin-left: 0px;
   }
 }
@@ -428,7 +877,7 @@
   border: none;
 }
 .applianceDropdown__hiddenElt {
-  width: 453px;
+  width: 450px;
   border-radius: 5px;
   font-size: 15px;
   font-family: "Lato", sans-serif;
@@ -439,6 +888,91 @@
   max-height: 245px;
   margin-left: 30px;
   display: none;
+}
+@media screen and (max-width: 300px) {
+  .applianceDropdown__hiddenElt {
+    width: 240px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .applianceDropdown__hiddenElt {
+    padding-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    flex-direction: column;
+  }
+}
+@media (min-width: 300px) and (max-width: 350px) {
+  .applianceDropdown__hiddenElt {
+    width: 270px;
+  }
+}
+@media (min-width: 350px) and (max-width: 400px) {
+  .applianceDropdown__hiddenElt {
+    width: 300px;
+    background-color: mediumseagreen;
+  }
+}
+@media (min-width: 400px) and (max-width: 450px) {
+  .applianceDropdown__hiddenElt {
+    width: 360px;
+    background-color: #f5f269;
+  }
+}
+@media (min-width: 450px) and (max-width: 500px) {
+  .applianceDropdown__hiddenElt {
+    width: 410px;
+    background-color: #74500d;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .applianceDropdown__hiddenElt {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 500px) and (max-width: 600px) {
+  .applianceDropdown__hiddenElt {
+    width: 460px;
+    background-color: #4ccfd8;
+  }
+}
+@media (min-width: 600px) and (max-width: 700px) {
+  .applianceDropdown__hiddenElt {
+    min-width: 550px;
+    background-color: #090a4e;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .applianceDropdown__hiddenElt {
+    min-width: 650px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    background-color: #4e093f;
+  }
+}
+@media (min-width: 800px) and (max-width: 900px) {
+  .applianceDropdown__hiddenElt {
+    min-width: 710px;
+    background-color: #c4d33e;
+  }
+}
+@media (min-width: 900px) and (max-width: 1000px) {
+  .applianceDropdown__hiddenElt {
+    width: 400.5px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    margin-right: 30px;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1100px) {
+  .applianceDropdown__hiddenElt {
+    width: 450px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    margin-right: 30px;
+  }
 }
 .applianceDropdown__hiddenElt--header {
   width: 100%;
@@ -454,12 +988,17 @@
   border: none;
 }
 .applianceDropdown__hiddenElt--header > .specificSearch-input {
-  width: 408px;
+  width: 90%;
   height: 100%;
   font-size: 16px;
   border: none;
   padding-left: 25px;
   border-top-left-radius: 5px;
+}
+@media screen and (max-width: 500px) {
+  .applianceDropdown__hiddenElt--header > .specificSearch-input {
+    font-size: 14px;
+  }
 }
 .applianceDropdown__hiddenElt--header > .specificSearch-input:focus {
   outline: none !important;
@@ -480,9 +1019,49 @@
   padding-top: 30px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   font-size: 16px;
   font-weight: 500;
+}
+@media screen and (max-width: 500px) {
+  .applianceDropdown__hiddenElt--footer {
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    overflow-y: auto;
+  }
+}
+@media screen and (max-width: 300px) {
+  .applianceDropdown__hiddenElt--footer {
+    max-height: 150px;
+    font-size: 13px;
+  }
+}
+@media (min-width: 300px) and (max-width: 500px) {
+  .applianceDropdown__hiddenElt--footer {
+    max-height: 180px;
+    font-size: 14px;
+    min-width: 80%;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .applianceDropdown__hiddenElt--footer {
+    max-height: 190px;
+    overflow-y: auto;
+    padding-top: 10px;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .applianceDropdown__hiddenElt--footer {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+}
+@media (min-width: 900px) and (max-width: 1100px) {
+  .applianceDropdown__hiddenElt--footer {
+    max-height: 180px;
+    overflow-y: auto;
+  }
 }
 .applianceDropdown__hiddenElt--footer > .typeOfElement-list {
   display: flex;
@@ -491,7 +1070,7 @@
   justify-content: flex-start;
 }
 .applianceDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
-  width: 144px;
+  width: 143px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -502,12 +1081,60 @@
   line-height: 30px;
   cursor: pointer;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .applianceDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
-    width: 30%;
+    width: 33%;
     line-height: 20px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .applianceDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
     padding-left: 5px;
     padding-right: 5px;
+  }
+}
+@media (min-width: 300px) and (max-width: 500px) {
+  .applianceDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (min-width: 500px) and (max-width: 600px) {
+  .applianceDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
+    line-height: 25px;
+    width: 110px;
+    font-size: 14px;
+  }
+}
+@media (min-width: 600px) and (max-width: 700px) {
+  .applianceDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
+    line-height: 25px;
+    width: 132px;
+    padding-left: 20px;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .applianceDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
+    line-height: 25px;
+    width: 125px;
+    padding-left: 20px;
+    padding-right: 10px;
+  }
+}
+@media (min-width: 800px) and (max-width: 900px) {
+  .applianceDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
+    width: 115px;
+    padding-left: 10px;
+  }
+}
+@media (min-width: 900px) and (max-width: 1000px) {
+  .applianceDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
+    width: 126px;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1100px) {
+  .applianceDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
+    width: 140px;
   }
 }
 .applianceDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div:hover {
@@ -542,12 +1169,38 @@
   background-color: #ED6454;
   margin-left: 30px;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .ustensilDropdown__openBtn {
     margin-bottom: 20px;
   }
 }
-@media screen and (max-width: 400px) {
+@media (min-width: 500px) and (max-width: 700px) {
+  .ustensilDropdown__openBtn {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .ustensilDropdown__openBtn {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 900px) and (max-width: 1100px) {
+  .ustensilDropdown__openBtn {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .ustensilDropdown__openBtn {
+    margin-left: 0px;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .ustensilDropdown__openBtn {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+@media (min-width: 900px) and (max-width: 1100px) {
   .ustensilDropdown__openBtn {
     margin-left: 0px;
   }
@@ -558,7 +1211,7 @@
   border: none;
 }
 .ustensilDropdown__hiddenElt {
-  width: 453px;
+  width: 450px;
   border-radius: 5px;
   font-size: 15px;
   font-family: "Lato", sans-serif;
@@ -569,6 +1222,91 @@
   max-height: 415px;
   margin-left: 30px;
   display: none;
+}
+@media screen and (max-width: 300px) {
+  .ustensilDropdown__hiddenElt {
+    width: 240px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .ustensilDropdown__hiddenElt {
+    padding-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    flex-direction: column;
+  }
+}
+@media (min-width: 300px) and (max-width: 350px) {
+  .ustensilDropdown__hiddenElt {
+    width: 270px;
+  }
+}
+@media (min-width: 350px) and (max-width: 400px) {
+  .ustensilDropdown__hiddenElt {
+    width: 300px;
+    background-color: mediumseagreen;
+  }
+}
+@media (min-width: 400px) and (max-width: 450px) {
+  .ustensilDropdown__hiddenElt {
+    width: 360px;
+    background-color: #f5f269;
+  }
+}
+@media (min-width: 450px) and (max-width: 500px) {
+  .ustensilDropdown__hiddenElt {
+    width: 410px;
+    background-color: #74500d;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .ustensilDropdown__hiddenElt {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 500px) and (max-width: 600px) {
+  .ustensilDropdown__hiddenElt {
+    width: 460px;
+    background-color: #4ccfd8;
+  }
+}
+@media (min-width: 600px) and (max-width: 700px) {
+  .ustensilDropdown__hiddenElt {
+    min-width: 550px;
+    background-color: #090a4e;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .ustensilDropdown__hiddenElt {
+    min-width: 650px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    background-color: #4e093f;
+  }
+}
+@media (min-width: 800px) and (max-width: 900px) {
+  .ustensilDropdown__hiddenElt {
+    min-width: 710px;
+    background-color: #c4d33e;
+  }
+}
+@media (min-width: 900px) and (max-width: 1000px) {
+  .ustensilDropdown__hiddenElt {
+    width: 400.5px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    margin-right: 30px;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1100px) {
+  .ustensilDropdown__hiddenElt {
+    width: 450px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    margin-right: 30px;
+  }
 }
 .ustensilDropdown__hiddenElt--header {
   width: 100%;
@@ -584,12 +1322,17 @@
   border: none;
 }
 .ustensilDropdown__hiddenElt--header > .specificSearch-input {
-  width: 408px;
+  width: 90%;
   height: 100%;
   font-size: 16px;
   border: none;
   padding-left: 25px;
   border-top-left-radius: 5px;
+}
+@media screen and (max-width: 500px) {
+  .ustensilDropdown__hiddenElt--header > .specificSearch-input {
+    font-size: 14px;
+  }
 }
 .ustensilDropdown__hiddenElt--header > .specificSearch-input:focus {
   outline: none !important;
@@ -610,9 +1353,49 @@
   padding-top: 30px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   font-size: 16px;
   font-weight: 500;
+}
+@media screen and (max-width: 500px) {
+  .ustensilDropdown__hiddenElt--footer {
+    width: 100%;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    overflow-y: auto;
+  }
+}
+@media screen and (max-width: 300px) {
+  .ustensilDropdown__hiddenElt--footer {
+    max-height: 150px;
+    font-size: 13px;
+  }
+}
+@media (min-width: 300px) and (max-width: 500px) {
+  .ustensilDropdown__hiddenElt--footer {
+    max-height: 180px;
+    font-size: 14px;
+    min-width: 80%;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .ustensilDropdown__hiddenElt--footer {
+    max-height: 190px;
+    overflow-y: auto;
+    padding-top: 10px;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .ustensilDropdown__hiddenElt--footer {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+}
+@media (min-width: 900px) and (max-width: 1100px) {
+  .ustensilDropdown__hiddenElt--footer {
+    max-height: 180px;
+    overflow-y: auto;
+  }
 }
 .ustensilDropdown__hiddenElt--footer > .typeOfElement-list {
   display: flex;
@@ -621,7 +1404,7 @@
   justify-content: flex-start;
 }
 .ustensilDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
-  width: 144px;
+  width: 143px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -632,12 +1415,60 @@
   line-height: 30px;
   cursor: pointer;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .ustensilDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
-    width: 30%;
+    width: 33%;
     line-height: 20px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .ustensilDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
     padding-left: 5px;
     padding-right: 5px;
+  }
+}
+@media (min-width: 300px) and (max-width: 500px) {
+  .ustensilDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (min-width: 500px) and (max-width: 600px) {
+  .ustensilDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
+    line-height: 25px;
+    width: 110px;
+    font-size: 14px;
+  }
+}
+@media (min-width: 600px) and (max-width: 700px) {
+  .ustensilDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
+    line-height: 25px;
+    width: 132px;
+    padding-left: 20px;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .ustensilDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
+    line-height: 25px;
+    width: 125px;
+    padding-left: 20px;
+    padding-right: 10px;
+  }
+}
+@media (min-width: 800px) and (max-width: 900px) {
+  .ustensilDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
+    width: 115px;
+    padding-left: 10px;
+  }
+}
+@media (min-width: 900px) and (max-width: 1000px) {
+  .ustensilDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
+    width: 126px;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1100px) {
+  .ustensilDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div {
+    width: 140px;
   }
 }
 .ustensilDropdown__hiddenElt--footer > .typeOfElement-list > .recipesOneElement-Div:hover {
@@ -658,6 +1489,32 @@
   justify-content: flex-start;
   margin-top: 65px;
 }
+@media screen and (max-width: 500px) {
+  .thumbCard-section {
+    margin-top: 0px;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .thumbCard-section {
+    margin-top: 0px;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .thumbCard-section {
+    justify-content: space-between;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 0px;
+  }
+}
+@media (min-width: 900px) and (max-width: 1100px) {
+  .thumbCard-section {
+    justify-content: space-between;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 0px;
+  }
+}
 
 .thumbCard {
   max-width: 443px;
@@ -669,10 +1526,42 @@
   display: flex;
   flex-direction: column;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .thumbCard {
     height: 320px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+  }
+}
+@media screen and (max-width: 300px) {
+  .thumbCard {
+    max-width: 300px;
+  }
+}
+@media (min-width: 300px) and (max-width: 500px) {
+  .thumbCard {
+    max-width: 500px;
+  }
+}
+@media (min-width: 500px) and (max-width: 700px) {
+  .thumbCard {
+    max-width: 680px;
+    margin-bottom: 30px;
+  }
+}
+@media (min-width: 700px) and (max-width: 900px) {
+  .thumbCard {
+    max-width: 47.5%;
+    margin-bottom: 35px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+@media (min-width: 900px) and (max-width: 1100px) {
+  .thumbCard {
+    max-width: 48%;
+    margin-bottom: 35px;
+    margin-left: 0px;
+    margin-right: 0px;
   }
 }
 .thumbCard__img {
@@ -700,7 +1589,7 @@
   margin-bottom: 10px;
   margin-left: 10px;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .thumbCard__description--header {
     font-size: 13px;
   }
@@ -728,9 +1617,17 @@
 .thumbCard__description--footer > .thumbCard__listOfCondiments > ul {
   list-style-type: none;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .thumbCard__description--footer > .thumbCard__listOfCondiments {
     -webkit-line-clamp: 7;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+@media (min-width: 700px) and (max-width: 800px) {
+  .thumbCard__description--footer > .thumbCard__listOfCondiments {
+    -webkit-line-clamp: 9;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
@@ -747,17 +1644,12 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .thumbCard__description--footer > .thumbCard__howToUse {
     -webkit-line-clamp: 7;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
-  }
-}
-@media screen and (max-width: 400px) {
-  .thumbCard {
-    max-width: 100%;
   }
 }
 

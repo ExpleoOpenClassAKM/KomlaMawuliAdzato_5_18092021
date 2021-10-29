@@ -2,6 +2,16 @@
     width: 100%;
     height: auto;
     margin-top: 42px;
+
+    //Media: 0 <==> 500px
+    @include media-inf-500px {
+        margin-top: 25px;
+    }
+
+    //Media: 500px <==> 700px
+    @include media-500px-700px {
+        margin-top: 30px;
+    }
     
     &__logo {
         height: 93px;
@@ -9,13 +19,15 @@
         justify-content: center;
         margin-bottom: 20px;
 
-        @include media-inf-400px {
+        //Media: 0 <==> 500px
+        @include media-inf-500px {
             height: 70px;
         }
-    }
 
-    @include media-inf-400px {
-        margin-top: 20px;
+        //Media: 500px <==> 700px
+        @include media-500px-700px {
+            height: 85px;
+        }
     }
 }
 
