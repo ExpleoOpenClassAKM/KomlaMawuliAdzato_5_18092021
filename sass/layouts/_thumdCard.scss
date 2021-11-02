@@ -32,6 +32,28 @@
         padding-left: 20px;
         margin-top: 0px;
     }
+
+    //Media: 1100px <==> 1299px
+    @include media-1101px-1299px {
+        justify-content: space-between;
+        padding-right: 20px;
+        padding-left: 20px;
+        margin-top: 70px;
+    }
+
+    //Media: 1300px <==> 1350px
+    @include media-1300px-1350px {
+        justify-content: space-between;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+    //Media: 1350px <==> 1450px
+    @include media-1350px-1450px {
+        justify-content: space-between;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
 }
 
 .thumbCard {
@@ -80,6 +102,24 @@
         margin-bottom: 35px;
         margin-left: 0px;
         margin-right: 0px;
+    }
+
+    //Media: 1100px <==> 1299px
+    @include media-1101px-1299px {
+        max-width: 48%;
+        margin-bottom: 35px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    //Media: 1300px <==> 1350px
+    @include media-1300px-1350px {
+        max-width: 30%;
+    }
+
+    //Media: 1350px <==> 1450px
+    @include media-1350px-1450px {
+        max-width: 30%;
     }
 
     &__img {

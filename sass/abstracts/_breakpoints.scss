@@ -11,6 +11,11 @@ $breakpoints: (
     media-900px: 900px,
     media-1000px: 1000px,
     media-1100px: 1100px,
+    media-1101px: 1101px,
+    media-1200px: 1200px,
+    media-1299px: 1299px,
+    media-1300px: 1300px,
+    media-1350px: 1350px,
     media-1450px: 1450px 
 );
 
@@ -106,6 +111,24 @@ $breakpoints: (
 
 @mixin media-1000px-1100px {
     @media (min-width: map-get($map: $breakpoints, $key: media-1000px)) and (max-width: map-get($map: $breakpoints, $key: media-1100px)){
+        @content;
+    }
+}
+
+@mixin media-1101px-1299px {
+    @media (min-width: map-get($map: $breakpoints, $key: media-1101px)) and (max-width: map-get($map: $breakpoints, $key: media-1299px)){
+        @content;
+    }
+}
+
+@mixin media-1300px-1350px {
+    @media (min-width: map-get($map: $breakpoints, $key: media-1300px)) and (max-width: map-get($map: $breakpoints, $key: media-1350px)){
+        @content;
+    }
+}
+
+@mixin media-1350px-1450px {
+    @media (min-width: map-get($map: $breakpoints, $key: media-1350px)) and (max-width: map-get($map: $breakpoints, $key: media-1450px)){
         @content;
     }
 }

@@ -143,19 +143,16 @@
     //Media: 350px <==> 400px
     @include media-350px-400px {
         width: 300px;
-        background-color: mediumseagreen;
     }
 
     //Media: 400px <==> 450px
     @include media-400px-450px {
         width: 360px;
-        background-color: rgb(245, 242, 105);
     }
 
     //Media: 450px <==> 500px
     @include media-450px-500px {
         width: 410px;
-        background-color: rgb(116, 80, 13);
     }
 
     //Media: 500px <==> 700px
@@ -168,13 +165,11 @@
     //Media: 500px <==> 600px
     @include media-500px-600px {
         width: 460px;
-        background-color: rgb(76, 207, 216);
     }
 
     //Media: 600px <==> 700px
     @include media-600px-700px {
         min-width: 550px;
-        background-color: rgb(9, 10, 78);
     }
 
     //Media: 700px <==> 900px
@@ -182,29 +177,41 @@
         min-width: 650px;
         margin-left: 0px;
         margin-bottom: 20px;
-        background-color: rgb(78, 9, 63);
     }
 
     //Media: 800px <==> 900px
     @include media-800px-900px {
         min-width: 710px;
-        background-color: rgb(196, 211, 62);
     }
 
     //Media: 900px <==> 1000px
     @include media-900px-1000px {
-        width: 400.5px;
+        min-width: 710px;
         margin-bottom: 20px;
-        margin-left: 0px;
-        margin-right: 30px;
     }
 
     //Media: 1000px <==> 1100px
-    @include media-1000px-1100px {
-        width: 450px;
+    @include media-1000px-1100px { 
+        min-width: 860px;
+        margin-bottom: 20px;
+    }
+
+    //Media: 1100px <==> 1299px
+    @include media-1101px-1299px {
+        width: 340px;
         margin-bottom: 20px;
         margin-left: 0px;
-        margin-right: 30px;
+        margin-right: 20px;
+    }
+
+    //Media: 1300px <==> 1350px
+    @include media-1300px-1350px {
+        width: 400px;
+    }
+
+    //Media: 1350px <==> 1450px
+    @include media-1350px-1450px {
+        width: 417px;
     }
 }
 
@@ -369,11 +376,33 @@
 
     //Media: 900px <==> 1000px
     @include media-900px-1000px {
-        width: 126px;
+        width: 138px;
     }
 
     //Media: 1000px <==> 1100px
     @include media-1000px-1100px {
         width: 140px;
+    }
+
+    //Media: 1100px <==> 1299px
+    @include media-1101px-1299px {
+        width: 105px;
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 14px;
+    }
+
+    //Media: 1300px <==> 1350px
+    @include media-1300px-1350px {
+        width: 126px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    //Media: 1350px <==> 1450px
+    @include media-1350px-1450px {
+        width: 132px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
