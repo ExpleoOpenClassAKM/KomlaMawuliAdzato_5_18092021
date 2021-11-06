@@ -268,43 +268,47 @@ function removeFilter(filteredElement, typeOfElement) {
     getValidRecipes();
 }
 
-//Fonction de récupération des recettes valides (methode "forEach")
 function getValidRecipes(input = false) {
-
     let validRecipes = [];
+    let counterFor = 0; //Compteur pour calculer le nombre d'itérations pour la boucle "for"
 
     //Met en Majuscule la saisie de l'user 
     if (input !== false) {   
         input = input.toUpperCase();
     }
 
-    //Compteur pour calculer le nombre d'itérations pour la boucle "forEach"
-    let counterForEach = 0;
-
-    allRecipesObjects.forEach(function(OneRecipe) {
-        if (OneRecipe.hasFilters === totalFiltersClicked) {
-            counterForEach = counterForEach +1;
-            console.log(counterForEach);
-            if (input !== false) { 
-                let recipeName = OneRecipe.name.toUpperCase(); //Nom des recettes en majuscule
-                let recipeDescription = OneRecipe.description.toUpperCase(); //Description des recettes en majuscule
-                //Recherche par le nom                                 
-                if (recipeName.includes(input)) { 
-                    validRecipes.push(OneRecipe);
-                } else
-                //Recherche dans la description
-                if (recipeDescription.includes(input)) { 
-                    validRecipes.push(OneRecipe)
-                } else
-                //Atteindre la liste des ingredients
-                if (OneRecipe.ingredients.map((OneIngredient) => (OneIngredient.name)).join().includes(input)) {
-                    validRecipes.push(OneRecipe)
-                }
-            } else {
+    for (let i = 0; i < allRecipesObjects.length; i++) {
+        counterFor = counterFor + 1;
+        let OneRecipe = allRecipesObjects[i];
+        if (input !== false) { 
+            let recipeName = OneRecipe.name.toUpperCase(); //Nom des recettes en majuscule
+            let recipeDescription = OneRecipe.description.toUpperCase(); //Description des recettes en majuscule
+            //Recherche par le nom                                 
+            if (recipeName.includes(input)) { 
                 validRecipes.push(OneRecipe);
+            } else
+            //Recherche dans la description
+            if (recipeDescription.includes(input)) { 
+                validRecipes.push(OneRecipe)
+            } else
+            //Atteindre la liste des ingredients
+            if (OneRecipe.ingredients.map((OneIngredient) => (OneIngredient.name)).join().includes(input)) {
+                validRecipes.push(OneRecipe)
             }
+        } else {
+            validRecipes.push(OneRecipe);
         }
-    })
+    }
+    
+    for (let i = 0; i < validRecipes.length; i++) {
+        counterFor = counterFor + 1;
+        let OneRecipe = validRecipes[i];
+        if (OneRecipe.hasFilters !== totalFiltersClicked) {
+            validRecipes.splice(i, 1);
+        }
+        console.log(counterFor);
+    }
+
     allRecipes = validRecipes;
 
     //================================================================================
@@ -353,7 +357,7 @@ function specificElementsSearch(input, type) {
 
     allElementsFilters[type].forEach(function(OneSearchElement) {
         let searchElementUpper = OneSearchElement.toUpperCase() //Transforme les éléments en majuscule
-        
+
         if (searchElementUpper.includes(input)) {
             allSearchElementsFilters.push(OneSearchElement)
         }
