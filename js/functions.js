@@ -268,32 +268,38 @@ function removeFilter(filteredElement, typeOfElement) {
     getValidRecipes();
 }
 
-function getValidRecipes(input = false) {  //<======= rajouter appliances / Ustensils / description pour les recherches
+//Fonction de récupération des recettes valides (methode "forEach")
+function getValidRecipes(input = false) {
 
     let validRecipes = [];
+
+    //Met en Majuscule la saisie de l'user 
+    if (input !== false) {   
+        input = input.toUpperCase();
+    }
+
+    //Compteur pour calculer le nombre d'itérations pour la boucle "forEach"
+    let counterForEach = 0;
+
     allRecipesObjects.forEach(function(OneRecipe) {
         if (OneRecipe.hasFilters === totalFiltersClicked) {
-            if (input !== false) {   
+            counterForEach = counterForEach +1;
+            console.log(counterForEach);
+            if (input !== false) { 
+                let recipeName = OneRecipe.name.toUpperCase(); //Nom des recettes en majuscule
+                let recipeDescription = OneRecipe.description.toUpperCase(); //Description des recettes en majuscule
                 //Recherche par le nom                                 
-                if (OneRecipe.name.includes(input)) { 
+                if (recipeName.includes(input)) { 
                     validRecipes.push(OneRecipe);
                 } else
                 //Recherche dans la description
-                if (OneRecipe.description.includes(input)) { 
+                if (recipeDescription.includes(input)) { 
                     validRecipes.push(OneRecipe)
                 } else
                 //Atteindre la liste des ingredients
                 if (OneRecipe.ingredients.map((OneIngredient) => (OneIngredient.name)).join().includes(input)) {
                     validRecipes.push(OneRecipe)
-                } else
-                //Atteindre la liste des appliances
-                if (OneRecipe.appliances.map((OneAppliance) => (OneAppliance.name)).join().includes(input)) {
-                    validRecipes.push(OneRecipe)
-                } else
-                //Atteindre la liste des ustensils
-                if (OneRecipe.ustensils.map((OneUstensil) => (OneUstensil.name)).join().includes(input)) {
-                        validRecipes.push(OneRecipe)
-                    }
+                }
             } else {
                 validRecipes.push(OneRecipe);
             }
@@ -341,11 +347,14 @@ closeValidRecipesCountCross.addEventListener("click", function() {
 
 //=====================================================================================
 //=== Fonction pour la recherche spécifique "Ingredients"; "Appareils"; "Ustensils" ===
-function searchIngredientApplianceUstensil(input, type) {
+function specificElementsSearch(input, type) {
     let allSearchElementsFilters = [];
+    input = input.toUpperCase(); //Gestion de la saisie en majuscules
 
     allElementsFilters[type].forEach(function(OneSearchElement) {
-        if (OneSearchElement.includes(input)) {
+        let searchElementUpper = OneSearchElement.toUpperCase() //Transforme les éléments en majuscule
+        
+        if (searchElementUpper.includes(input)) {
             allSearchElementsFilters.push(OneSearchElement)
         }
     })
@@ -450,7 +459,7 @@ function getSpecificIngredientsInputEvent() {
     document.getElementById("input-ingredient").addEventListener("input", function(event) {
         event.stopPropagation();
         getFilters();
-        searchIngredientApplianceUstensil(this.value, 1)
+        specificElementsSearch(this.value, 1);
      })
 }
 
@@ -460,8 +469,7 @@ function getSpecificAppliancesInputEvent() {
     document.getElementById("input-appliance").addEventListener("input", function(event) {
         event.stopPropagation();
         getFilters();
-        searchIngredientApplianceUstensil(this.value, 0)
-        
+        specificElementsSearch(this.value, 0)
     })
 }
 
@@ -471,6 +479,6 @@ function getSpecificUstensilsInputEvent() {
     document.getElementById("input-ustensil").addEventListener("input", function(event) {
         event.stopPropagation();
         getFilters();
-        searchIngredientApplianceUstensil(this.value, 2)
+        specificElementsSearch(this.value, 2)
     })
 }
