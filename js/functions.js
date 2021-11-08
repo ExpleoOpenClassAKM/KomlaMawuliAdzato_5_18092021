@@ -268,6 +268,7 @@ function removeFilter(filteredElement, typeOfElement) {
     getValidRecipes();
 }
 
+//Récupère les recettes valides avec la version "FOR"
 function getValidRecipes(input = false) {
     let validRecipes = [];
     let counterFor = 0; //Compteur pour calculer le nombre d'itérations pour la boucle "for"
@@ -292,7 +293,7 @@ function getValidRecipes(input = false) {
                 validRecipes.push(OneRecipe)
             } else
             //Atteindre la liste des ingredients
-            if (OneRecipe.ingredients.map((OneIngredient) => (OneIngredient.name)).join().includes(input)) {
+            if (OneRecipe.ingredients.map((OneIngredient) => (OneIngredient.name.toUpperCase())).join().includes(input)) {
                 validRecipes.push(OneRecipe)
             }
         } else {
@@ -306,9 +307,9 @@ function getValidRecipes(input = false) {
         if (OneRecipe.hasFilters !== totalFiltersClicked) {
             validRecipes.splice(i, 1);
         }
-        console.log(counterFor);
     }
 
+    console.log("Nombre de tours de boucles :", counterFor + " tours");
     allRecipes = validRecipes;
 
     //================================================================================
