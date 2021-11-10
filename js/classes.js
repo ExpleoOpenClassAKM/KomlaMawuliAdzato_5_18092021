@@ -9,6 +9,8 @@ class Recipe {
       this.appliances = [];
       this.ustensils = [];
       this.hasFilters = 0;
+      this.hasInput = false;
+      this.toDisplay = true;
     }
     //Ici on crée une méthode pour ajouter des instances "ingredients" à la classe "Recipe"
     addIngredient(ingredient) {

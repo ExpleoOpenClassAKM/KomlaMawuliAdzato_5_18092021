@@ -1,12 +1,14 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 //====> Variables pour stocker toute notre recette
-let allRecipes = [];
 let allRecipesObjects = [];
 
 //====> Variables pour les filtres
 let allElementsFilters = [];
 let totalFiltersClicked = 0;
+
+//===> Filtres actifs
+let activeFilters = [];
 
 //===========================================================
 //Ici on crée une fonction pour récupérer tous les éléments du fichier "recipes" qu'on va stocker dans "allRecipes"
@@ -35,9 +37,8 @@ function createRecipesObject() {
         })
         
         //Ici on vient stocker toute notre recette dans "allRecipes"
-        allRecipes.push(OneNewRecipeObject);
+        allRecipesObjects.push(OneNewRecipeObject);
     }); 
-    allRecipesObjects = allRecipes;
 }
 
 //=========================================================
@@ -49,45 +50,43 @@ function getFilters() {
     let allAppliancesFilters = [];
     let allUstensilsFilters = [];
 
-    
-    allRecipes.forEach(function(OneRecipe) {
+    allRecipesObjects.forEach(function(OneRecipe) {
+        if (OneRecipe.toDisplay === true) {
+            //Filtre pour tous les noms d'ingredients
+            OneRecipe.ingredients.forEach(function(OneIngredient) {
+                if (allIngredientsFilters.includes(OneIngredient.name) === false) {
+                    allIngredientsFilters.push(OneIngredient.name)
+                }
+                //Trie les ingredients par ordre alphabétique
+                return allIngredientsFilters.sort()
+            });
+            
 
-        //Filtre pour tous les noms d'ingredients
-        OneRecipe.ingredients.forEach(function(OneIngredient) {
-            if (allIngredientsFilters.includes(OneIngredient.name) === false) {
-                allIngredientsFilters.push(OneIngredient.name)
-            }
-            //Trie les ingredients par ordre alphabétique
-            return allIngredientsFilters.sort()
-        });
-        
+            //Filtre pour tous les noms de plats
+            OneRecipe.appliances.forEach(function(OneAppliance) {
+                if (allAppliancesFilters.includes(OneAppliance.name) === false) {
+                    allAppliancesFilters.push(OneAppliance.name)
+                }
+                //Trie les appareils par ordre alphabétique
+                return allAppliancesFilters.sort()
+            });
+            
 
-        //Filtre pour tous les noms de plats
-        OneRecipe.appliances.forEach(function(OneAppliance) {
-            if (allAppliancesFilters.includes(OneAppliance.name) === false) {
-                allAppliancesFilters.push(OneAppliance.name)
-            }
-            //Trie les appareils par ordre alphabétique
-            return allAppliancesFilters.sort()
-        });
-        
-
-        //Filtre pour tous les noms d'ustensiles
-        OneRecipe.ustensils.forEach(function(OneUstensil) {
-            if (allUstensilsFilters.includes(OneUstensil.name) === false) {
-                allUstensilsFilters.push(OneUstensil.name)
-            }
-            //Trie les ustensils par ordre alphabétique
-            allUstensilsFilters.sort()
-        });
+            //Filtre pour tous les noms d'ustensiles
+            OneRecipe.ustensils.forEach(function(OneUstensil) {
+                if (allUstensilsFilters.includes(OneUstensil.name) === false) {
+                    allUstensilsFilters.push(OneUstensil.name)
+                }
+                //Trie les ustensils par ordre alphabétique
+                return allUstensilsFilters.sort()
+            });
+        }
         
     })
     //Filtres contenant tous les éléments filtrés
     allElementsFilters = [allAppliancesFilters, allIngredientsFilters, allUstensilsFilters];
     displayFilters();
 }
-
-let activeFilters = [];  //===> Filtres actifs
 
 function displayFilters(allElementsFiltersCopy = []) {
     
@@ -240,7 +239,7 @@ function removeFilter(filteredElement, typeOfElement) {
         "ustensils" //====> 2
     ];
 
-    allRecipes.forEach(function(OneRecipe) {
+    allRecipesObjects.forEach(function(OneRecipe) {
         if (type[typeOfElement] === "appliances") {
             OneRecipe.appliances.forEach(function(OneAppliance) {
                 if (filteredElement === OneAppliance.name) {
@@ -270,7 +269,6 @@ function removeFilter(filteredElement, typeOfElement) {
 
 //Récupère les recettes valides avec la version "FOR"
 function getValidRecipes(input = false) {
-    let validRecipes = [];
     let counterFor = 0; //Compteur pour calculer le nombre d'itérations pour la boucle "for"
 
     //Met en Majuscule la saisie de l'user 
@@ -281,36 +279,39 @@ function getValidRecipes(input = false) {
     for (let i = 0; i < allRecipesObjects.length; i++) {
         counterFor = counterFor + 1;
         let OneRecipe = allRecipesObjects[i];
+        OneRecipe.toDisplay = false;
         if (input !== false) { 
+            OneRecipe.hasInput = false;
             let recipeName = OneRecipe.name.toUpperCase(); //Nom des recettes en majuscule
             let recipeDescription = OneRecipe.description.toUpperCase(); //Description des recettes en majuscule
             //Recherche par le nom                                 
             if (recipeName.includes(input)) { 
-                validRecipes.push(OneRecipe);
+                OneRecipe.hasInput = true;
+                // validRecipes.push(OneRecipe);
             } else
             //Recherche dans la description
             if (recipeDescription.includes(input)) { 
-                validRecipes.push(OneRecipe)
+                OneRecipe.hasInput = true;
+                // validRecipes.push(OneRecipe)
             } else
             //Atteindre la liste des ingredients
             if (OneRecipe.ingredients.map((OneIngredient) => (OneIngredient.name.toUpperCase())).join().includes(input)) {
-                validRecipes.push(OneRecipe)
+                OneRecipe.hasInput = true;
+                // validRecipes.push(OneRecipe)
             }
-        } else {
-            validRecipes.push(OneRecipe);
         }
     }
     
-    for (let i = 0; i < validRecipes.length; i++) {
+    let totalValidRecipes = 0; //Toutes les recettes valides (vide au départ)
+    for (let i = 0; i < allRecipesObjects.length; i++) {
         counterFor = counterFor + 1;
-        let OneRecipe = validRecipes[i];
-        if (OneRecipe.hasFilters !== totalFiltersClicked) {
-            validRecipes.splice(i, 1);
+        let OneRecipe = allRecipesObjects[i];
+        if (((OneRecipe.hasInput && input !== false) || (input === false)) && (OneRecipe.hasFilters === totalFiltersClicked)) {
+            totalValidRecipes += 1;
+            allRecipesObjects[i].toDisplay = true;
         }
     }
-
     console.log("Nombre de tours de boucles :", counterFor + " tours");
-    allRecipes = validRecipes;
 
     //================================================================================
     //======== Paramétrage du message d'info sur le résultat de la recherche =========
@@ -325,13 +326,13 @@ function getValidRecipes(input = false) {
     if (input.length < 3) {
         document.getElementById("getValidRecipesCount").style.display = "none"
     } else {
-        if (validRecipes.length !== 0) {
-            document.getElementById("showValidRecipesCount").innerText = validRecipes.length + " recette(s) correspond(ent) à votre recherche"
+        if (totalValidRecipes !== 0) {
+            document.getElementById("showValidRecipesCount").innerText = totalValidRecipes + " recette(s) correspond(ent) à votre recherche"
             document.getElementById("getValidRecipesCount").style.display = "block"
             document.getElementById("getValidRecipesCount").style.background = validRecipesResultColors[0] // $cd-color-validRecipesFund 
         } 
         else
-        if (validRecipes.length === 0) {
+        if (totalValidRecipes === 0) {
             document.getElementById("showValidRecipesCount").innerText = "Aucune recette ne correspond à votre critère… vous pouvez chercher: " + 
                                                                         "« tarte aux pommes », " + "« poisson », etc.";
             document.getElementById("getValidRecipesCount").style.display = "block"
@@ -378,40 +379,42 @@ function displayRecipes() {
     let container = document.getElementById("menuCards");
     container.innerHTML = "";
 
-    allRecipes.forEach(function(OneRecipe) {
+    allRecipesObjects.forEach(function(OneRecipe) {
         
-        let template = 
-            `<div class="thumbCard">
-                <div class="thumbCard__img"></div>
-                <div class="thumbCard__description">
-                    <div class="thumbCard__description--header">
-                        <div class="thumbCard__title"><span>${OneRecipe.name}<sapn></div>
-                        <div class="thumbCard__time">
-                            <i class="far fa-clock"></i>
-                            <span>${OneRecipe.time} min</span>
+        if (OneRecipe.toDisplay === true) {
+            let template = 
+                `<div class="thumbCard">
+                    <div class="thumbCard__img"></div>
+                    <div class="thumbCard__description">
+                        <div class="thumbCard__description--header">
+                            <div class="thumbCard__title"><span>${OneRecipe.name}<sapn></div>
+                            <div class="thumbCard__time">
+                                <i class="far fa-clock"></i>
+                                <span>${OneRecipe.time} min</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="thumbCard__description--footer">
-                        <label for="listOfCondiments" class="thumbCard__listOfCondiments">
-                            <ul class="content">
-                            ${OneRecipe.ingredients
-                                .map(
+                        <div class="thumbCard__description--footer">
+                            <label for="listOfCondiments" class="thumbCard__listOfCondiments">
+                                <ul class="content">
+                                ${OneRecipe.ingredients
+                            .map(
                                 (OneIngredient) =>
                                     `<li class="thumbCard__listOfCondiments"><b>${OneIngredient.name} : </b> 
                                     ${OneIngredient.quantity} ${OneIngredient.unit}</li>`
                                 )
-                                .join("")}
-                            </ul>
-                        </label>
-                        
-                        <label for="description" class="thumbCard__howToUse">
-                            ${OneRecipe.description}
-                        </label>
+                            .join("")}
+                                </ul>
+                            </label>
+                            
+                            <label for="description" class="thumbCard__howToUse">
+                                ${OneRecipe.description}
+                            </label>
+                        </div>
                     </div>
                 </div>
-             </div>
-            `
+                `
         container.innerHTML += template;
+        }
     })
 }
 

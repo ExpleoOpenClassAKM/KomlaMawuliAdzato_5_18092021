@@ -91,23 +91,8 @@
     border: none;
     cursor: pointer;
 
-    //Media: 0 <==> 500px
-    @include media-inf-500px {
-        margin-bottom: 20px;
-    }
-
-    //Media: 500px <==> 700px
-    @include media-500px-700px {
-        margin-bottom: 20px;
-    }
-
-    //Media: 700px <==> 900px
-    @include media-700px-900px {
-        margin-bottom: 20px;
-    }
-
-    //Media: 900px <==> 1100px
-    @include media-900px-1100px {
+    //Media: 0 <==> 1100px
+    @include media-inf-1100px {
         margin-bottom: 20px;
     }
 }

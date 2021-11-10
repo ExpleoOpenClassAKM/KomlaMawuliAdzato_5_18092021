@@ -41,16 +41,9 @@
         margin-top: 70px;
     }
 
-    //Media: 1300px <==> 1350px
-    @include media-1300px-1350px {
-        justify-content: space-between;
-        padding-right: 0px;
-        padding-left: 0px;
-    }
-
-    //Media: 1350px <==> 1450px
-    @include media-1350px-1450px {
-        justify-content: space-between;
+    //Media: 1300px <==> 1450px
+    @include media-1300px-1450px {
+        justify-content: center;
         padding-right: 0px;
         padding-left: 0px;
     }
