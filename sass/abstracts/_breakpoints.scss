@@ -31,6 +31,13 @@ $breakpoints: (
     }
 }
 
+//Medias inf 1100px 
+@mixin media-inf-1100px {
+    @media screen and (max-width: map-get($map: $breakpoints, $key: media-1100px)){
+        @content;
+    }
+}
+
 @mixin media-300px-500px {
     @media (min-width: map-get($map: $breakpoints, $key: media-300px)) and (max-width: map-get($map: $breakpoints, $key: media-500px)){
         @content;
@@ -117,6 +124,13 @@ $breakpoints: (
 
 @mixin media-1101px-1299px {
     @media (min-width: map-get($map: $breakpoints, $key: media-1101px)) and (max-width: map-get($map: $breakpoints, $key: media-1299px)){
+        @content;
+    }
+}
+
+//Affichage thumb_cards sur cet intervalle
+@mixin media-1300px-1450px {
+    @media (min-width: map-get($map: $breakpoints, $key: media-1300px)) and (max-width: map-get($map: $breakpoints, $key: media-1450px)){
         @content;
     }
 }
