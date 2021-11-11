@@ -5,17 +5,16 @@
 createRecipesObject()
 createEventsForFilters()
 getFilters()
-getMainInputEvent()
+onSearchMainBarEvent()
 
 //===> Recherche spécifique dans la liste des Ingredients <===
-getSpecificIngredientsInputEvent()
+onSearchIngredientsBarEvent()
 
 //===> Recherche spécifique dans la liste des Appareils <===
-getSpecificAppliancesInputEvent()
+onSearchAppliancesBarEvent()
 
 //===> Recherche spécifique dans la liste des Ustensils <===
-getSpecificUstensilsInputEvent()
+onSearchUstensilsBarEvent()
 
-//=============>
-
+//=============> Afficher les cartes des menus
 displayRecipes()
