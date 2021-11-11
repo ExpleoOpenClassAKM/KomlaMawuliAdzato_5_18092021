@@ -454,7 +454,7 @@ function addFilterBox(name, type) {
 //================================================================================
 //=================== Recherche par l'input de l'utilisateur =====================
 //************** Recherche par la barre de recherche principale ******************
-function getMainInputEvent() {
+function onSearchMainBarEvent() {
     document.getElementById("input-search").addEventListener("input", function(event) {
         event.preventDefault()
         getValidRecipes(this.value)
@@ -463,7 +463,7 @@ function getMainInputEvent() {
 
 //================================================================================
 //*********** Recherche spécifique dans la liste des Ingredients *****************
-function getSpecificIngredientsInputEvent() {
+function onSearchIngredientsBarEvent() {
     document.getElementById("input-ingredient").addEventListener("input", function(event) {
         event.stopPropagation();
         getFilters();
@@ -473,7 +473,7 @@ function getSpecificIngredientsInputEvent() {
 
 //================================================================================
 //========== Recherche spécifique dans la liste des Appareils ==================
-function getSpecificAppliancesInputEvent() {
+function onSearchAppliancesBarEvent() {
     document.getElementById("input-appliance").addEventListener("input", function(event) {
         event.stopPropagation();
         getFilters();
@@ -483,7 +483,7 @@ function getSpecificAppliancesInputEvent() {
 
 //================================================================================
 //========== Recherche spécifique dans la liste des Ustensils ==================
-function getSpecificUstensilsInputEvent() {
+function onSearchUstensilsBarEvent() {
     document.getElementById("input-ustensil").addEventListener("input", function(event) {
         event.stopPropagation();
         getFilters();
