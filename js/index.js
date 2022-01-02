@@ -5,6 +5,8 @@
 createRecipesObject()
 createEventsForFilters()
 getFilters()
+
+//===> Recherche principale dans la BDD recipes <===
 onSearchMainBarEvent()
 
 //===> Recherche spécifique dans la liste des Ingredients <===
