@@ -225,7 +225,16 @@ function addFilter(filteredElement, typeOfElement) {
             })
         }
     });
-    getValidRecipes();
+
+        //===============================
+        //Permet d'affiner la recherche spécifique par rapport à la recherche principale et vice versa 
+        let mainSearchValue = document.getElementById("main-search").value
+        if (mainSearchValue === ''){
+            getValidRecipes()
+        } else {
+            mainSearchValue = mainSearchValue.toUpperCase()
+            getValidRecipes(mainSearchValue)
+        }
 }
 
 //====> Réinitialise les filtres
@@ -264,7 +273,16 @@ function removeFilter(filteredElement, typeOfElement) {
             })
         }
     })
-    getValidRecipes();
+        //===============================
+        //Permet d'affiner la recherche spécifique par rapport à la recherche principale et vice versa 
+        let mainSearchValue = document.getElementById("main-search").value
+        if (mainSearchValue === ''){
+            getValidRecipes()
+
+        } else {
+            mainSearchValue = mainSearchValue.toUpperCase()
+            getValidRecipes(mainSearchValue)
+        }
 }
 
 //Récupère les recettes valides avec la version "FOR"
@@ -323,8 +341,10 @@ function getValidRecipes(input = false) {
     ]
 
     //Affichage du nombre des recettes trouvées
-    if (input.length < 3) {
+    if (input.length < 3 && activeFilters.length === 0 || totalValidRecipes === allRecipesObjects.length) {
+
         document.getElementById("getValidRecipesCount").style.display = "none"
+        
     } else {
         if (totalValidRecipes !== 0) {
             document.getElementById("showValidRecipesCount").innerText = totalValidRecipes + " recette(s) correspond(ent) à votre recherche"
@@ -455,7 +475,7 @@ function addFilterBox(name, type) {
 //=================== Recherche par l'input de l'utilisateur =====================
 //************** Recherche par la barre de recherche principale ******************
 function onSearchMainBarEvent() {
-    document.getElementById("input-search").addEventListener("input", function(event) {
+    document.getElementById("main-search").addEventListener("input", function(event) {
         event.preventDefault()
         getValidRecipes(this.value)
     })
